@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/webmap-evaluation-app/static/css/main.9127531e.css",
+    "main.js": "/webmap-evaluation-app/static/js/main.da52bd3b.js",
+    "static/media/mapy_upol.png": "/webmap-evaluation-app/static/media/mapy_upol.29aaacedd48c8e6a3b7b.png",
+    "index.html": "/webmap-evaluation-app/index.html",
+    "main.9127531e.css.map": "/webmap-evaluation-app/static/css/main.9127531e.css.map",
+    "main.da52bd3b.js.map": "/webmap-evaluation-app/static/js/main.da52bd3b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9127531e.css",
+    "static/js/main.da52bd3b.js"
+  ]
+}
