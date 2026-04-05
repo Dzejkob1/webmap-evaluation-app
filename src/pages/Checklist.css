@@ -1,0 +1,118 @@
+/* ===== HEADER (sjednocený styl) ===== */
+
+.header {
+  padding: 1.2rem 0;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  text-align: center;
+  color: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+
+/* ===== NADPIS STRÁNKY ===== */
+
+.checklist-page h1 {
+  color: #0056b3;
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.checklist-page p {
+  color: #6b7280;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+/* ===== GRID KATEGORIÍ ===== */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.8rem;
+  justify-items: center;
+  margin-bottom: 3rem;
+}
+
+/* ===== KARTY ===== */
+
+.category-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  text-decoration: none;
+  color: #2d3748;
+  width: 230px;
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 123, 255, 0.15);
+  border-color: #007bff;
+}
+
+.category-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.7rem;
+  color: #007bff;
+}
+
+/* ===== TLAČÍTKO ZPĚT ===== */
+
+.back-home {
+  margin-top: 2.5rem;
+}
+
+.back-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.25);
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 123, 255, 0.35);
+}
+
+/* ===== IFRAME NÁHLED ===== */
+
+.preview-iframe {
+  width: 73%;
+  height: 420px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== VÝSLEDKY ANALÝZY ===== */
+
+.analysis-result {
+  margin: 3rem auto;
+  padding: 2rem 2.5rem;
+  width: 70%;
+  font-size: 22pt;
+  line-height: 1.6;
+  text-align: left;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+  border-left: 6px solid #d35400; /* tmavě oranžový akcent */
+  color: #2d3748;
+}

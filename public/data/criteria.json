@@ -1,0 +1,822 @@
+[
+  {
+    "category": "cartography",
+    "id": "cartography",
+    "title": "Kartografické",
+    "description": "Základní kartografická pravidla.",
+    "items": [
+      {
+        "id": 1,
+        "text": "Je k dispozici měřítko?",
+        "weight": 3,
+        "explanation": "Měřítko je nezbytné pro interpretaci vzdáleností.",
+        "links": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Scale_(map)",
+            "label": "detail"
+          }
+        ],
+        "source": "Voženílek+Kaňok",
+        "images": ["/img/scale-good.png"]
+      },
+      {
+        "id": 2,
+        "text": "Obsahuje aplikace mapové pole?",
+        "weight": 3,
+        "explanation": "Mapové pole je základní prostor pro zobrazení geografických dat.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 3,
+        "text": "Má mapová aplikace přístupnou legendu?",
+        "weight": 3,
+        "explanation": "Legenda vysvětluje význam použitých symbolů a barev.",
+        "links": [],
+        "source": "Voženílek+Kaňok",
+        "images": []
+      },
+      {
+        "id": 4,
+        "text": "Je legenda v souladu s kartografickými pravidly (např. s označením na mapě)?",
+        "weight": 3,
+        "explanation": "Symboly v legendě musí přesně odpovídat symbolům použitým v mapovém poli.",
+        "links": [],
+        "source": "Voženílek+Kaňok",
+        "images": []
+      },
+      {
+        "id": 5,
+        "text": "Mění se měřítko dynamicky na základě změny pozice a zoomu?",
+        "weight": 3,
+        "explanation": "Zajišťuje aktuálnost údaje o měřítku při interakci uživatele.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 6,
+        "text": "Obsahuje aplikace nadpis?",
+        "weight": 3,
+        "explanation": "Nadpis jasně identifikuje téma a účel mapy.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 7,
+        "text": "Obsahuje mapa tiráž?",
+        "weight": 3,
+        "explanation": "Tiráž poskytuje informace o autorech, zdrojích dat a datu vydání.",
+        "links": [],
+        "source": "Voženílek+Kaňok",
+        "images": []
+      },
+      {
+        "id": 8,
+        "text": "Umožňuje aplikace přepínání tematických vrstev?",
+        "weight": 2,
+        "explanation": "Uživatel by měl mít kontrolu nad tím, jaká data jsou aktuálně zobrazena.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 9,
+        "text": "Je mapové pole nejdominantnějším prvkem mapy?",
+        "weight": 3,
+        "explanation": "Vizuální hierarchie musí upřednostňovat samotnou mapu před ovládacími prvky.",
+        "links": [],
+        "source": "Voženílek+Kaňok",
+        "images": []
+      },
+      {
+        "id": 10,
+        "text": "Řídí se tematické vrstvy v mapě kartografickými konvencemi?",
+        "weight": 3,
+        "explanation": "Použití barev a symbolů by mělo odpovídat zažitým standardům (např. modrá pro vodu).",
+        "links": [],
+        "source": "Voženílek+Kaňok",
+        "images": []
+      },
+      {
+        "id": 11,
+        "text": "Jsou data polohově správně lokalizována?",
+        "weight": 3,
+        "explanation": "Geometrická přesnost dat vůči podkladové mapě a souřadnicovému systému.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 12,
+        "text": "Je v aplikaci zachována správná vizuální hierarchie (jsou nejdůležitější vrstvy nahoře a barevně nejvýraznější)?",
+        "weight": 3,
+        "explanation": "Vizuální hierarchie určuje pořadí a výraznost mapových vrstev tak, aby byly nejdůležitější informace vnímány jako první.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.4.3 – Vliv vizuální hierarchie, str. 79, 80)",
+        "images": []
+      },
+      {
+        "id": 13,
+        "text": "Je mapová symbologie vhodně zvolená a odpovídá kartografickým pravidlům?",
+        "weight": 3,
+        "explanation": "Volba bodových, liniových a plošných znaků musí být srozumitelná.",
+        "links": [],
+        "source": "Voženílek+Kaňok",
+        "images": []
+      },
+      {
+        "id": 14,
+        "text": "Umožňuje aplikace odečet souřadnic ve formátu [lat, lon]?",
+        "weight": 1,
+        "explanation": "Možnost získat přesnou polohu bodu v souřadnicích.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 15,
+        "text": "Lze přepínat mezi podkladovými mapami?",
+        "weight": 2,
+        "explanation": "Uživatel může volit kontext (ortofoto, topografická mapa, základní mapa).",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 16,
+        "text": "Mění se velikost nebo detail symbolů v závislosti na měřítku (zoom-dependent symbology)?",
+        "weight": 3,
+        "explanation": "Přizpůsobení symbolů měřítku zlepšuje čitelnost mapy při přibližování a oddalování.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 4.4 – Mapová kompozice, str. 67)",
+        "images": []
+      },
+      {
+        "id": 17,
+        "text": "Je v případě možnosti rotace mapy přítomen prvek směrovky (orientace k severu) a tlačítko pro návrat do výchozí polohy?",
+        "weight": 2,
+        "explanation": "Při rotaci mapy musí mít uživatel možnost snadno určit orientaci a vrátit mapu do výchozí polohy.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.1.3 – Orientace, str. 52, 53)",
+        "images": []
+      },
+      {
+        "id": 18,
+        "text": "Dochází k automatické agregaci bodů (clustering) při odzoomování, aby nedocházelo k překryvu znaků?",
+        "weight": 2,
+        "explanation": "Agregace bodů omezuje překryv znaků a zvyšuje čitelnost mapy při malých měřítcích.",
+        "links": [],
+        "source": "Nétek, Kap. 4.3.4 (Generalizace)",
+        "images": []
+      },
+      {
+        "id": 19,
+        "text": "Obsahuje legenda vysvětlení všech použitých symbolů včetně jejich hraničních hodnot?",
+        "weight": 3,
+        "explanation": "Legenda by měla úplně vysvětlovat všechny použité symboly, barvy a intervaly hodnot.",
+        "links": [],
+        "source": "Nétek, Kap. 6.2 / GISTBoK [CV-05]",
+        "images": []
+      },
+      {
+        "id": 20,
+        "text": "Je zvolená metoda tematické kartografie (např. kartogram vs. kartodiagram) adekvátní pro daný typ dat?",
+        "weight": 2,
+        "explanation": "Zvolená kartografická metoda má odpovídat povaze dat i cíli sdělení mapy.",
+        "links": [],
+        "source": "Nétek, Kap. 6.7 / GISTBoK [CV-04]",
+        "images": []
+      },
+      {
+        "id": 21,
+        "text": "Je uživatel v případě využití metody intenzity jevu (heat-map) upozorněn, že jde o náhledovou metodu nevhodnou pro přesný odečet hodnot?",
+        "weight": 2,
+        "explanation": "Heatmapa je vhodná spíše pro orientační zobrazení intenzity jevu než pro přesnou interpretaci konkrétních hodnot.",
+        "links": [],
+        "source": "Nétek (Kapitola 6.7.10 – Heat-map, str. 116)",
+        "images": []
+      },
+      {
+        "id": 22,
+        "text": "Je v případě použití metody teček zajištěna jejich dynamická změna (velikosti či hodnoty tečky) při změně měřítka (zoomu)?",
+        "weight": 2,
+        "explanation": "Metoda teček by měla reagovat na změnu měřítka tak, aby zůstala zachována čitelnost i interpretační správnost.",
+        "links": [],
+        "source": "Nétek (Kapitola 6.7.4 – Metoda teček, str. 102, 103)",
+        "images": []
+      },
+      {
+        "id": 23,
+        "text": "Mají bodové znaky pro zvýšení kontrastu vůči podkladu definovaný okraj, halo efekt nebo stínování?",
+        "weight": 2,
+        "explanation": "Doplňkové zvýraznění bodových znaků pomáhá odlišit je od podkladové mapy a zlepšuje jejich čitelnost.",
+        "links": [],
+        "source": "Nétek (Kapitola 6.5.1 a 6.6.4 – Bodové znaky a Okraj, str. 81, 92)",
+        "images": []
+      },
+      {
+        "id": 24,
+        "text": "Jsou vektorová data optimalizována pro web (např. formát GeoJSON nebo TopoJSON)?",
+        "weight": 2,
+        "explanation": "Optimalizace vektorových dat snižuje objem přenášených dat a zrychluje vykreslení mapy ve webovém prostředí.",
+        "links": [],
+        "source": "Nétek (Kapitola 5.2.2 – Vektorová data, str. 80)",
+        "images": []
+      },
+      {
+        "id": 25,
+        "text": "Využívá aplikace pro rastrové podklady standardizované dlaždicové služby (Tiles)?",
+        "weight": 2,
+        "explanation": "Dlaždicové služby jsou standardním a efektivním způsobem publikování rastrových mapových podkladů na webu.",
+        "links": [],
+        "source": "Nétek (Kapitola 4.3 – Metody publikování, str. 61)",
+        "images": []
+      },
+      {
+        "id": 26,
+        "text": "Je kartografické zobrazení realizováno v projekci Web Mercator?",
+        "weight": 3,
+        "explanation": "Web Mercator je nejrozšířenější projekce ve webové kartografii a zajišťuje kompatibilitu s běžnými mapovými podklady.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 27,
+        "text": "Je mapa responzivní a přizpůsobuje se velikosti okna prohlížeče?",
+        "weight": 3,
+        "explanation": "Mapa by měla zůstat dobře použitelná i při změně velikosti okna nebo na různých typech zařízení.",
+        "links": [],
+        "source": "Nétek Kapitola 3.1 – Webové prohlížeče, str. 38",
+        "images": []
+      },
+      {
+        "id": 28,
+        "text": "Využívá aplikace pro přenos dat otevřené a standardizované formáty (např. GeoJSON, GeoPackage) pro lepší interoperabilitu?",
+        "weight": 2,
+        "explanation": "Použití otevřených a standardizovaných formátů zvyšuje interoperabilitu a usnadňuje výměnu dat mezi systémy.",
+        "links": [],
+        "source": "Kapitola 8.4 a 9.2.1 – Standardizace a formáty dat, str. 140, 151",
+        "images": []
+      }
+    ]
+  },
+  {
+    "category": "gis",
+    "id": "gis",
+    "title": "GIS / Funkcionalita",
+    "description": "GIS konvence a funkcionalita.",
+    "items": [
+      {
+        "id": 1,
+        "text": "Umožňuje aplikace zoom?",
+        "weight": 3,
+        "explanation": "Možnost přibližování a oddalování je základní interakcí pro práci s webovou mapou.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 2,
+        "text": "Umožňuje aplikace vyhledávání?",
+        "weight": 1,
+        "explanation": "Nástroj pro nalezení prvků na základě atributů nebo polohy.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 3,
+        "text": "Umožňuje aplikace on-screen analýzy (např. měření, identifikaci apod.)?",
+        "weight": 1,
+        "explanation": "Základní GIS nástroje pro interakci s mapovými prvky.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 4,
+        "text": "Obsahuje mapa navigaci, která umožňuje procházení kroků vpřed a zpět?",
+        "weight": 1,
+        "explanation": "Historie pohledů umožňuje uživateli vrátit se k předchozímu výřezu.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 5,
+        "text": "Je počet nutných kroků vyžadujících práci s mapou co nejvíce minimalizován?",
+        "weight": 1,
+        "explanation": "Efektivita uživatelského rozhraní a workflow.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 6,
+        "text": "Mají obrázky popisky nebo alternativní popisky (atribut alt u tagu img)?",
+        "weight": 1,
+        "explanation": "Důležité pro přístupnost (screen-readery) a při výpadku načítání.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 7,
+        "text": "Je funkcionalita GIS nástrojů zřejmá (ikona, popisek, tooltip)?",
+        "weight": 3,
+        "explanation": "Srozumitelnost ovládacích prvků pro uživatele.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 8,
+        "text": "Podporuje aplikace GPS lokalizaci aktuální pozice (GPS senzor, WiFi, IP adresa)?",
+        "weight": 1,
+        "explanation": "Využití GPS senzoru pro zobrazení polohy uživatele.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 9,
+        "text": "Podporuje aplikace atributová data?",
+        "weight": 1,
+        "explanation": "Možnost prohlížet a pracovat s tabulkovými informacemi o prvcích.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 10,
+        "text": "Odpovídá kompozice a ovládání mapy GIS konvencím a standardům?",
+        "weight": 3,
+        "explanation": "Dodržení obvyklých vzorců chování známých z GIS systémů.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 11,
+        "text": "Podporuje aplikace multimediální data (fotografie, videa, grafy apod.)?",
+        "weight": 1,
+        "explanation": "Podpora multimediálních dat rozšiřuje možnosti interpretace mapových prvků a jejich kontextu.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 12,
+        "text": "Umožňuje aplikace prostorové dotazování (např. výběr prvků v okruhu 5 km)?",
+        "weight": 1,
+        "explanation": "Prostorové dotazování umožňuje vybírat a analyzovat prvky podle jejich polohy a vzdálenostních vztahů.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 13,
+        "text": "Obsahují interaktivní prvky (např. body) vyskakovací okna (pop-up), která podávají doplňující informace bez zakrytí celé mapy?",
+        "weight": 1,
+        "explanation": "Vyskakovací okna umožňují zpřístupnit doplňující informace o prvku bez nutnosti opustit mapové pole.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 14,
+        "text": "Je k dispozici nástroj pro měření vzdálenosti nebo plochy?",
+        "weight": 1,
+        "explanation": "Měřicí nástroje rozšiřují funkční možnosti aplikace pro praktickou práci s mapou.",
+        "links": [],
+        "source": "Nétek (Kapitola 6.3.4 – Vyskakovací okno, str. 72)",
+        "images": []
+      },
+      {
+        "id": 15,
+        "text": "Umožňuje aplikace manipulaci s mapou pomocí myši?",
+        "weight": 3,
+        "explanation": "Základní interaktivita (posun, zoom) je klíčová pro použitelnost.",
+        "links": [],
+        "source": "",
+        "images": []
+      }
+    ]
+  },
+  {
+    "category": "technology",
+    "id": "technology",
+    "title": "Technologické",
+    "description": "Základní technologická pravidla.",
+    "items": [
+      {
+        "id": 1,
+        "text": "Je zvolená technologie vhodná pro podporu operačního řízení?",
+        "weight": 3,
+        "explanation": "Technologický stack musí odpovídat nárokům na spolehlivost a rychlost.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 2,
+        "text": "Je aplikace nezávislá na platformě, OS i prohlížeči?",
+        "weight": 3,
+        "explanation": "Zajištění kompatibility napříč různými uživatelskými prostředími.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 3,
+        "text": "Nevyžaduje aplikace pro svůj běh instalaci či žádný plugin?",
+        "weight": 3,
+        "explanation": "Minimalizace bariér pro spuštění aplikace v moderních prohlížečích.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 4,
+        "text": "Není vyžadováno načtení stránky při každém pohybu (data se načítají asynchronně)?",
+        "weight": 3,
+        "explanation": "Využití AJAX/Fetch pro plynulý uživatelský zážitek bez blikání stránky.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 5,
+        "text": "Je aplikace přizpůsobena pro mobilní zařízení?",
+        "weight": 3,
+        "explanation": "Responzivní design pro zobrazení na telefonech a tabletech.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 6,
+        "text": "Lze aplikaci ovládat dotykem?",
+        "weight": 1,
+        "explanation": "Podpora gest pro zařízení s dotykovou obrazovkou.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 7,
+        "text": "Obsahuje aplikace jednoznačný titulek stránky <title> (zpravidla obdobu nadpisu)?",
+        "weight": 3,
+        "explanation": "Důležité pro orientaci uživatele v záložkách prohlížeče a SEO.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 8,
+        "text": "Je URL aplikace zapamatovatelné (SEO-friendly)?",
+        "weight": 3,
+        "explanation": "Srozumitelná struktura adresy usnadňuje sdílení a dohledatelnost.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 9,
+        "text": "Umožňuje aplikace vizualizovat různé typy dat (není uzavřena pro jediný typ souborů)?",
+        "weight": 1,
+        "explanation": "Schopnost pracovat s různorodými datovými zdroji.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 10,
+        "text": "Lze aplikaci upravit nebo rozšířit (např. díky otevřenému zdrojovému kódu)?",
+        "weight": 1,
+        "explanation": "Možnost úprav a rozšíření zvyšuje otevřenost řešení a jeho dlouhodobou udržitelnost.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 11,
+        "text": "Je aplikace rozšiřitelná (widgety, pluginy)?",
+        "weight": 1,
+        "explanation": "Rozšiřitelnost aplikace umožňuje její další vývoj bez zásadních změn jádra systému.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 12,
+        "text": "Je serverové nebo hardwarové řešení stabilní a dostatečně flexibilní i při vysokém počtu návštěv?",
+        "weight": 3,
+        "explanation": "Infrastruktura musí zvládat očekávanou zátěž.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 13,
+        "text": "Lze aplikaci spustit v prostředí internetu?",
+        "weight": 3,
+        "explanation": "Dostupnost aplikace online bez omezení na lokální síť (pokud není interní).",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 14,
+        "text": "Má kód deklarovaný <!DOCTYPE html>?",
+        "weight": 3,
+        "explanation": "Standard pro moderní webové stránky zajišťující správné vykreslování.",
+        "links": [],
+        "source": "W3C",
+        "images": []
+      },
+      {
+        "id": 15,
+        "text": "Načte se aplikace po spuštění do 3 sekund?",
+        "weight": 3,
+        "explanation": "Rychlost načtení je klíčová pro udržení pozornosti uživatele.",
+        "links": [],
+        "source": "W3C",
+        "images": []
+      },
+      {
+        "id": 16,
+        "text": "Má aplikace nastavené kódování UTF-8?",
+        "weight": 3,
+        "explanation": "Zajišťuje správné zobrazení diakritiky a speciálních znaků.",
+        "links": [],
+        "source": "W3C",
+        "images": []
+      },
+      {
+        "id": 17,
+        "text": "Jsou jednotlivé tagy kódu uzavřené?",
+        "weight": 3,
+        "explanation": "Správně uzavřené tagy jsou základním předpokladem validního HTML kódu.",
+        "links": [],
+        "source": "W3C",
+        "images": []
+      },
+      {
+        "id": 18,
+        "text": "Splňuje kód aplikace správnou strukturu HTML (html, head, body)?",
+        "weight": 3,
+        "explanation": "Základní validita HTML dokumentu.",
+        "links": [],
+        "source": "W3C",
+        "images": []
+      },
+      {
+        "id": 19,
+        "text": "Používá kód správně atributy a elementy (href, alt,…)?",
+        "weight": 3,
+        "explanation": "Zajištění funkčnosti odkazů a přístupnosti obrázků.",
+        "links": [],
+        "source": "W3C",
+        "images": []
+      },
+      {
+        "id": 20,
+        "text": "Má aplikace platné a správné vlastnosti a hodnoty CSS?",
+        "weight": 3,
+        "explanation": "Validita stylů zajišťuje konzistentní vzhled napříč prohlížeči.",
+        "links": [],
+        "source": "W3C",
+        "images": []
+      },
+      {
+        "id": 21,
+        "text": "Je latence serveru při požadavku na nová data nižší než 200 ms?",
+        "weight": 3,
+        "explanation": "Nízká latence serveru je důležitá pro plynulou odezvu aplikace při práci s dynamickými daty.",
+        "links": [],
+        "source": "",
+        "images": []
+      }
+    ]
+  },
+  {
+    "category": "safety",
+    "id": "safety",
+    "title": "Bezpečnost",
+    "description": "Důvěryhodnost, původ dat a legislativní aspekty.",
+    "items": [
+      {
+        "id": 1,
+        "text": "Je mapový obsah aktuální a důvěryhodný?",
+        "weight": 3,
+        "explanation": "Zajištění validity a časové relevance prezentovaných informací.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 2,
+        "text": "Obsahuje aplikace místo pro autorské a licenční údaje (Copyright) datových vrstev i služeb?",
+        "weight": 3,
+        "explanation": "Dodržení autorských práv a podmínek užití datových zdrojů.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 3,
+        "text": "Je uveden autor nebo tiráž mapové aplikace?",
+        "weight": 3,
+        "explanation": "Jasná identifikace provozovatele a tvůrce aplikace.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 4,
+        "text": "Nelze důvěryhodnost a bezpečnost aplikace jednoduše narušit (např. skripty třetích stran)?",
+        "weight": 3,
+        "explanation": "Ochrana proti běžným útokům (XSS, SQL injection apod.).",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 5,
+        "text": "V případě neveřejných (soukromých, skrytých) aplikací nelze aplikaci veřejně dohledat (správně definované robots)?",
+        "weight": 2,
+        "explanation": "Správné nastavení přístupových práv a indexace.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 6,
+        "text": "Jsou veškeré části aplikace umístěny na totožné URL adrese?",
+        "weight": 3,
+        "explanation": "Konzistence prostředí a prevence zmatení uživatele.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 7,
+        "text": "Nedochází k přesměrování bez vědomí uživatele?",
+        "weight": 3,
+        "explanation": "Transparentní navigace bez nevyžádaných skoků na jiné weby.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 8,
+        "text": "Neobsahuje aplikace žádné skryté nebo systémové skripty, které by se spouštěly bez vědomí uživatele?",
+        "weight": 3,
+        "explanation": "Čistota kódu bez škodlivého malwaru či sledovacích skriptů.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 9,
+        "text": "Je k dispozici návod nebo nápověda?",
+        "weight": 2,
+        "explanation": "Uživatelská podpora pro pochopení ovládání aplikace.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 10,
+        "text": "Neobsahuje aplikace závažné typografické a pravopisné chyby?",
+        "weight": 3,
+        "explanation": "Jazyková správnost zvyšuje profesionální dojem a důvěryhodnost.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 11,
+        "text": "Jsou definována chybová hlášení a stránka 404 (Nenalezeno)?",
+        "weight": 3,
+        "explanation": "Ošetření stavů, kdy požadovaný obsah není nalezen.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 12,
+        "text": "Obsahují chybová hlášení jasné instrukce?",
+        "weight": 2,
+        "explanation": "Pomoc uživateli vyřešit nastalý problém místo prostého oznámení chyby.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 13,
+        "text": "Jsou nápověda, upozornění i chyby psány v pozitivním nebo neutrálním tónu (bez expresivních výrazů a negativ)?",
+        "weight": 2,
+        "explanation": "Profesionální komunikace s uživatelem.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 14,
+        "text": "Je uživatel v případě inicializace nebo načítání většího množství dat upozorněn (textově nebo graficky, např. loader)?",
+        "weight": 1,
+        "explanation": "Vizuální zpětná vazba při delších operacích.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 15,
+        "text": "Je nápověda pochopitelná, bez chyb a překlepů?",
+        "weight": 2,
+        "explanation": "Kvalitní dokumentace je vizitkou aplikace.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 16,
+        "text": "Lze aplikaci včetně nastavení automaticky nebo manuálně zálohovat?",
+        "weight": 1,
+        "explanation": "Zajištění kontinuity dat a nastavení v případě havárie.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 17,
+        "text": "Nemá uživatel skrz aplikaci přístup k originálním datům (webové služby, replikace dat apod.)?",
+        "weight": 1,
+        "explanation": "Ochrana surových dat před neautorizovaným stažením nebo modifikací.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 18,
+        "text": "Jsou nastaveny mechanismy pro návrat k funkční verzi v případě havárie (verzování, git)?",
+        "weight": 2,
+        "explanation": "Možnost rollbacku při neúspěšné aktualizaci.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 19,
+        "text": "Odpovídá aplikace legislativním požadavkům (neporušuje zákony, autorská práva apod.)?",
+        "weight": 3,
+        "explanation": "Soulad s GDPR, zákonem o přístupnosti apod.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 20,
+        "text": "Byla aplikace podrobena zátěžovým testům?",
+        "weight": 3,
+        "explanation": "Ověření stability při vysokém počtu současně přistupujících uživatelů.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 21,
+        "text": "Je k dispozici technická podpora nebo FAQ pro závažnější případy?",
+        "weight": 1,
+        "explanation": "Dostupná technická podpora nebo FAQ usnadňuje řešení závažnějších problémů a zvyšuje důvěryhodnost aplikace.",
+        "links": [],
+        "source": "",
+        "images": []
+      },
+      {
+        "id": 22,
+        "text": "Jsou u mapy jasně definována metadata (původ dat, datum poslední aktualizace)?",
+        "weight": 3,
+        "explanation": "Metadata umožňují posoudit původ, aktuálnost a důvěryhodnost mapového obsahu.",
+        "links": [],
+        "source": "Nétek, Kap. 5.1 / GISTBoK [DM-02]",
+        "images": []
+      },
+      {
+        "id": 23,
+        "text": "Je u mapy jasně uvedeno prohlášení o autorských právech (Copyright) a licence k datům?",
+        "weight": 3,
+        "explanation": "Jasně uvedené copyrightové a licenční informace pomáhají uživateli pochopit podmínky použití dat i samotné mapy.",
+        "links": [],
+        "source": "Kapitola 8.2 – Autorské právo a licence, str. 135",
+        "images": []
+      }
+    ]
+  }
+]
