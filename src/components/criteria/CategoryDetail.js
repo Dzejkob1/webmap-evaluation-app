@@ -18,6 +18,9 @@ function CategoryDetail({
 
   return (
     <div className="criteria-container">
+
+      <h1>{category.title}</h1>
+    <div className="buttons-row">
       <div className="top-navigation">
         <Link to="/" className="home-button">
           <span className="lang lang-cs">← Zpět na úvod</span>
@@ -29,9 +32,7 @@ function CategoryDetail({
         <span className="lang lang-cs">← Zpět na kategorie</span>
         <span className="lang lang-en">← Back to categories</span>
       </button>
-
-      <h1>{category.title}</h1>
-
+    </div>
       <p className="criteria-intro">{category.description}</p>
 
       {category.items.some((item) => item.weight === 3) && (

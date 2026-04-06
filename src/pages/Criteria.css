@@ -3,13 +3,15 @@
 }
 
 .criteria-container {
-  max-width: 1200px;   /* ← zvětši */
-  margin: 3rem auto;
+  max-width: 1280px;
+  margin: 1.5rem auto;
   padding: 0 1rem;
+  margin-top: 1.5rem;
 }
 
 .criteria-intro {
-  margin-bottom: 2.5rem;
+  margin-top: 0.1rem;
+  margin-bottom: 1.5rem;
   color: #6b7280;
 }
 
@@ -24,10 +26,19 @@
   display: grid;
   grid-template-columns: repeat(4, 220px);
   justify-content: center;
-  gap: 2rem;   /* ← mezera mezi kartami */
+  gap: 1.5rem;
 }
 
 @media (max-width: 1100px) {
+  .category-page-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .category-page-actions {
+    justify-content: flex-start;
+  }
+
   .category-grid {
     grid-template-columns: repeat(2, 220px);
   }
@@ -42,7 +53,8 @@
 .category-card {
   border: 1px solid #e2e8f0;
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 1.2rem;
+  min-height: 190px;
   background: white;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -57,17 +69,38 @@
 
 /* ===== TLAČÍTKO ZPĚT ===== */
 
+.home-button,
 .back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   background: linear-gradient(135deg, #2c3e50, #34495e);
   color: #ffffff;
+
   padding: 10px 22px;
+  min-height: 42px;
   border-radius: 8px;
+
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1;
+  white-space: nowrap;
+
+  text-decoration: none;
   border: none;
   cursor: pointer;
-  font-weight: 600;
-  margin-bottom: 25px;
+  appearance: none;
+  -webkit-appearance: none;
+
   transition: 0.25s ease;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.back-button {
+  margin-left: 0;
+  margin-bottom: 8px;
 }
 
 .back-button:hover {
@@ -217,20 +250,10 @@
 .top-navigation {
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 1rem;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
 }
 
-.home-button {
-  background: linear-gradient(135deg, #2c3e50, #34495e);
-  color: #ffffff;
-  padding: 10px 22px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: 0.25s ease;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
 
 .home-button:hover {
   background: linear-gradient(135deg, #2980b9, #2471a3);
@@ -651,4 +674,45 @@
 
 .criteria-content {
   flex: 1;
+}
+
+.category-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.category-page-title-block h1 {
+  margin: 0 0 0.8rem 0;
+}
+
+.category-page-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.category-card h2 {
+  margin-top: 1.1rem;
+  margin-bottom: 0.9rem;
+}
+
+.category-card p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.criteria-container h1 {
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+}
+
+.buttons-row {
+  display: flex;
+  gap: 0.8rem;
+  margin-left: 60%;
+  margin-bottom: 0.1rem;
 }

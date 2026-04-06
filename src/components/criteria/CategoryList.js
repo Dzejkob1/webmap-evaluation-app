@@ -29,17 +29,19 @@ function CategoryList({
 
   return (
   <>
-    {/* 🔝 NAVIGACE */}
-    <div className="top-navigation">
-      <Link to="/" className="home-button">
-  <span className="lang lang-cs">← Zpět na úvod</span>
-  <span className="lang lang-en">← Back to homepage</span>
-</Link>
-    </div>
+    <div className="category-page-header">
+      <div className="category-page-title-block">
+        <h1>Seznam kategorií</h1>
 
-    <h1>Seznam kategorií</h1>
+        <div className="top-navigation">
+          <Link to="/" className="home-button">
+            <span className="lang lang-cs">← Zpět na úvod</span>
+            <span className="lang lang-en">← Back to homepage</span>
+          </Link>
+        </div>
+      </div>
 
-      <div style={{ textAlign: "right", marginBottom: "1.5rem" }}>
+      <div className="category-page-actions">
         <div
           ref={toolsRef}
           style={{ display: "inline-block", position: "relative", marginRight: "0.5rem" }}
@@ -52,51 +54,55 @@ function CategoryList({
           </button>
 
           {toolsOpen && (
-  <div className="tools-dropdown-menu">
-    <button
-      className="tools-dropdown-item"
-      onClick={() => {
-        onDownloadJson();
-        setToolsOpen(false);
-      }}
-    >
-      ⬇ Stáhnout aktuální JSON
-    </button>
+            <div className="tools-dropdown-menu">
+              <button
+                className="tools-dropdown-item"
+                onClick={() => {
+                  onDownloadJson();
+                  setToolsOpen(false);
+                }}
+              >
+                ⬇ Stáhnout aktuální JSON
+              </button>
 
-    <button
-      className="tools-dropdown-item"
-      onClick={() => {
-        onDownloadEmptyJson();
-        setToolsOpen(false);
-      }}
-    >
-      ⬇ Stáhnout prázdnou JSON šablonu
-    </button>
+              <button
+                className="tools-dropdown-item"
+                onClick={() => {
+                  onDownloadEmptyJson();
+                  setToolsOpen(false);
+                }}
+              >
+                ⬇ Stáhnout prázdnou JSON šablonu
+              </button>
 
-    <button
-      className="tools-dropdown-item"
-      onClick={() => {
-        onUploadJson();
-        setToolsOpen(false);
-      }}
-    >
-      ⬆ Nahrát JSON
-    </button>
+              <button
+                className="tools-dropdown-item"
+                onClick={() => {
+                  onUploadJson();
+                  setToolsOpen(false);
+                }}
+              >
+                ⬆ Nahrát JSON
+              </button>
 
-    <button
-      className="tools-dropdown-item"
-      onClick={() => {
-        onRestoreDefaults();
-        setToolsOpen(false);
-      }}
-    >
-      ↺ Obnovit původní kategorie
-    </button>
-  </div>
-)}
+              <button
+                className="tools-dropdown-item"
+                onClick={() => {
+                  onRestoreDefaults();
+                  setToolsOpen(false);
+                }}
+              >
+                ↺ Obnovit původní kategorie
+              </button>
+            </div>
+          )}
         </div>
 
-        <button className="home-button" onClick={onUploadCsv} style={{ marginRight: "0.5rem" }}>
+        <button
+          className="home-button"
+          onClick={onUploadCsv}
+          style={{ marginRight: "0.5rem" }}
+        >
           ⬆ CSV
         </button>
 
@@ -104,49 +110,50 @@ function CategoryList({
           + Vlastní
         </button>
       </div>
+    </div>
 
-      <div className="category-grid">
-        {categories.map((cat) => (
-          <div
-            key={cat.id}
-            className={`category-card ${cat.ignored ? "ignored-card" : ""}`}
-            onClick={() => {
-              if (!cat.ignored) onSelect(cat);
+    <div className="category-grid">
+      {categories.map((cat) => (
+        <div
+          key={cat.id}
+          className={`category-card ${cat.ignored ? "ignored-card" : ""}`}
+          onClick={() => {
+            if (!cat.ignored) onSelect(cat);
+          }}
+        >
+          <button
+            className="category-action-btn category-ignore-btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleIgnore(cat.id);
             }}
           >
+            {cat.ignored ? "Obnovit" : "Ignorovat"}
+          </button>
+
+          {cat.isCustom && (
             <button
-              className="category-action-btn category-ignore-btn"
+              className="category-action-btn category-delete-btn"
               onClick={(e) => {
                 e.stopPropagation();
-                onToggleIgnore(cat.id);
+                onDeleteCustom(cat.id);
               }}
             >
-              {cat.ignored ? "Obnovit" : "Ignorovat"}
+              ✕
             </button>
+          )}
 
-            {cat.isCustom && (
-              <button
-                className="category-action-btn category-delete-btn"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onDeleteCustom(cat.id);
-                }}
-              >
-                ✕
-              </button>
-            )}
+          <h2>{cat.title}</h2>
+          <p>{cat.description}</p>
 
-            <h2>{cat.title}</h2>
-            <p>{cat.description}</p>
-
-            {cat.ignored && (
-              <p className="ignored-label">Tato kategorie je ignorována</p>
-            )}
-          </div>
-        ))}
-      </div>
-    </>
-  );
+          {cat.ignored && (
+            <p className="ignored-label">Tato kategorie je ignorována</p>
+          )}
+        </div>
+      ))}
+    </div>
+  </>
+);
 }
 
 export default CategoryList;
