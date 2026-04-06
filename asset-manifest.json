@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/webmap-evaluation-app/static/css/main.9127531e.css",
-    "main.js": "/webmap-evaluation-app/static/js/main.14145746.js",
+    "main.css": "/webmap-evaluation-app/static/css/main.c85f4913.css",
+    "main.js": "/webmap-evaluation-app/static/js/main.289ed1fc.js",
     "static/media/mapy_upol.png": "/webmap-evaluation-app/static/media/mapy_upol.29aaacedd48c8e6a3b7b.png",
     "index.html": "/webmap-evaluation-app/index.html",
-    "main.9127531e.css.map": "/webmap-evaluation-app/static/css/main.9127531e.css.map",
-    "main.14145746.js.map": "/webmap-evaluation-app/static/js/main.14145746.js.map"
+    "main.c85f4913.css.map": "/webmap-evaluation-app/static/css/main.c85f4913.css.map",
+    "main.289ed1fc.js.map": "/webmap-evaluation-app/static/js/main.289ed1fc.js.map"
   },
   "entrypoints": [
-    "static/css/main.9127531e.css",
-    "static/js/main.14145746.js"
+    "static/css/main.c85f4913.css",
+    "static/js/main.289ed1fc.js"
   ]
 }
