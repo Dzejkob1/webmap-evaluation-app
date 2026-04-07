@@ -29,170 +29,177 @@ function CategoryList({
   }, []);
 
   return (
-  <>
-    <div className="category-page-header">
-      <div className="category-page-title-block">
-        <h1>Seznam kategorií</h1>
+    <>
+      <div className="category-page-header">
+        <div className="category-page-title-block">
+          <h1>Seznam kategorií</h1>
 
-        <div className="page-help">
-      <button
-        className="help-button"
-        onClick={() => setHelpOpen((prev) => !prev)}
-        aria-label="Nápověda"
-        type="button"
-      >
-        ?
-      </button>
+          <div className="page-help">
+            <button
+              className="help-button"
+              onClick={() => setHelpOpen((prev) => !prev)}
+              aria-label="Nápověda"
+              type="button"
+            >
+              ?
+            </button>
 
-      {helpOpen && (
-  <div className="help-popover">
-    <h3>Jak na to?</h3>
+            {helpOpen && (
+              <div className="help-popover">
+                <h3>Jak na to?</h3>
 
-    <ul>
-      <li>
-        Vyber kategorii kliknutím na kartu. Následně pokračuj na další
-        kategorie až k závěrečnému reportu.
-      </li>
+                <ul>
+                  <li>
+                    Vyber kategorii kliknutím na kartu. Následně pokračuj na další
+                    kategorie až k závěrečnému reportu.
+                  </li>
 
-      <li>
-        Kliknutím na „Vlastní kritéria“ můžeš stáhnout JSON šablonu
-        a upravit ji podle svých potřeb.
-      </li>
+                  <li>
+                    Kliknutím na „Vlastní kritéria“ můžeš stáhnout JSON šablonu
+                    a upravit ji podle svých potřeb.
+                  </li>
 
-      <li>
-        Pokud chceš vyloučit defaultní kritéria z hodnocení,
-        klikni na „Ignorovat“.
-      </li>
+                  <li>
+                    Pokud chceš vyloučit defaultní kritéria z hodnocení,
+                    klikni na „Ignorovat“.
+                  </li>
 
-      <li>
-        Tlačítkem „Obnovit kritéria“ můžeš resetovat původní kategorie.
-      </li>
-    </ul>
-  </div>
-)}
-    </div>
+                  <li>
+                    Tlačítkem „Obnovit kritéria“ můžeš resetovat původní kategorie.
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
 
-        <div className="top-navigation">
-          <Link to="/" className="home-button">
-            <span className="lang lang-cs">← Zpět na úvod</span>
-            <span className="lang lang-en">← Back to homepage</span>
-          </Link>
+          <div className="top-navigation">
+            <Link to="/" className="home-button">
+              <span className="lang lang-cs">← Zpět na úvod</span>
+              <span className="lang lang-en">← Back to homepage</span>
+            </Link>
+          </div>
         </div>
-      </div>
 
-      <div className="category-page-actions">
-        <div
-          ref={toolsRef}
-          style={{ display: "inline-block", position: "relative", marginRight: "0.5rem" }}
-        >
+        <div className="category-page-actions">
+          <div
+            ref={toolsRef}
+            style={{ display: "inline-block", position: "relative", marginRight: "0.5rem" }}
+          >
+            <button
+              className="home-button"
+              onClick={() => setToolsOpen((prev) => !prev)}
+              type="button"
+            >
+              Vlastní kritéria
+            </button>
+
+            {toolsOpen && (
+              <div className="tools-dropdown-menu">
+                <button
+                  className="tools-dropdown-item"
+                  onClick={() => {
+                    onDownloadJson();
+                    setToolsOpen(false);
+                  }}
+                >
+                  ⬇ Stáhnout aktuální JSON
+                </button>
+
+                <button
+                  className="tools-dropdown-item"
+                  onClick={() => {
+                    onDownloadEmptyJson();
+                    setToolsOpen(false);
+                  }}
+                >
+                  ⬇ Stáhnout prázdnou JSON šablonu
+                </button>
+
+                <button
+                  className="tools-dropdown-item"
+                  onClick={() => {
+                    onUploadJson();
+                    setToolsOpen(false);
+                  }}
+                >
+                  ⬆ Nahrát JSON
+                </button>
+
+                <button
+                  className="tools-dropdown-item"
+                  onClick={() => {
+                    onUploadCsv();
+                    setToolsOpen(false);
+                  }}
+                >
+                  ⬆ Nahrát CSV
+                </button>
+
+                <button
+                  className="tools-dropdown-item"
+                  onClick={() => {
+                    onCustom();
+                    setToolsOpen(false);
+                  }}
+                >
+                  + Přidat vlastní kategorii
+                </button>
+              </div>
+            )}
+          </div>
+
           <button
             className="home-button"
-            onClick={() => setToolsOpen((prev) => !prev)}
+            onClick={onRestoreDefaults}
+            type="button"
           >
-            Vlastní kritéria
+            ↺ Obnovit kritéria
           </button>
-
-          {toolsOpen && (
-            <div className="tools-dropdown-menu">
-              <button
-                className="tools-dropdown-item"
-                onClick={() => {
-                  onDownloadJson();
-                  setToolsOpen(false);
-                }}
-              >
-                ⬇ Stáhnout aktuální JSON
-              </button>
-
-              <button
-                className="tools-dropdown-item"
-                onClick={() => {
-                  onDownloadEmptyJson();
-                  setToolsOpen(false);
-                }}
-              >
-                ⬇ Stáhnout prázdnou JSON šablonu
-              </button>
-
-              <button
-                className="tools-dropdown-item"
-                onClick={() => {
-                  onUploadJson();
-                  setToolsOpen(false);
-                }}
-              >
-                ⬆ Nahrát JSON
-              </button>
-
-              <button
-                className="tools-dropdown-item"
-                onClick={() => {
-                  onRestoreDefaults();
-                  setToolsOpen(false);
-                }}
-              >
-                ↺ Obnovit původní kategorie
-              </button>
-            </div>
-          )}
         </div>
-
-        <button
-          className="home-button"
-          onClick={onUploadCsv}
-          style={{ marginRight: "0.5rem" }}
-        >
-          ⬆ CSV
-        </button>
-
-        <button className="home-button" onClick={onCustom}>
-          + Vlastní
-        </button>
       </div>
-    </div>
 
-    <div className="category-grid">
-      {categories.map((cat) => (
-        <div
-          key={cat.id}
-          className={`category-card ${cat.ignored ? "ignored-card" : ""}`}
-          onClick={() => {
-            if (!cat.ignored) onSelect(cat);
-          }}
-        >
-          <button
-            className="category-action-btn category-ignore-btn"
-            onClick={(e) => {
-              e.stopPropagation();
-              onToggleIgnore(cat.id);
+      <div className="category-grid">
+        {categories.map((cat) => (
+          <div
+            key={cat.id}
+            className={`category-card ${cat.ignored ? "ignored-card" : ""}`}
+            onClick={() => {
+              if (!cat.ignored) onSelect(cat);
             }}
           >
-            {cat.ignored ? "Obnovit" : "Ignorovat"}
-          </button>
-
-          {cat.isCustom && (
             <button
-              className="category-action-btn category-delete-btn"
+              className="category-action-btn category-ignore-btn"
               onClick={(e) => {
                 e.stopPropagation();
-                onDeleteCustom(cat.id);
+                onToggleIgnore(cat.id);
               }}
             >
-              ✕
+              {cat.ignored ? "Obnovit" : "Ignorovat"}
             </button>
-          )}
 
-          <h2>{cat.title}</h2>
-          <p>{cat.description}</p>
+            {cat.isCustom && (
+              <button
+                className="category-action-btn category-delete-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onDeleteCustom(cat.id);
+                }}
+              >
+                ✕
+              </button>
+            )}
 
-          {cat.ignored && (
-            <p className="ignored-label">Tato kategorie je ignorována</p>
-          )}
-        </div>
-      ))}
-    </div>
-  </>
-);
+            <h2>{cat.title}</h2>
+            <p>{cat.description}</p>
+
+            {cat.ignored && (
+              <p className="ignored-label">Tato kategorie je ignorována</p>
+            )}
+          </div>
+        ))}
+      </div>
+    </>
+  );
 }
 
 export default CategoryList;

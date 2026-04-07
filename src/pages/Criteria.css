@@ -825,3 +825,13 @@
   margin-left: 6px;
   font-size: 1rem;
 }
+
+.secondary-button {
+  background: #eef2f7;
+  color: #2c3e50;
+  border: 1px solid #dbe3ee;
+}
+
+.secondary-button:hover {
+  background: #e2e8f0;
+}
