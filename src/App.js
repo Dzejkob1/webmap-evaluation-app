@@ -3,7 +3,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Checklist from "./pages/Checklist";
 import CriteriaPage from "./pages/CriteriaPage";
-import geoimage from "./assets/mapy_upol.png";
+
 
 function App() {
   const [lang, setLang] = useState(localStorage.getItem("lang") || "cs");
@@ -40,40 +40,44 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={
-              <>
-                <div className="bubble-container">
-                  <Link to="/checklist" className="bubble">
-                    <span className="bubble-text lang lang-cs">Otestovat</span>
-                    <span className="bubble-text lang lang-en">Start Evaluation</span>
-                  </Link>
+  element={
+    <>
+      <div className="bubble-container single-bubble">
+        <Link to="/criteria" className="bubble secondary">
+          <span className="bubble-text lang lang-cs">Hodnocení</span>
+          <span className="bubble-text lang lang-en">Criteria List</span>
+        </Link>
+      </div>
 
-                  <Link to="/criteria" className="bubble secondary">
-                    <span className="bubble-text lang lang-cs">Seznam kritérií</span>
-                    <span className="bubble-text lang lang-en">Criteria List</span>
-                  </Link>
-                </div>
+      <div className="intro-divider"></div>
 
-                <section className="intro">
-                  <div className="intro-text">
-                    <h2 className="lang lang-cs">O aplikaci</h2>
-                    <h2 className="lang lang-en">About App</h2><br></br>
+      <section className="intro intro-full">
+        <div className="intro-text intro-text-full">
+          <h2 className="lang lang-cs">O aplikaci</h2>
+<h2 className="lang lang-en">About App</h2><br></br>
 
-                    <p className="lang lang-cs">
-                      Tato webová aplikace slouží pro hodnocení vybrané webové mapové aplikace na základě určených kritérií.
-                    </p>
+<p className="intro-lead lang lang-cs">
+  Tato webová aplikace slouží pro hodnocení vybraných webových mapových aplikací
+  na základě definovaných kartografických a technologických kritérií.
+</p>
 
-                    <p className="lang lang-en">
-                      This web application is used to evaluate selected web mapping applications based on defined criteria.
-                    </p>
-                  </div>
+<ul className="lang lang-cs">
+  <li>Umožňuje systematické vyhodnocení kvality webové mapy.</li>
+  <li>Pracuje s váženými kritérii (povinná, doporučená, volitelná).</li>
+  <li>Generuje přehledný závěrečný report.</li>
+</ul>
 
-                  <div className="intro-image">
-                    <img src={geoimage} alt="Mapy UPOL" />
-                  </div>
-                </section>
-              </>
-            }
+<p className="intro-lead lang lang-en">
+  This application evaluates web mapping applications based on defined criteria.
+</p>
+
+          <div className="intro-extra">
+            {/* sem můžeš později doplnit další odstavce, odrážky nebo metodiku */}
+          </div>
+        </div>
+      </section>
+    </>
+  }
           />
 
           <Route path="/checklist/*" element={<Checklist />} />

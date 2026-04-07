@@ -14,6 +14,7 @@ function CategoryList({
   onRestoreDefaults,
 }) {
   const [toolsOpen, setToolsOpen] = useState(false);
+  const [helpOpen, setHelpOpen] = useState(false);
   const toolsRef = useRef(null);
 
   useEffect(() => {
@@ -32,6 +33,44 @@ function CategoryList({
     <div className="category-page-header">
       <div className="category-page-title-block">
         <h1>Seznam kategorií</h1>
+
+        <div className="page-help">
+      <button
+        className="help-button"
+        onClick={() => setHelpOpen((prev) => !prev)}
+        aria-label="Nápověda"
+        type="button"
+      >
+        ?
+      </button>
+
+      {helpOpen && (
+  <div className="help-popover">
+    <h3>Jak na to?</h3>
+
+    <ul>
+      <li>
+        Vyber kategorii kliknutím na kartu. Následně pokračuj na další
+        kategorie až k závěrečnému reportu.
+      </li>
+
+      <li>
+        Kliknutím na „Vlastní kritéria“ můžeš stáhnout JSON šablonu
+        a upravit ji podle svých potřeb.
+      </li>
+
+      <li>
+        Pokud chceš vyloučit defaultní kritéria z hodnocení,
+        klikni na „Ignorovat“.
+      </li>
+
+      <li>
+        Tlačítkem „Obnovit kritéria“ můžeš resetovat původní kategorie.
+      </li>
+    </ul>
+  </div>
+)}
+    </div>
 
         <div className="top-navigation">
           <Link to="/" className="home-button">

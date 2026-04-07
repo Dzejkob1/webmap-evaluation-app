@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import CriteriaItem from "./CriteriaItem";
 
 function CategoryDetail({
@@ -15,11 +16,61 @@ function CategoryDetail({
   onBack,
 }) {
   const result = getResult(category);
-
+  const [helpOpen, setHelpOpen] = useState(false);
   return (
     <div className="criteria-container">
 
-      <h1>{category.title}</h1>
+<h1>{category.title}</h1>
+
+    <div className="page-help">
+      <button
+        className="help-button"
+        onClick={() => setHelpOpen((prev) => !prev)}
+        aria-label="Nápověda"
+        type="button"
+      >
+        ?
+      </button>
+
+      {helpOpen && (
+  <div className="help-popover">
+    <h3>Nápověda</h3>
+
+    <ul>
+      <li>
+        Vyplň všechna kritéria. Dělí se podle váhy.
+      </li>
+
+      <li>
+        Váha 3 <span className="required-star">*</span> – povinné kritérium.
+        To, co musí každá webová mapová aplikace splňovat.
+      </li>
+
+      <li>
+        Váha 2 <span style={{ color: "#4f46e5", fontWeight: "bold" }}>*</span> – 
+        neplatí obecně pro všechny případy, ale pokud se týká tvojí aplikace 
+        (je to tvůj záměr), má jasnou definici.
+      </li>
+
+      <li>
+        Váha 1 – nepovinná kritéria.
+      </li>
+
+      <li>
+        Odpovědi:
+        <br />
+        <strong>ANO</strong> – tvoje aplikace splňuje kritérium.
+        <br />
+        <strong>NE</strong> – tvoje aplikace nesplňuje kritérium (ale týká se jí).
+        <br />
+        <strong>N/A</strong> – tvoje aplikace se dané kritérium netýká.
+      </li>
+    </ul>
+  </div>
+)}
+    </div>
+
+
     <div className="buttons-row">
       <div className="top-navigation">
         <Link to="/" className="home-button">
@@ -35,13 +86,6 @@ function CategoryDetail({
     </div>
       <p className="criteria-intro">{category.description}</p>
 
-      {category.items.some((item) => item.weight === 3) && (
-        <p className="criteria-legend">
-          <span className="required-star">*</span>
-          <span className="lang lang-cs"> Povinné kritérium</span>
-          <span className="lang lang-en"> Mandatory criterion</span>
-        </p>
-      )}
 
       <div className="criteria-items">
         {category.items.map((item, index) => (

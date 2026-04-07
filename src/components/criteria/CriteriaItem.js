@@ -36,15 +36,14 @@ function CriteriaItem({
           <span className="criteria-text">
             {item.text}
             {item.weight === 3 && (
-              <span className="required-star">*</span>
-            )}
+  <span className="required-star">*</span>
+)}
+
+{item.weight === 2 && (
+  <span className="recommended-star">*</span>
+)}
           </span>
 
-          <span className="criteria-weight">
-            <span className="lang lang-cs">Váha:</span>
-            <span className="lang lang-en">Weight:</span>{" "}
-            {item.weight}
-          </span>
         </div>
 
         <div className="criteria-answer">

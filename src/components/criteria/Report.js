@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function Report({ categories, answers, getResult, generateSummary, onReset }) {
   const results = categories.map((cat) => ({
     title: cat.title,
@@ -10,6 +12,7 @@ function Report({ categories, answers, getResult, generateSummary, onReset }) {
   }));
 
   const summaryText = generateSummary();
+  const [helpOpen, setHelpOpen] = useState(false);
 
   return (
     <div className="criteria-container">
@@ -17,6 +20,45 @@ function Report({ categories, answers, getResult, generateSummary, onReset }) {
         <h1 className="lang lang-cs">Souhrnný report</h1>
         <br />
         <h1 className="lang lang-en">Summary Report</h1>
+
+      <div className="page-help">
+  <button
+    className="help-button"
+    onClick={() => setHelpOpen((prev) => !prev)}
+    aria-label="Nápověda"
+    type="button"
+  >
+    ?
+  </button>
+
+  {helpOpen && (
+    <div className="help-popover">
+      <h3>Nápověda</h3>
+
+      <ul>
+        <li>
+          Tento report shrnuje výsledky hodnocení jednotlivých kategorií.
+        </li>
+
+        <li>
+          Každá karta představuje jednu kategorii a její celkové skóre.
+        </li>
+
+        <li>
+          Barevný kruh znázorňuje procentuální úspěšnost splněných kritérií.
+        </li>
+
+        <li>
+          V případě nesplnění povinných kritérií jsou tato kritéria vypsána.
+        </li>
+
+        <li>
+          Výsledky slouží pro orientační zhodnocení kvality mapové aplikace.
+        </li>
+      </ul>
+    </div>
+  )}
+</div>
 
         <p className="lang lang-cs">Přehled výsledků jednotlivých kategorií</p>
         <p className="lang lang-en">Overview of category results</p>

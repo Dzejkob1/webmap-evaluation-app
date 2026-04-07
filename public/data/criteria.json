@@ -111,7 +111,7 @@
       },
       {
         "id": 12,
-        "text": "Je v aplikaci zachována správná vizuální hierarchie (jsou nejdůležitější vrstvy nahoře a barevně nejvýraznější)?",
+        "text": "Je v aplikaci zachována správná vizuální hierarchie (nejdůležitější vrstvy nahoře a barevně nejvýraznější)?",
         "weight": 3,
         "explanation": "Vizuální hierarchie určuje pořadí a výraznost mapových vrstev tak, aby byly nejdůležitější informace vnímány jako první.",
         "links": [],
@@ -267,8 +267,8 @@
   {
     "category": "gis",
     "id": "gis",
-    "title": "GIS / Funkcionalita",
-    "description": "GIS konvence a funkcionalita.",
+    "title": "Uživatelské",
+    "description": "Uživatelské možnosti a funkcionalita.",
     "items": [
       {
         "id": 1,

@@ -3,7 +3,8 @@
 }
 
 .criteria-container {
-  max-width: 1280px;
+  position: relative;
+  max-width: 1500px;
   margin: 1.5rem auto;
   padding: 0 1rem;
   margin-top: 1.5rem;
@@ -28,6 +29,7 @@
   justify-content: center;
   gap: 1.5rem;
 }
+
 
 @media (max-width: 1100px) {
   .category-page-header {
@@ -134,8 +136,8 @@
 }
 
 .criteria-text {
-  max-width: 70%;
   line-height: 1.5;
+  white-space: normal;
 }
 
 /* ===== ANO / NE ===== */
@@ -282,7 +284,9 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  max-width: 70%;
+  flex: 1;
+  min-width: 0;
+  margin-right: 15px;
 }
 
 .expand-btn {
@@ -404,8 +408,8 @@
 
 .report-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
+  gap: 1.5rem;
 }
 
 /* KARTA JEDNÉ KATEGORIE */
@@ -463,6 +467,19 @@
   font-size: 1.4rem;
   font-weight: 700;
   color: #111827;
+}
+
+
+@media (max-width: 1200px) {
+  .report-grid {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .report-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* DETAILY POD SCORE */
@@ -693,6 +710,8 @@
   align-items: flex-start;
   gap: 0.5rem;
   flex-wrap: wrap;
+
+  margin-right: 60px; /* 👈 KLÍČOVÉ */
 }
 
 .category-card h2 {
@@ -715,4 +734,94 @@
   gap: 0.8rem;
   margin-left: 60%;
   margin-bottom: 0.1rem;
+}
+
+/* ===== NÁPOVĚDA STRÁNKY ===== */
+
+.page-help {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  z-index: 20;
+}
+
+.help-button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.25s ease;
+}
+
+.help-button:hover {
+  background: linear-gradient(135deg, #2980b9, #2471a3);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.help-popover {
+  position: absolute;
+  top: 52px;
+  right: 0;
+  width: 320px;
+  max-width: min(320px, calc(100vw - 80px));
+  padding: 1rem 1.1rem;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #dbe3ee;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  color: #374151;
+}
+
+.help-popover h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+.help-popover p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #6b7280;
+}
+
+.help-popover ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.help-popover li {
+  margin-bottom: 0.5rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #6b7280;
+}
+
+.help-popover strong {
+  font-weight: 600;
+}
+
+.help-popover li {
+  margin-bottom: 0.6rem;
+}
+
+.recommended-star {
+  color: #4f46e5;   /* stejná modrá jako weight badge */
+  font-weight: bold;
+  margin-left: 6px;
+  font-size: 1rem;
 }

@@ -1,5 +1,11 @@
 /* ===== GLOBÁLNÍ STYL ===== */
 
+.homepage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,8 +17,13 @@ body {
 
 /* Jemná animace načtení */
 .main-content {
-  animation: fadeIn 0.6s ease forwards;
-  opacity: 0;
+  max-width: 1200px;
+  margin: 40px auto 24px auto;
+  background: #ffffff;
+  padding: 50px 60px 40px 60px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  flex: 1;
 }
 
 @keyframes fadeIn {
@@ -70,14 +81,7 @@ nav a:hover::after {
 
 /* ===== HLAVNÍ OBSAH (MODERN CARD) ===== */
 
-.main-content {
-  max-width: 1200px;
-  margin: 50px auto;
-  background: #ffffff;
-  padding: 60px;
-  border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-}
+
 
 /* ===== HLAVNÍ TLAČÍTKA ===== */
 
@@ -85,8 +89,12 @@ nav a:hover::after {
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin: 50px 0;
+  margin: 30px 0 24px 0;
   flex-wrap: wrap;
+}
+
+.single-bubble {
+  justify-content: center;
 }
 
 .bubble {
@@ -127,7 +135,7 @@ nav a:hover::after {
   justify-content: space-between;
   align-items: center;
   gap: 60px;
-  margin-top: 60px;
+  margin-top: 0;
   flex-wrap: wrap;
 }
 
@@ -165,6 +173,18 @@ nav a:hover::after {
   margin-right: 10px;
 }
 
+.intro-full {
+  display: block;
+}
+
+.intro-text-full {
+  max-width: 100%;
+}
+
+.intro-extra {
+  margin-top: 20px;
+  min-height: 80px;
+}
 /* ===== OBRÁZEK ===== */
 
 .intro-image img {
@@ -207,8 +227,8 @@ nav a:hover::after {
 
 .footer {
   text-align: center;
-  padding: 30px;
-  margin-top: 80px;
+  padding: 24px 30px;
+  margin-top: 24px;
   font-size: 0.9rem;
   color: #888;
   border-top: 1px solid #e5e7eb;
@@ -252,6 +272,10 @@ nav a:hover::after {
 
 }
 
+html, body, #root {
+  height: 100%;
+}
+
 /* ===== LANGUAGE SWITCH ===== */
 
 .language-switch {
@@ -288,4 +312,18 @@ body[data-lang="cs"] .lang-cs {
 
 body[data-lang="en"] .lang-en {
   display: inline;
+}
+
+.intro-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d1d5db, transparent);
+  margin: 10px 0 30px 0;
+}
+
+.intro-lead {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+  color: #374151;
 }
