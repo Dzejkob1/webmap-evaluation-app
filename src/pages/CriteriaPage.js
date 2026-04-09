@@ -16,12 +16,33 @@ function CriteriaPage() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(null);
   const [showReport, setShowReport] = useState(false);
-  const [answers, setAnswers] = useState({});
+  const [answers, setAnswers] = useState(() => {
+  try {
+    const savedAnswers = localStorage.getItem("criteriaAnswers");
+    return savedAnswers ? JSON.parse(savedAnswers) : {};
+  } catch {
+    return {};
+  }
+});
   const [customMode, setCustomMode] = useState(false);
   const [openItems, setOpenItems] = useState({});
 
   const fileInputRef = useRef();
   const csvInputRef = useRef();
+
+  const resetCategoryAnswers = (categoryId) => {
+  setAnswers((prev) => {
+    const updated = { ...prev };
+
+    Object.keys(updated).forEach((key) => {
+      if (key.startsWith(`${categoryId}-`)) {
+        delete updated[key];
+      }
+    });
+
+    return updated;
+  });
+};
 
   const loadDefaultCategories = async () => {
     const res = await fetch(process.env.PUBLIC_URL + "/data/criteria.json");
@@ -42,6 +63,10 @@ function CriteriaPage() {
     setOpenItems({});
     setCustomMode(false);
   };
+
+  useEffect(() => {
+  localStorage.setItem("criteriaAnswers", JSON.stringify(answers));
+}, [answers]);
 
   useEffect(() => {
     const init = async () => {
@@ -80,9 +105,18 @@ function CriteriaPage() {
   }, [categories]);
 
   const setAnswer = (catId, itemId, value) => {
-    const key = `${catId}-${itemId}`;
-    setAnswers((prev) => ({ ...prev, [key]: value }));
-  };
+  const key = `${catId}-${itemId}`;
+
+  setAnswers((prev) => {
+    if (prev[key] === value) {
+      const updated = { ...prev };
+      delete updated[key];
+      return updated;
+    }
+
+    return { ...prev, [key]: value };
+  });
+};
 
   const activeCategories = categories.filter((cat) => !cat.ignored);
 
@@ -336,21 +370,22 @@ function CriteriaPage() {
 
       {selectedCategory && !showReport && (
         <CategoryDetail
-          category={selectedCategory}
-          answers={answers}
-          setAnswer={setAnswer}
-          goNext={goNext}
-          goPrev={goPrev}
-          currentIndex={currentIndex}
-          categories={activeCategories}
-          openItems={openItems}
-          setOpenItems={setOpenItems}
-          getResult={(cat) => getResult(cat, answers)}
-          onBack={() => {
-            setSelectedCategory(null);
-            setCurrentIndex(null);
-          }}
-        />
+  category={selectedCategory}
+  answers={answers}
+  setAnswer={setAnswer}
+  resetCategoryAnswers={resetCategoryAnswers}
+  goNext={goNext}
+  goPrev={goPrev}
+  currentIndex={currentIndex}
+  categories={activeCategories}
+  openItems={openItems}
+  setOpenItems={setOpenItems}
+  getResult={(cat) => getResult(cat, answers)}
+  onBack={() => {
+    setSelectedCategory(null);
+    setCurrentIndex(null);
+  }}
+/>
       )}
 
       {showReport && (

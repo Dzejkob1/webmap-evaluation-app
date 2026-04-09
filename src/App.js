@@ -1,5 +1,5 @@
 // App.js
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Checklist from "./pages/Checklist";
 import CriteriaPage from "./pages/CriteriaPage";
@@ -13,9 +13,22 @@ function App() {
     localStorage.setItem("lang", lang);
   }, [lang]);
 
+  const location = useLocation();
+  const isHomePage = location.pathname === "/"; 
+
   return (
     <div className="homepage">
       <header className="header">
+
+      {!isHomePage && (
+  <div className="header-back">
+    <Link to="/" className="header-back-button">
+      <span className="lang lang-cs">← Zpět na úvod</span>
+      <span className="lang lang-en">← Back to homepage</span>
+    </Link>
+  </div>
+)}
+
         <div className="language-switch">
           <button
             className={lang === "cs" ? "active" : ""}

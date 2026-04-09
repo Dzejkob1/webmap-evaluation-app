@@ -53,14 +53,23 @@
 }
 
 .category-card {
+  position: relative;
+  overflow: hidden;
+
   border: 1px solid #e2e8f0;
   border-radius: 16px;
-  padding: 1.2rem;
+  padding: 1.4rem 1.2rem 1.2rem 1.2rem;
   min-height: 190px;
   background: white;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
 }
 
 .category-card:hover {
@@ -69,6 +78,26 @@
   border-color: #007bff;
 }
 
+.category-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+
+  font-size: 2rem;
+  line-height: 1;
+
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12);
+}
+
+.category-card:hover .category-card-icon {
+  transform: scale(1.06);
+  transition: transform 0.25s ease;
+}
 /* ===== TLAČÍTKO ZPĚT ===== */
 
 .home-button,
@@ -81,23 +110,20 @@
   color: #ffffff;
 
   padding: 10px 22px;
-  min-height: 42px;
+  height: 42px; /* ← místo min-height */
   border-radius: 8px;
 
   font-family: inherit;
   font-weight: 600;
   font-size: 0.9rem;
   line-height: 1;
-  white-space: nowrap;
 
+  white-space: nowrap;
   text-decoration: none;
   border: none;
   cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
 
   transition: 0.25s ease;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
 .back-button {
@@ -391,9 +417,52 @@
 /* ======================================= */
 
 .report-header {
+  position: relative;
   margin-bottom: 3rem;
   text-align: left;
 }
+
+.report-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.report-header-text h1 {
+  font-size: 2rem;
+  margin: 0 0 0.4rem 0;
+}
+
+.report-header-text p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.report-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .report-header-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .report-header-actions {
+    justify-content: flex-start;
+  }
+}
+
+.report-help {
+  position: relative;
+  z-index: 1000;
+}
+
 
 .report-header h1 {
   font-size: 2rem;
@@ -424,14 +493,15 @@
 }
 
 .report-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+    transform: none;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
 }
 
 .report-card h2 {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
   color: #111827;
+  text-align: center;
 }
 
 /* KRUHOVÉ SCORE */
@@ -443,24 +513,6 @@
   margin-bottom: 1.5rem;
 }
 
-.report-circle {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.report-circle::after {
-  content: "";
-  position: absolute;
-  width: 95px;
-  height: 95px;
-  background: white;
-  border-radius: 50%;
-}
 
 .report-percentage {
   position: relative;
@@ -588,10 +640,7 @@
   box-shadow: 0 6px 15px rgba(107, 114, 128, 0.3);
 }
 
-.category-card {
-  position: relative;
-  overflow: hidden;
-}
+
 
 .category-action-btn {
   position: absolute;
@@ -715,8 +764,10 @@
 }
 
 .category-card h2 {
-  margin-top: 1.1rem;
-  margin-bottom: 0.9rem;
+  margin-top: 1.8rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  line-height: 1.3;
 }
 
 .category-card p {
@@ -727,13 +778,6 @@
 .criteria-container h1 {
   margin-top: 0;
   margin-bottom: 0.2rem;
-}
-
-.buttons-row {
-  display: flex;
-  gap: 0.8rem;
-  margin-left: 60%;
-  margin-bottom: 0.1rem;
 }
 
 /* ===== NÁPOVĚDA STRÁNKY ===== */
@@ -751,6 +795,7 @@
   border-radius: 50%;
   border: none;
   cursor: pointer;
+  margin-bottom: 6px;
 
   display: flex;
   align-items: center;
@@ -784,6 +829,7 @@
   border: 1px solid #dbe3ee;
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
   color: #374151;
+  z-index: 2000;
 }
 
 .help-popover h3 {
@@ -834,4 +880,146 @@
 
 .secondary-button:hover {
   background: #e2e8f0;
+}
+
+.category-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.category-detail-header h1 {
+  margin: 0;
+}
+
+.category-detail-actions {
+  display: flex;
+  align-items: center; /* DŮLEŽITÉ */
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.page-help-inline {
+  position: relative;
+  top: auto;
+  right: auto;
+}
+
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  color: #2c3e50;
+  border: 1px solid #cbd5e1;
+
+  padding: 10px 22px;
+  min-height: 42px;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1;
+  white-space: nowrap;
+
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+.secondary-button:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .category-detail-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .category-detail-actions {
+    justify-content: flex-start;
+  }
+}
+
+.report-actions {
+  display: flex;
+  align-items: center;
+}
+
+.report-download-btn {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #ffffff;
+  padding: 10px 22px;
+  height: 42px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+
+.report-download-btn:hover {
+  background: linear-gradient(135deg, #2980b9, #2471a3);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.report-export-area {
+  background: transparent;
+}
+
+.report-circle-fallback {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 14px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.report-circle-fallback.green {
+  border-color: #22c55e;
+}
+
+.report-circle-fallback.orange {
+  border-color: #f59e0b;
+}
+
+.report-circle-fallback.red {
+  border-color: #ef4444;
+}
+
+.report-circle-svg {
+  width: 130px;
+  height: 130px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.report-circle-svg svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.report-percentage {
+  position: relative;
+  z-index: 1;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111827;
 }

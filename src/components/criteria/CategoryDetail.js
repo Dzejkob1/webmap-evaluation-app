@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import CriteriaItem from "./CriteriaItem";
 
@@ -6,6 +5,7 @@ function CategoryDetail({
   category,
   answers,
   setAnswer,
+  resetCategoryAnswers,
   goNext,
   goPrev,
   currentIndex,
@@ -17,75 +17,70 @@ function CategoryDetail({
 }) {
   const result = getResult(category);
   const [helpOpen, setHelpOpen] = useState(false);
+
   return (
     <div className="criteria-container">
+      <div className="category-detail-header">
+        <h1>{category.title}</h1>
 
-<h1>{category.title}</h1>
+        <div className="category-detail-actions">
+          <button className="back-button" onClick={onBack} type="button">
+            <span className="lang lang-cs">← Zpět na kategorie</span>
+            <span className="lang lang-en">← Back to categories</span>
+          </button>
 
-    <div className="page-help">
-      <button
-        className="help-button"
-        onClick={() => setHelpOpen((prev) => !prev)}
-        aria-label="Nápověda"
-        type="button"
-      >
-        ?
-      </button>
+          <button
+            className="back-button"
+            onClick={() => resetCategoryAnswers(category.id)}
+            type="button"
+          >
+            <span className="lang lang-cs">↺ Resetovat kritéria</span>
+            <span className="lang lang-en">↺ Reset criteria</span>
+          </button>
 
-      {helpOpen && (
-  <div className="help-popover">
-    <h3>Nápověda</h3>
+          <div className="page-help page-help-inline">
+            <button
+              className="help-button"
+              onClick={() => setHelpOpen((prev) => !prev)}
+              aria-label="Nápověda"
+              type="button"
+            >
+              ?
+            </button>
 
-    <ul>
-      <li>
-        Vyplň všechna kritéria. Dělí se podle váhy.
-      </li>
+            {helpOpen && (
+              <div className="help-popover">
+                <h3>Nápověda</h3>
 
-      <li>
-        Váha 3 <span className="required-star">*</span> – povinné kritérium.
-        To, co musí každá webová mapová aplikace splňovat.
-      </li>
-
-      <li>
-        Váha 2 <span style={{ color: "#4f46e5", fontWeight: "bold" }}>*</span> – 
-        neplatí obecně pro všechny případy, ale pokud se týká tvojí aplikace 
-        (je to tvůj záměr), má jasnou definici.
-      </li>
-
-      <li>
-        Váha 1 – nepovinná kritéria.
-      </li>
-
-      <li>
-        Odpovědi:
-        <br />
-        <strong>ANO</strong> – tvoje aplikace splňuje kritérium.
-        <br />
-        <strong>NE</strong> – tvoje aplikace nesplňuje kritérium (ale týká se jí).
-        <br />
-        <strong>N/A</strong> – tvoje aplikace se dané kritérium netýká.
-      </li>
-    </ul>
-  </div>
-)}
-    </div>
-
-
-    <div className="buttons-row">
-      <div className="top-navigation">
-        <Link to="/" className="home-button">
-          <span className="lang lang-cs">← Zpět na úvod</span>
-          <span className="lang lang-en">← Back to homepage</span>
-        </Link>
+                <ul>
+                  <li>Vyplň všechna kritéria. Dělí se podle váhy.</li>
+                  <li>
+                    Váha 3 <span className="required-star">*</span> – povinné kritérium.
+                    To, co musí každá webová mapová aplikace splňovat.
+                  </li>
+                  <li>
+                    Váha 2 <span style={{ color: "#4f46e5", fontWeight: "bold" }}>*</span> – 
+                    neplatí obecně pro všechny případy, ale pokud se týká tvojí aplikace
+                    (je to tvůj záměr), má jasnou definici.
+                  </li>
+                  <li>Váha 1 – nepovinná kritéria.</li>
+                  <li>
+                    Odpovědi:
+                    <br />
+                    <strong>ANO</strong> – tvoje aplikace splňuje kritérium.
+                    <br />
+                    <strong>NE</strong> – tvoje aplikace nesplňuje kritérium (ale týká se jí).
+                    <br />
+                    <strong>N/A</strong> – tvoje aplikace se dané kritérium netýká.
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
 
-      <button className="back-button" onClick={onBack}>
-        <span className="lang lang-cs">← Zpět na kategorie</span>
-        <span className="lang lang-en">← Back to categories</span>
-      </button>
-    </div>
       <p className="criteria-intro">{category.description}</p>
-
 
       <div className="criteria-items">
         {category.items.map((item, index) => (
@@ -130,15 +125,10 @@ function CategoryDetail({
 
         <button className="nav-button" onClick={goNext}>
           <span className="lang lang-cs">
-            {currentIndex === categories.length - 1
-              ? "Zobrazit report →"
-              : "Další →"}
+            {currentIndex === categories.length - 1 ? "Zobrazit report →" : "Další →"}
           </span>
-
           <span className="lang lang-en">
-            {currentIndex === categories.length - 1
-              ? "Show report →"
-              : "Next →"}
+            {currentIndex === categories.length - 1 ? "Show report →" : "Next →"}
           </span>
         </button>
       </div>

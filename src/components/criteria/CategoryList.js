@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 
 function CategoryList({
@@ -27,6 +26,19 @@ function CategoryList({
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
+
+  const categoryIcons = {
+  cartography: "🗺️",
+  usability: "👤",
+  technology: "⚙️",
+  safety: "🛡️",
+};
+
+const getCategoryIcon = (cat) => {
+  if (categoryIcons[cat.id]) return categoryIcons[cat.id];
+  if (cat.isCustom) return "✳️";
+  return "📁";
+};
 
   return (
     <>
@@ -72,12 +84,7 @@ function CategoryList({
             )}
           </div>
 
-          <div className="top-navigation">
-            <Link to="/" className="home-button">
-              <span className="lang lang-cs">← Zpět na úvod</span>
-              <span className="lang lang-en">← Back to homepage</span>
-            </Link>
-          </div>
+          
         </div>
 
         <div className="category-page-actions">
@@ -190,7 +197,9 @@ function CategoryList({
             )}
 
             <h2>{cat.title}</h2>
-            <p>{cat.description}</p>
+<div className="category-card-icon" aria-hidden="true">
+  {getCategoryIcon(cat)}
+</div>
 
             {cat.ignored && (
               <p className="ignored-label">Tato kategorie je ignorována</p>
