@@ -66,7 +66,8 @@ const getCategoryIcon = (cat) => {
                     kategorie až k závěrečnému reportu.
                   </li>
 
-                  <li>
+                {/*
+                 <li>
                     Kliknutím na „Vlastní kritéria“ můžeš stáhnout JSON šablonu
                     a upravit ji podle svých potřeb.
                   </li>
@@ -75,7 +76,7 @@ const getCategoryIcon = (cat) => {
                     Pokud chceš vyloučit defaultní kritéria z hodnocení,
                     klikni na „Ignorovat“.
                   </li>
-
+                */}
                   <li>
                     Tlačítkem „Obnovit kritéria“ můžeš resetovat původní kategorie.
                   </li>
@@ -92,67 +93,72 @@ const getCategoryIcon = (cat) => {
             ref={toolsRef}
             style={{ display: "inline-block", position: "relative", marginRight: "0.5rem" }}
           >
-            <button
-              className="home-button"
-              onClick={() => setToolsOpen((prev) => !prev)}
-              type="button"
-            >
-              Vlastní kritéria
-            </button>
+            
+<div className="tools-dropdown-wrapper" ref={toolsRef}>
+  <button
+  className="home-button disabled-button"
+  type="button"
+  disabled
+>
+  Vlastní kritéria
+</button>
 
-            {toolsOpen && (
-              <div className="tools-dropdown-menu">
-                <button
-                  className="tools-dropdown-item"
-                  onClick={() => {
-                    onDownloadJson();
-                    setToolsOpen(false);
-                  }}
-                >
-                  ⬇ Stáhnout aktuální JSON
-                </button>
+  {toolsOpen && (
+    <div className="tools-dropdown-menu">
+      <button
+        className="tools-dropdown-item"
+        onClick={() => {
+          onDownloadJson();
+          setToolsOpen(false);
+        }}
+      >
+        ⬇ Stáhnout aktuální JSON
+      </button>
 
-                <button
-                  className="tools-dropdown-item"
-                  onClick={() => {
-                    onDownloadEmptyJson();
-                    setToolsOpen(false);
-                  }}
-                >
-                  ⬇ Stáhnout prázdnou JSON šablonu
-                </button>
+      <button
+        className="tools-dropdown-item"
+        onClick={() => {
+          onDownloadEmptyJson();
+          setToolsOpen(false);
+        }}
+      >
+        ⬇ Stáhnout prázdnou JSON šablonu
+      </button>
 
-                <button
-                  className="tools-dropdown-item"
-                  onClick={() => {
-                    onUploadJson();
-                    setToolsOpen(false);
-                  }}
-                >
-                  ⬆ Nahrát JSON
-                </button>
+      <button
+        className="tools-dropdown-item"
+        onClick={() => {
+          onUploadJson();
+          setToolsOpen(false);
+        }}
+      >
+        ⬆ Nahrát JSON
+      </button>
 
-                <button
-                  className="tools-dropdown-item"
-                  onClick={() => {
-                    onUploadCsv();
-                    setToolsOpen(false);
-                  }}
-                >
-                  ⬆ Nahrát CSV
-                </button>
+      <button
+        className="tools-dropdown-item"
+        onClick={() => {
+          onUploadCsv();
+          setToolsOpen(false);
+        }}
+      >
+        ⬆ Nahrát CSV
+      </button>
 
-                <button
-                  className="tools-dropdown-item"
-                  onClick={() => {
-                    onCustom();
-                    setToolsOpen(false);
-                  }}
-                >
-                  + Přidat vlastní kategorii
-                </button>
-              </div>
-            )}
+      <button
+        className="tools-dropdown-item"
+        onClick={() => {
+          onCustom();
+          setToolsOpen(false);
+        }}
+      >
+        + Přidat vlastní kategorii
+      </button>
+    </div>
+  )}
+    
+</div>
+
           </div>
 
           <button

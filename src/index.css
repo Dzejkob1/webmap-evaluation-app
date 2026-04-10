@@ -272,14 +272,28 @@ nav a:hover::after {
 
 .footer {
   text-align: center;
-  padding: 24px 30px;
+  padding: 14px 20px;
   margin-top: 24px;
   font-size: 0.9rem;
-  color: #888;
+  color: rgba(107, 114, 128, 0.7); 
   border-top: 1px solid #e5e7eb;
   background: #ffffff;
 }
 
+.footer-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.footer-content a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
 /* ===== RESPONZIVITA ===== */
 
 @media (max-width: 768px) {
@@ -371,4 +385,110 @@ body[data-lang="en"] .lang-en {
   margin-bottom: 15px;
   font-size: 1.05rem;
   color: #374151;
+}
+
+.language-switch button.disabled-lang {
+  position: relative;
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.language-switch button.disabled-lang::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.9);
+  transform: rotate(-18deg);
+  transform-origin: center;
+}
+
+.test-banner {
+  margin: 0 0 2rem 0;
+  padding: 1.4rem 1.6rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #eff6ff, #f8fbff);
+  border: 1px solid #dbeafe;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+}
+
+.test-banner h2 {
+  margin: 0 0 0.6rem 0;
+  color: #1f3b57;
+  font-size: 1.45rem;
+}
+
+.test-banner p {
+  margin: 0;
+  color: #475569;
+}
+
+.testing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+
+.testing-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 1.2rem 1.25rem;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.04);
+}
+
+.testing-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.7rem;
+  color: #2c3e50;
+  font-size: 1.02rem;
+}
+
+.testing-card p {
+  margin: 0;
+  color: #4b5563;
+}
+
+.testing-card ol {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #4b5563;
+}
+
+.testing-card li {
+  margin-bottom: 0.45rem;
+}
+
+.form-placeholder {
+  margin-top: 0.9rem;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  color: #64748b;
+  font-weight: 600;
+  text-align: center;
+}
+
+.testing-note {
+  margin-top: 1.6rem;
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: #9a3412;
+}
+
+@media (max-width: 768px) {
+  .testing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .test-banner {
+    padding: 1.2rem 1.1rem;
+  }
 }
