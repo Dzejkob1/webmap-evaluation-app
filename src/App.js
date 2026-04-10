@@ -86,7 +86,7 @@ function App() {
         </p>
 
 
-        <p className="lang lang-cs">
+        <p className="intro-lead lang lang-cs">
           V této testovací verzi je aplikace naplněna výchozím datasetem
           vytvořeném v rámci bakalářské práce.
           Produkční verze nástroje bude rozšířena také o základní administraci, tedy možnost upravovat
@@ -147,9 +147,11 @@ function App() {
         </Routes>
       </main>
 
+<div className="intro-divider"></div>
+
       <footer className="footer">
   <div className="footer-content">
-    Jakub HERMANN · nástroj je produktem bakalářské práce "Návrh platformy pro hodnocení webových map" · Univerzita Palackého v Olomouci · Katedra geoinformatiky · 
+    Jakub HERMANN  ·  nástroj je produktem bakalářské práce "Návrh platformy pro hodnocení webových map"  ·  Univerzita Palackého v Olomouci  ·  katedra geoinformatiky  ·  
     @:{" "}
     <a href="mailto:jakub.hermann713@gmail.com">
       jakub.hermann713@gmail.com

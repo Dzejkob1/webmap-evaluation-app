@@ -271,17 +271,16 @@ nav a:hover::after {
 /* ===== FOOTER ===== */
 
 .footer {
+  background: #f4f7f6;
+  padding: 0.8rem 1rem;
   text-align: center;
-  padding: 14px 20px;
-  margin-top: 24px;
   font-size: 0.9rem;
-  color: rgba(107, 114, 128, 0.7); 
-  border-top: 1px solid #e5e7eb;
-  background: #ffffff;
+  margin-top: -20px;
+  color: rgba(100, 116, 139, 0.75); /* lehká průhlednost */
 }
 
 .footer-content {
-  max-width: 1300px;
+  max-width: 1320px;
   margin: 0 auto;
   line-height: 1.5;
 }
