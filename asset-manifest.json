@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/webmap-evaluation-app/static/css/main.5a283de4.css",
-    "main.js": "/webmap-evaluation-app/static/js/main.fc48ed5e.js",
+    "main.css": "/webmap-evaluation-app/static/css/main.1dd8a78c.css",
+    "main.js": "/webmap-evaluation-app/static/js/main.6e6588f4.js",
     "static/js/977.e77281e4.chunk.js": "/webmap-evaluation-app/static/js/977.e77281e4.chunk.js",
     "static/js/455.e4e9d0b0.chunk.js": "/webmap-evaluation-app/static/js/455.e4e9d0b0.chunk.js",
     "index.html": "/webmap-evaluation-app/index.html",
-    "main.5a283de4.css.map": "/webmap-evaluation-app/static/css/main.5a283de4.css.map",
-    "main.fc48ed5e.js.map": "/webmap-evaluation-app/static/js/main.fc48ed5e.js.map",
+    "main.1dd8a78c.css.map": "/webmap-evaluation-app/static/css/main.1dd8a78c.css.map",
+    "main.6e6588f4.js.map": "/webmap-evaluation-app/static/js/main.6e6588f4.js.map",
     "977.e77281e4.chunk.js.map": "/webmap-evaluation-app/static/js/977.e77281e4.chunk.js.map",
     "455.e4e9d0b0.chunk.js.map": "/webmap-evaluation-app/static/js/455.e4e9d0b0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5a283de4.css",
-    "static/js/main.fc48ed5e.js"
+    "static/css/main.1dd8a78c.css",
+    "static/js/main.6e6588f4.js"
   ]
 }
