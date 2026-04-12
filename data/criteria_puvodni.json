@@ -10,11 +10,14 @@
         "text": "Je k dispozici měřítko?",
         "weight": 3,
         "explanation": "Měřítko je nezbytné pro interpretaci vzdáleností.",
-        "links": [],
-        "source": "Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)",
-        "images": [
-          "/img/scale-good.png"
-        ]
+        "links": [
+          {
+            "url": "https://en.wikipedia.org/wiki/Scale_(map)",
+            "label": "detail"
+          }
+        ],
+        "source": "Voženílek+Kaňok",
+        "images": ["/img/scale-good.png"]
       },
       {
         "id": 2,
@@ -22,7 +25,7 @@
         "weight": 3,
         "explanation": "Legenda vysvětluje význam použitých symbolů a barev.",
         "links": [],
-        "source": "Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)",
+        "source": "Voženílek+Kaňok",
         "images": []
       },
       {
@@ -31,7 +34,7 @@
         "weight": 3,
         "explanation": "Symboly v legendě musí přesně odpovídat symbolům použitým v mapovém poli.",
         "links": [],
-        "source": "Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)",
+        "source": "Voženílek+Kaňok",
         "images": []
       },
       {
@@ -40,7 +43,7 @@
         "weight": 3,
         "explanation": "Zajišťuje aktuálnost údaje o měřítku při interakci uživatele.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 6.1.4 – Úroveň měřítka, str. 53–56)",
+        "source": "",
         "images": []
       },
       {
@@ -49,7 +52,7 @@
         "weight": 3,
         "explanation": "Nadpis jasně identifikuje téma a účel mapy.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 6.2.1 – Název mapy, str. 58)",
+        "source": "",
         "images": []
       },
       {
@@ -58,7 +61,7 @@
         "weight": 3,
         "explanation": "Tiráž poskytuje informace o autorech, zdrojích dat a datu vydání.",
         "links": [],
-        "source": "Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)",
+        "source": "Voženílek+Kaňok",
         "images": []
       },
       {
@@ -67,7 +70,7 @@
         "weight": 2,
         "explanation": "Uživatel by měl mít kontrolu nad tím, jaká data jsou aktuálně zobrazena.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 9.1.2 – Tematické vrstvy, str. 150)",
+        "source": "",
         "images": []
       },
       {
@@ -76,7 +79,7 @@
         "weight": 3,
         "explanation": "Vizuální hierarchie musí upřednostňovat samotnou mapu před ovládacími prvky.",
         "links": [],
-        "source": "Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)",
+        "source": "Voženílek+Kaňok",
         "images": []
       },
       {
@@ -85,7 +88,7 @@
         "weight": 3,
         "explanation": "Použití barev a symbolů by mělo odpovídat zažitým standardům (např. modrá pro vodu).",
         "links": [],
-        "source": "Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)",
+        "source": "Voženílek+Kaňok",
         "images": []
       },
       {
@@ -94,7 +97,7 @@
         "weight": 3,
         "explanation": "Geometrická přesnost dat vůči podkladové mapě a souřadnicovému systému.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 6.1.2 – Souřadnicové systémy, str. 50–52) / UCGIS GIS&T Body of Knowledge",
+        "source": "",
         "images": []
       },
       {
@@ -108,11 +111,11 @@
       },
       {
         "id": 12,
-        "text": "Je znakový klíč mapy vhodně zvolený a odpovídá kartografickým pravidlům?",
+        "text": "Je mapová symbologie vhodně zvolená a odpovídá kartografickým pravidlům?",
         "weight": 3,
         "explanation": "Volba bodových, liniových a plošných znaků musí být srozumitelná.",
         "links": [],
-        "source": "Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)",
+        "source": "Voženílek+Kaňok",
         "images": []
       },
       {
@@ -121,7 +124,7 @@
         "weight": 1,
         "explanation": "Možnost získat přesnou polohu bodu v souřadnicích.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 6.1.2 – Souřadnicové systémy, str. 50–52) / UCGIS GIS&T Body of Knowledge",
+        "source": "",
         "images": []
       },
       {
@@ -130,7 +133,7 @@
         "weight": 2,
         "explanation": "Uživatel může volit kontext (ortofoto, topografická mapa, základní mapa).",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 9.1.1 – Podkladové mapy, str. 145–150)",
+        "source": "",
         "images": []
       },
       {
@@ -229,7 +232,7 @@
         "weight": 3,
         "explanation": "Web Mercator je nejrozšířenější projekce ve webové kartografii a zajišťuje kompatibilitu s běžnými mapovými podklady.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 6.1.1 – Kartografické zobrazení, str. 46–50) / UCGIS GIS&T Body of Knowledge",
+        "source": "",
         "images": []
       },
       {
@@ -264,7 +267,7 @@
         "weight": 3,
         "explanation": "Možnost přibližování a oddalování je základní interakcí pro práci s webovou mapou.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 6.1.4 – Úroveň měřítka, str. 53–56)",
+        "source": "",
         "images": []
       },
       {
@@ -273,7 +276,7 @@
         "weight": 1,
         "explanation": "Nástroj pro nalezení prvků na základě atributů nebo polohy.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 6.3.3 – Vyhledávání, str. 71)",
+        "source": "",
         "images": []
       },
       {
@@ -282,7 +285,7 @@
         "weight": 1,
         "explanation": "Základní GIS nástroje pro interakci s mapovými prvky.",
         "links": [],
-        "source": "UCGIS GIS&T Body of Knowledge",
+        "source": "",
         "images": []
       },
       {
@@ -291,7 +294,7 @@
         "weight": 1,
         "explanation": "Historie pohledů umožňuje uživateli vrátit se k předchozímu výřezu.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 6.3.1 – Ovládací prvky, str. 67–69)",
+        "source": "",
         "images": []
       },
       {
@@ -300,7 +303,7 @@
         "weight": 1,
         "explanation": "Efektivita uživatelského rozhraní a workflow.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 6.3.1 – Ovládací prvky, str. 67–69)",
+        "source": "",
         "images": []
       },
       {
@@ -309,7 +312,7 @@
         "weight": 1,
         "explanation": "Důležité pro přístupnost (screen-readery) a při výpadku načítání.",
         "links": [],
-        "source": "W3C WAI – alt text / Web accessibility",
+        "source": "",
         "images": []
       },
       {
@@ -318,7 +321,7 @@
         "weight": 3,
         "explanation": "Srozumitelnost ovládacích prvků pro uživatele.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 6.3.1 – Ovládací prvky, str. 67–69)",
+        "source": "",
         "images": []
       },
       {
@@ -327,7 +330,7 @@
         "weight": 1,
         "explanation": "Využití GPS senzoru pro zobrazení polohy uživatele.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 7.5 – Optimalizace pro mobilní zařízení, str. 127–131)",
+        "source": "",
         "images": []
       },
       {
@@ -336,7 +339,7 @@
         "weight": 1,
         "explanation": "Možnost prohlížet a pracovat s tabulkovými informacemi o prvcích.",
         "links": [],
-        "source": "UCGIS GIS&T Body of Knowledge",
+        "source": "",
         "images": []
       },
       {
@@ -345,7 +348,7 @@
         "weight": 3,
         "explanation": "Dodržení obvyklých vzorců chování známých z GIS systémů.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 6.3–6.4 – Ovládací prvky a celková kompozice mapy, str. 67–80)",
+        "source": "",
         "images": []
       },
       {
@@ -354,7 +357,7 @@
         "weight": 1,
         "explanation": "Podpora multimediálních dat rozšiřuje možnosti interpretace mapových prvků a jejich kontextu.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 6.5.4 – Multimédia, str. 84–86)",
+        "source": "",
         "images": []
       },
       {
@@ -363,7 +366,7 @@
         "weight": 1,
         "explanation": "Prostorové dotazování umožňuje vybírat a analyzovat prvky podle jejich polohy a vzdálenostních vztahů.",
         "links": [],
-        "source": "UCGIS GIS&T Body of Knowledge",
+        "source": "",
         "images": []
       },
       {
@@ -372,7 +375,7 @@
         "weight": 1,
         "explanation": "Vyskakovací okna umožňují zpřístupnit doplňující informace o prvku bez nutnosti opustit mapové pole.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 6.3.4 – Vyskakovací okno (pop-up), str. 72–75)",
+        "source": "",
         "images": []
       },
       {
@@ -390,7 +393,7 @@
         "weight": 3,
         "explanation": "Základní interaktivita (posun, zoom) je klíčová pro použitelnost.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 2.8 – Interaktivita, dynamika, str. 21–27)",
+        "source": "",
         "images": []
       }
     ]
@@ -416,7 +419,7 @@
         "weight": 3,
         "explanation": "Zajištění kompatibility napříč různými uživatelskými prostředími.",
         "links": [],
-        "source": "W3C – webové standardy a validita / Nétek 2020 (Kapitola 5.2 – Obrazovka a webový prohlížeč jako zobrazovací médium, str. 39–43)",
+        "source": "",
         "images": []
       },
       {
@@ -425,7 +428,7 @@
         "weight": 3,
         "explanation": "Minimalizace bariér pro spuštění aplikace v moderních prohlížečích.",
         "links": [],
-        "source": "W3C – webové standardy a validita / Nétek 2020 (Kapitola 7.2 – Programovací jazyky, str. 124–125)",
+        "source": "",
         "images": []
       },
       {
@@ -434,7 +437,7 @@
         "weight": 3,
         "explanation": "Využití AJAX/Fetch pro plynulý uživatelský zážitek bez blikání stránky.",
         "links": [],
-        "source": "Front-End Performance Checklist",
+        "source": "",
         "images": []
       },
       {
@@ -470,7 +473,7 @@
         "weight": 3,
         "explanation": "Srozumitelná struktura adresy usnadňuje sdílení a dohledatelnost.",
         "links": [],
-        "source": "Nétek 2020",
+        "source": "",
         "images": []
       },
       {
@@ -479,7 +482,7 @@
         "weight": 1,
         "explanation": "Schopnost pracovat s různorodými datovými zdroji.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 9.2–9.3 – Publikování a konzumace dat, str. 151–163)",
+        "source": "",
         "images": []
       },
       {
@@ -506,7 +509,7 @@
         "weight": 3,
         "explanation": "Infrastruktura musí zvládat očekávanou zátěž.",
         "links": [],
-        "source": "Front-End Performance Checklist / Nétek 2020 (Kapitola 7.4 – Cloud computing, str. 126–127)",
+        "source": "",
         "images": []
       },
       {
@@ -587,7 +590,7 @@
         "weight": 3,
         "explanation": "Nízká latence serveru je důležitá pro plynulou odezvu aplikace při práci s dynamickými daty.",
         "links": [],
-        "source": "Front-End Performance Checklist",
+        "source": "",
         "images": []
       }
     ]
@@ -631,7 +634,7 @@
         "weight": 3,
         "explanation": "Ochrana proti běžným útokům (XSS, SQL injection apod.).",
         "links": [],
-        "source": "Nétek 2020",
+        "source": "",
         "images": []
       },
       {
@@ -640,7 +643,7 @@
         "weight": 2,
         "explanation": "Správné nastavení přístupových práv a indexace.",
         "links": [],
-        "source": "Nétek 2020",
+        "source": "",
         "images": []
       },
       {
@@ -649,7 +652,7 @@
         "weight": 3,
         "explanation": "Konzistence prostředí a prevence zmatení uživatele.",
         "links": [],
-        "source": "Nétek 2020",
+        "source": "",
         "images": []
       },
       {
@@ -658,7 +661,7 @@
         "weight": 3,
         "explanation": "Transparentní navigace bez nevyžádaných skoků na jiné weby.",
         "links": [],
-        "source": "Nétek 2020",
+        "source": "",
         "images": []
       },
       {
@@ -667,7 +670,7 @@
         "weight": 3,
         "explanation": "Čistota kódu bez škodlivého malwaru či sledovacích skriptů.",
         "links": [],
-        "source": "Nétek 2020",
+        "source": "",
         "images": []
       },
       {
@@ -676,7 +679,7 @@
         "weight": 2,
         "explanation": "Uživatelská podpora pro pochopení ovládání aplikace.",
         "links": [],
-        "source": "Nétek 2020",
+        "source": "",
         "images": []
       },
       {
@@ -685,7 +688,7 @@
         "weight": 3,
         "explanation": "Jazyková správnost zvyšuje profesionální dojem a důvěryhodnost.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 6.6.3 – Písmo, str. 89–92)",
+        "source": "",
         "images": []
       },
       {
@@ -694,7 +697,7 @@
         "weight": 3,
         "explanation": "Ošetření stavů, kdy požadovaný obsah není nalezen.",
         "links": [],
-        "source": "W3C – webové standardy a validita",
+        "source": "",
         "images": []
       },
       {
@@ -703,7 +706,7 @@
         "weight": 2,
         "explanation": "Pomoc uživateli vyřešit nastalý problém místo prostého oznámení chyby.",
         "links": [],
-        "source": "W3C – webové standardy a validita",
+        "source": "",
         "images": []
       },
       {
@@ -712,7 +715,7 @@
         "weight": 2,
         "explanation": "Profesionální komunikace s uživatelem.",
         "links": [],
-        "source": "W3C – webové standardy a přístupnost",
+        "source": "",
         "images": []
       },
       {
@@ -721,7 +724,7 @@
         "weight": 1,
         "explanation": "Vizuální zpětná vazba při delších operacích.",
         "links": [],
-        "source": "Front-End Performance Checklist",
+        "source": "",
         "images": []
       },
       {
@@ -730,7 +733,7 @@
         "weight": 2,
         "explanation": "Kvalitní dokumentace je vizitkou aplikace.",
         "links": [],
-        "source": "Nétek 2020",
+        "source": "",
         "images": []
       },
       {
@@ -739,7 +742,7 @@
         "weight": 1,
         "explanation": "Zajištění kontinuity dat a nastavení v případě havárie.",
         "links": [],
-        "source": "UCGIS GIS&T Body of Knowledge",
+        "source": "",
         "images": []
       },
       {
@@ -748,7 +751,7 @@
         "weight": 1,
         "explanation": "Ochrana surových dat před neautorizovaným stažením nebo modifikací.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 9.2–9.3 – Publikování a konzumace dat, str. 151–163)",
+        "source": "",
         "images": []
       },
       {
@@ -757,7 +760,7 @@
         "weight": 2,
         "explanation": "Možnost rollbacku při neúspěšné aktualizaci.",
         "links": [],
-        "source": "UCGIS GIS&T Body of Knowledge",
+        "source": "",
         "images": []
       },
       {
@@ -766,7 +769,7 @@
         "weight": 3,
         "explanation": "Soulad s GDPR, zákonem o přístupnosti apod.",
         "links": [],
-        "source": "Nétek 2020 (Kapitola 8.2 – Autorské právo a licence, str. 135–137)",
+        "source": "",
         "images": []
       },
       {
@@ -775,7 +778,7 @@
         "weight": 3,
         "explanation": "Ověření stability při vysokém počtu současně přistupujících uživatelů.",
         "links": [],
-        "source": "Front-End Performance Checklist",
+        "source": "",
         "images": []
       },
       {
@@ -784,7 +787,7 @@
         "weight": 1,
         "explanation": "Dostupná technická podpora nebo FAQ usnadňuje řešení závažnějších problémů a zvyšuje důvěryhodnost aplikace.",
         "links": [],
-        "source": "Nétek 2020",
+        "source": "",
         "images": []
       },
       {
