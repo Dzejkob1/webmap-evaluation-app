@@ -2,15 +2,27 @@ export const getResult = (cat, answers) => {
   let totalWeight = 0;
   let yesWeight = 0;
   let naCount = 0;
+  let answeredCount = 0;
+
+  const totalItems = cat.items.length;
+  const applicableItems = cat.items.filter((item) => {
+    const value = answers[`${cat.id}-${item.id}`];
+    return value !== "na";
+  }).length;
 
   cat.items.forEach((item) => {
     const value = answers[`${cat.id}-${item.id}`];
+
+    if (value === undefined) {
+      return;
+    }
 
     if (value === "na") {
       naCount++;
       return;
     }
 
+    answeredCount++;
     totalWeight += item.weight;
 
     if (value === true) {
@@ -25,12 +37,27 @@ export const getResult = (cat, answers) => {
   if (percentage >= 90) color = "green";
   else if (percentage >= 61) color = "orange";
 
+  const isEmpty = answeredCount === 0 && naCount === 0;
+  const isPartial =
+    !isEmpty &&
+    answeredCount + naCount < totalItems;
+
+  const isComplete =
+    !isEmpty &&
+    answeredCount + naCount === totalItems;
+
   return {
     totalWeight,
     yesWeight,
     percentage,
     color,
     naCount,
+    answeredCount,
+    totalItems,
+    applicableItems,
+    isEmpty,
+    isPartial,
+    isComplete,
   };
 };
 
@@ -48,22 +75,20 @@ export const globalStats = (categories, answers) => {
 
   let criticalFails = [];
   let categoriesWithMandatoryFails = [];
+  let filledCategoriesCount = 0;
 
   categories.forEach((cat) => {
-    cat.items.forEach((item) => {
-      const value = answers[`${cat.id}-${item.id}`];
+    const result = getResult(cat, answers);
 
-      if (value === "na") {
-        naCount++;
-        return;
-      }
+    if (result.isEmpty) {
+      return;
+    }
 
-      totalWeight += item.weight;
+    filledCategoriesCount++;
 
-      if (value === true) {
-        yesWeight += item.weight;
-      }
-    });
+    totalWeight += result.totalWeight;
+    yesWeight += result.yesWeight;
+    naCount += result.naCount;
 
     const failedMandatory = getFailedMandatoryItems(cat, answers);
 
@@ -88,6 +113,8 @@ export const globalStats = (categories, answers) => {
     criticalFails,
     categoriesWithMandatoryFails: [...new Set(categoriesWithMandatoryFails)],
     hasMandatoryFails: criticalFails.length > 0,
+    filledCategoriesCount,
+    isCompletelyEmpty: filledCategoriesCount === 0,
   };
 };
 
@@ -99,27 +126,47 @@ const formatCategoryList = (categories) => {
 export const generateSummary = (categories, answers) => {
   const stats = globalStats(categories, answers);
 
-  if (!stats.hasMandatoryFails) {
-    if (stats.percentage <= 60) {
-      return "Aplikace vyhovuje základním kritériím, ale existuje prostor pro zlepšení.";
-    }
-
-    if (stats.percentage <= 89) {
-      return "Aplikace splňuje většinu sledovaných kritérií, ale zůstává prostor pro potenciální rozvoj.";
-    }
-
-    return "Aplikace plně vyhovuje sledovaným kritériím. Všechny klíčové oblasti jsou pokryty a nevykazují zásadní nedostatky.";
+  if (stats.isCompletelyEmpty) {
+    return "";
   }
 
-  const failedCats = formatCategoryList(stats.categoriesWithMandatoryFails);
+  const failedCategories = [...new Set(stats.categoriesWithMandatoryFails)];
+  const failedCatsText = formatCategoryList(failedCategories);
+  const failedCount = failedCategories.length;
+
+  if (!stats.hasMandatoryFails) {
+    if (stats.percentage === 100) {
+      return "Aplikace plně vyhovuje sledovaným kritériím. Všechny klíčové oblasti jsou pokryty.";
+    }
+
+    if (stats.percentage >= 61) {
+      return "Aplikace splňuje většinu sledovaných kritérií.";
+    }
+
+    return "Aplikace má kritické nedostatky a vyžaduje zásadní přepracování.";
+  }
 
   if (stats.percentage <= 60) {
-    return `Aplikace má kritické nedostatky a vyžaduje zásadní přepracování v oblasti/ech: ${failedCats}.`;
+    return `Aplikace má kritické nedostatky a vyžaduje zásadní přepracování v oblasti/ech: ${failedCatsText}.`;
   }
 
-  if (stats.percentage <= 89) {
-    return `Aplikace splňuje většinu sledovaných kritérií, ale potřebuje podstatné změny v oblasti/ech: ${failedCats}.`;
+ if (stats.percentage >= 61 && stats.percentage <= 99) {
+
+  // 🔴 nová podmínka – žádná kategorie není 100%
+  if (failedCount === stats.filledCategoriesCount) {
+    return "Aplikace sice splňuje většinu sledovaných kritérií, ale žádná z hodnocených kategorií není splněna bez výhrad.";
   }
 
-  return `Aplikace vykazuje vysokou kvalitu, ale má nedostatky v oblasti/ech: ${failedCats}.`;
+  if (failedCount === 1) {
+    return `Aplikace vykazuje vysokou kvalitu a splňuje téměř všechna kritéria. Má slabiny pouze v kategorii: ${failedCatsText}.`;
+  }
+
+  return `Aplikace sice splňuje většinu sledovaných kritérií, ale stále má nedostatky v oblasti/ech: ${failedCatsText}.`;
+}
+
+  if (stats.percentage === 100) {
+    return "Aplikace plně vyhovuje sledovaným kritériím. Všechny klíčové oblasti jsou pokryty.";
+  }
+
+  return "";
 };

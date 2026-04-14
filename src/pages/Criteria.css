@@ -1042,3 +1042,39 @@
   transform: rotate(-10deg);
   pointer-events: none;
 }
+
+.report-card-empty {
+  opacity: 0.6;
+  position: relative;
+}
+
+.report-card-empty::after {
+  content: "";
+  position: absolute;
+  top: 52%;
+  left: 12%;
+  width: 76%;
+  height: 2px;
+  background: rgba(107, 114, 128, 0.45);
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+.report-circle-empty {
+  filter: grayscale(100%);
+}
+
+.report-card-empty .report-percentage {
+  color: #9ca3af;
+}
+
+.report-status-empty {
+  color: #9ca3af;
+}
+
+.report-note-partial {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #d97706;
+  font-weight: 600;
+}

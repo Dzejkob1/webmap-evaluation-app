@@ -53,6 +53,28 @@ function CategoryDetail({
                 <h3>Nápověda</h3>
 
                 <ul>
+  <li>
+    Vyplň všechna kritéria v dané kategorii.
+  </li>
+
+  <li>
+    V této testovací verzi jsou zobrazena pouze základní povinná kritéria.
+  </li>
+
+  <li>
+    Odpovědi:
+    <br />
+    <strong>ANO</strong> – hodnocená aplikace splňuje kritérium.
+    <br />
+    <strong>NE</strong> – hodnocená aplikace kritérium nesplňuje.
+  </li>
+
+  <li>
+    Po vyplnění všech kategorií se zobrazí souhrnný report.
+  </li>
+</ul>
+
+                {/*<ul>
                   <li>Vyplň všechna kritéria. Dělí se podle váhy.</li>
                   <li>
                     Váha 3 <span className="required-star">*</span> – povinné kritérium.
@@ -73,7 +95,7 @@ function CategoryDetail({
                     <br />
                     <strong>N/A</strong> – tvoje aplikace se dané kritérium netýká.
                   </li>
-                </ul>
+                </ul>*/}
               </div>
             )}
           </div>

@@ -45,15 +45,16 @@ function CriteriaPage() {
 };
 
   const loadDefaultCategories = async () => {
-    const res = await fetch(process.env.PUBLIC_URL + "/data/criteria.json");
-    const data = await res.json();
+  const res = await fetch(process.env.PUBLIC_URL + "/data/criteria.json");
+  const data = await res.json();
 
-    return data.map((cat) => ({
-      ...cat,
-      isCustom: false,
-      ignored: false,
-    }));
-  };
+  return data.map((cat) => ({
+    ...cat,
+    items: cat.items.filter((item) => item.weight === 3),
+    isCustom: false,
+    ignored: false,
+  }));
+};
 
   const resetUiState = () => {
     setAnswers({});

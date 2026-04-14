@@ -35,13 +35,15 @@ function CriteriaItem({
 
           <span className="criteria-text">
             {item.text}
-            {item.weight === 3 && (
+            {/*
+{item.weight === 3 && (
   <span className="required-star">*</span>
 )}
 
 {item.weight === 2 && (
   <span className="recommended-star">*</span>
 )}
+*/}
           </span>
 
         </div>
@@ -103,12 +105,16 @@ function CriteriaItem({
             </div>
 
             {item.images?.length > 0 && (
-              <div className="criteria-images">
-                {item.images.map((src, i) => (
-                  <img key={i} src={src} alt={item.text} />
-                ))}
-              </div>
-            )}
+  <div className="criteria-images">
+    {item.images.map((src, i) => (
+      <img
+        key={i}
+        src={`${process.env.PUBLIC_URL}${src}`}
+        alt={item.text}
+      />
+    ))}
+  </div>
+)}
           </div>
         </div>
       )}

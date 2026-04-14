@@ -491,3 +491,23 @@ body[data-lang="en"] .lang-en {
     padding: 1.2rem 1.1rem;
   }
 }
+
+.form-link-button {
+  display: inline-block;
+  margin-top: 0.9rem;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.25s ease;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.2);
+}
+
+.form-link-button:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.25);
+}

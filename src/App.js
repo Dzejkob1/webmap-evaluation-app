@@ -126,9 +126,14 @@ function App() {
               Po otestování aplikace prosím vyplňte krátký formulář.  
             </p>
 
-            <div className="form-placeholder">
-              FORMULÁŘ
-            </div>
+            <a
+  href="https://forms.gle/KYCPWfQdA7AMVUVQA"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="form-link-button"
+>
+  Vyplnit dotazník
+</a>
           </div>
         </div>
 
