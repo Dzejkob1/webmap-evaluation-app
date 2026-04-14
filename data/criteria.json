@@ -12,9 +12,7 @@
         "explanation": "Měřítko je nezbytné pro interpretaci vzdáleností.",
         "links": [],
         "source": "Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)",
-        "images": [
-          "/img/scale-good.png"
-        ]
+        "images": ["/img/scale.png"]
       },
       {
         "id": 2,
@@ -23,7 +21,7 @@
         "explanation": "Legenda vysvětluje význam použitých symbolů a barev.",
         "links": [],
         "source": "Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)",
-        "images": []
+        "images": ["/img/legend.png"]
       },
       {
         "id": 3,
@@ -230,7 +228,7 @@
         "explanation": "Web Mercator je nejrozšířenější projekce ve webové kartografii a zajišťuje kompatibilitu s běžnými mapovými podklady.",
         "links": [],
         "source": "Nétek 2020 (Kapitola 6.1.1 – Kartografické zobrazení, str. 46–50) / UCGIS GIS&T Body of Knowledge",
-        "images": []
+        "images": ["/img/WebMercator.png"]
       },
       {
         "id": 26,
@@ -239,7 +237,7 @@
         "explanation": "Mapa by měla zůstat dobře použitelná i při změně velikosti okna nebo na různých typech zařízení.",
         "links": [],
         "source": "Nétek Kapitola 3.1 – Webové prohlížeče, str. 38",
-        "images": []
+        "images": ["/img/responsive.png"]
       },
       {
         "id": 27,
@@ -444,7 +442,7 @@
         "explanation": "Responzivní design pro zobrazení na telefonech a tabletech.",
         "links": [],
         "source": "Nétek 2020",
-        "images": []
+        "images": ["/img/responsive.png"]
       },
       {
         "id": 6,
