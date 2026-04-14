@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function CriteriaItem({
   number,
   item,
@@ -9,6 +11,7 @@ function CriteriaItem({
 }) {
   const key = `${categoryId}-${item.id}`;
   const isOpen = openItems[key];
+  const [selectedImage, setSelectedImage] = useState(null);
 
   return (
     <div
@@ -29,29 +32,21 @@ function CriteriaItem({
                 [key]: !prev[key],
               }))
             }
+            type="button"
           >
             {isOpen ? "✕" : "ℹ"}
           </button>
 
           <span className="criteria-text">
             {item.text}
-            {/*
-{item.weight === 3 && (
-  <span className="required-star">*</span>
-)}
-
-{item.weight === 2 && (
-  <span className="recommended-star">*</span>
-)}
-*/}
           </span>
-
         </div>
 
         <div className="criteria-answer">
           <button
             className={`answer yes ${answers[key] === true ? "selected" : ""}`}
             onClick={() => setAnswer(categoryId, item.id, true)}
+            type="button"
           >
             ANO
           </button>
@@ -59,6 +54,7 @@ function CriteriaItem({
           <button
             className={`answer no ${answers[key] === false ? "selected" : ""}`}
             onClick={() => setAnswer(categoryId, item.id, false)}
+            type="button"
           >
             NE
           </button>
@@ -67,6 +63,7 @@ function CriteriaItem({
             <button
               className={`answer na ${answers[key] === "na" ? "selected" : ""}`}
               onClick={() => setAnswer(categoryId, item.id, "na")}
+              type="button"
             >
               N/A
             </button>
@@ -76,17 +73,17 @@ function CriteriaItem({
 
       {isOpen && (
         <div className="criteria-detail">
-          <div style={{ display: "flex", gap: "2rem" }}>
-            <div style={{ flex: 1 }}>
+          <div className="criteria-detail-layout">
+            <div className="criteria-detail-text">
               <div className="criteria-explanation">
                 {item.explanation}
               </div>
 
               {item.source && (
-                <div className="criteria-source">
-                  <strong>Zdroj:</strong> {item.source}
-                </div>
-              )}
+  <div className="criteria-source">
+    <strong>Metodický zdroj kritéria:</strong> {item.source}
+  </div>
+)}
 
               {item.links?.length > 0 && (
                 <div className="criteria-links">
@@ -105,17 +102,71 @@ function CriteriaItem({
             </div>
 
             {item.images?.length > 0 && (
-  <div className="criteria-images">
-    {item.images.map((src, i) => (
-      <img
-        key={i}
-        src={`${process.env.PUBLIC_URL}${src}`}
-        alt={item.text}
-      />
-    ))}
-  </div>
-)}
+              <div className="criteria-images">
+                {item.images.map((img, i) => {
+                  const tooltipParts = [
+                    img.source,
+                    img.author,
+                    img.license,
+                  ].filter(Boolean);
+
+                  return (
+                    <button
+                      key={i}
+                      type="button"
+                      className="criteria-image-button"
+                      onClick={() => setSelectedImage(img)}
+                      title={tooltipParts.join(" | ")}
+                    >
+                      <img
+                        src={`${process.env.PUBLIC_URL}${img.src}`}
+                        alt={img.alt || item.text}
+                        className="criteria-image-thumb"
+                      />
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </div>
+
+          {selectedImage && (
+            <div
+              className="image-modal-overlay"
+              onClick={() => setSelectedImage(null)}
+            >
+              <div
+                className="image-modal"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  type="button"
+                  className="image-modal-close"
+                  onClick={() => setSelectedImage(null)}
+                >
+                  ✕
+                </button>
+
+                <img
+                  src={`${process.env.PUBLIC_URL}${selectedImage.src}`}
+                  alt={selectedImage.alt || item.text}
+                  className="image-modal-img"
+                />
+
+                <div className="image-modal-meta">
+                  {selectedImage.source && (
+                    <div><strong>Zdroj:</strong> {selectedImage.source}</div>
+                  )}
+                  {selectedImage.author && (
+                    <div><strong>Autor:</strong> {selectedImage.author}</div>
+                  )}
+                  {selectedImage.license && (
+                    <div><strong>Licence:</strong> {selectedImage.license}</div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>
