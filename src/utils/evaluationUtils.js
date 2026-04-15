@@ -76,15 +76,28 @@ export const globalStats = (categories, answers) => {
   let criticalFails = [];
   let categoriesWithMandatoryFails = [];
   let filledCategoriesCount = 0;
+  let partialCategoriesCount = 0;
+
+  const categoryResults = [];
 
   categories.forEach((cat) => {
     const result = getResult(cat, answers);
+
+    categoryResults.push({
+      id: cat.id,
+      title: cat.title,
+      ...result,
+    });
 
     if (result.isEmpty) {
       return;
     }
 
     filledCategoriesCount++;
+
+    if (result.isPartial) {
+      partialCategoriesCount++;
+    }
 
     totalWeight += result.totalWeight;
     yesWeight += result.yesWeight;
@@ -114,7 +127,10 @@ export const globalStats = (categories, answers) => {
     categoriesWithMandatoryFails: [...new Set(categoriesWithMandatoryFails)],
     hasMandatoryFails: criticalFails.length > 0,
     filledCategoriesCount,
+    partialCategoriesCount,
     isCompletelyEmpty: filledCategoriesCount === 0,
+    categoryResults,
+    hasPartialCategories: partialCategoriesCount > 0,
   };
 };
 
@@ -134,12 +150,37 @@ export const generateSummary = (categories, answers) => {
   const failedCatsText = formatCategoryList(failedCategories);
   const failedCount = failedCategories.length;
 
+  const weakCategories = stats.categoryResults
+    .filter(
+      (cat) =>
+        !cat.isEmpty &&
+        cat.percentage >= 61 &&
+        cat.percentage <= 99 &&
+        cat.percentage < 100
+    )
+    .map((cat) => cat.title);
+
+  const criticalCategories = stats.categoryResults
+    .filter(
+      (cat) =>
+        !cat.isEmpty &&
+        cat.percentage <= 60
+    )
+    .map((cat) => cat.title);
+
+  const weakCatsText = formatCategoryList(weakCategories);
+  const criticalCatsText = formatCategoryList(criticalCategories);
+
   if (!stats.hasMandatoryFails) {
     if (stats.percentage === 100) {
       return "Aplikace plně vyhovuje sledovaným kritériím. Všechny klíčové oblasti jsou pokryty.";
     }
 
     if (stats.percentage >= 61) {
+      if (stats.hasPartialCategories) {
+        return "Na základě dosud vyplněných kritérií aplikace splňuje většinu sledovaných požadavků. Hodnocení však není úplné, protože některé kategorie nejsou zcela vyplněny.";
+      }
+
       return "Aplikace splňuje většinu sledovaných kritérií.";
     }
 
@@ -147,18 +188,61 @@ export const generateSummary = (categories, answers) => {
   }
 
   if (stats.percentage <= 60) {
+    if (stats.hasPartialCategories) {
+      return `Na základě dosud vyplněných kritérií aplikace vykazuje kritické nedostatky a vyžaduje zásadní přepracování v oblasti/ech: ${failedCatsText}.`;
+    }
+
     return `Aplikace má kritické nedostatky a vyžaduje zásadní přepracování v oblasti/ech: ${failedCatsText}.`;
   }
 
- if (stats.percentage >= 61 && stats.percentage <= 99) {
+  if (stats.percentage >= 61 && stats.percentage <= 99) {
+  // 1) Nejdřív nejpřesnější rozlišení:
+  // kombinace "slabších" a "kritických" kategorií
+  if (criticalCategories.length > 0 && weakCategories.length > 0) {
+    if (stats.hasPartialCategories) {
+      return `Na základě dosud vyplněných kritérií aplikace sice celkově splňuje většinu sledovaných požadavků, ale vykazuje nedostatky v kategorii/ích: ${weakCatsText} a současně vyžaduje zásadní přepracování v kategorii/ích: ${criticalCatsText}.`;
+    }
 
-  // 🔴 nová podmínka – žádná kategorie není 100%
+    return `Aplikace sice celkově splňuje většinu sledovaných požadavků, ale vykazuje nedostatky v kategorii/ích: ${weakCatsText} a současně vyžaduje zásadní přepracování v kategorii/ích: ${criticalCatsText}.`;
+  }
+
+  // 2) Jen kritické kategorie
+  if (criticalCategories.length > 0) {
+    if (stats.hasPartialCategories) {
+      return `Na základě dosud vyplněných kritérií aplikace sice celkově splňuje většinu sledovaných požadavků, ale vyžaduje zásadní přepracování v kategorii/ích: ${criticalCatsText}.`;
+    }
+
+    return `Aplikace sice celkově splňuje většinu sledovaných požadavků, ale vyžaduje zásadní přepracování v kategorii/ích: ${criticalCatsText}.`;
+  }
+
+  // 3) Jen slabší kategorie
+  if (weakCategories.length > 0) {
+    if (weakCategories.length === 1) {
+      if (stats.hasPartialCategories) {
+        return `Na základě dosud vyplněných kritérií aplikace vykazuje vysokou kvalitu a splňuje téměř všechna sledovaná kritéria. Slabiny se zatím projevují pouze v kategorii: ${weakCatsText}.`;
+      }
+
+      return `Aplikace vykazuje vysokou kvalitu a splňuje téměř všechna sledovaná kritéria. Slabiny se projevují pouze v kategorii: ${weakCatsText}.`;
+    }
+
+    if (stats.hasPartialCategories) {
+      return `Na základě dosud vyplněných kritérií aplikace sice splňuje většinu sledovaných požadavků, ale stále vykazuje nedostatky v kategorii/ích: ${weakCatsText}.`;
+    }
+
+    return `Aplikace sice splňuje většinu sledovaných požadavků, ale stále vykazuje nedostatky v kategorii/ích: ${weakCatsText}.`;
+  }
+
+  // 4) Až teprve jako obecná záložní formulace
   if (failedCount === stats.filledCategoriesCount) {
+    if (stats.hasPartialCategories) {
+      return "Na základě dosud vyplněných kritérií aplikace sice splňuje většinu sledovaných požadavků, avšak žádná z dosud hodnocených kategorií není bez výhrad.";
+    }
+
     return "Aplikace sice splňuje většinu sledovaných kritérií, ale žádná z hodnocených kategorií není splněna bez výhrad.";
   }
 
-  if (failedCount === 1) {
-    return `Aplikace vykazuje vysokou kvalitu a splňuje téměř všechna kritéria. Má slabiny pouze v kategorii: ${failedCatsText}.`;
+  if (stats.hasPartialCategories) {
+    return `Na základě dosud vyplněných kritérií aplikace sice splňuje většinu sledovaných požadavků, ale stále má nedostatky v oblasti/ech: ${failedCatsText}.`;
   }
 
   return `Aplikace sice splňuje většinu sledovaných kritérií, ale stále má nedostatky v oblasti/ech: ${failedCatsText}.`;

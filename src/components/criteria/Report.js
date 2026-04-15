@@ -110,6 +110,7 @@ function Report({ categories, answers, getResult, generateSummary, onReset }) {
                       <li>Každá karta představuje jednu kategorii a její celkové skóre.</li>
                       <li>Barevný kruh znázorňuje procentuální úspěšnost splněných kritérií.</li>
                       <li>V případě nesplnění povinných kritérií jsou tato kritéria vypsána.</li>
+                      <li>Je důležité odpovědět na všechny otázky.</li>
                       <li>Výsledky slouží pro orientační zhodnocení kvality mapové aplikace.</li>
                     </ul>
                   </div>
