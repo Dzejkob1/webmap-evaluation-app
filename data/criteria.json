@@ -422,7 +422,61 @@
         "links": [],
         "source": "Nétek 2020 (Kapitola 2.8 – Interaktivita, dynamika, str. 21–27)",
         "images": []
-      }
+      },
+      {
+"id": 16,
+"text": "Je uživatelské rozhraní aplikace (včetně všech prvků aplikace) konzistentně v jednom jazyce?",
+"weight": 3,
+"explanation": "Všechny části aplikace by měly být konzistentně v jednom jazyce (např. pouze česky nebo pouze anglicky) pro udržení maximální srozumitelnosti.",
+"links": [],
+"source": "W3C – Web Content Accessibility Guidelines (WCAG); Frontend Web Performance Checklist",
+"images": []
+},
+{
+"id": 17,
+"text": "Je velikost písma v aplikaci přizpůsobena pro snadnou čitelnost?",
+"weight": 3,
+"explanation": "Textové prvky by měly být dostatečně velké a čitelné na různých zařízeních. Příliš malé nebo nevhodně škálované písmo zhoršuje použitelnost aplikace.",
+"links": [],
+"source": "W3C – Web Content Accessibility Guidelines (WCAG); Nétek, 2020 (Webová kartografie – kapitola písmo)",
+"images": []
+},
+{
+"id": 18,
+"text": "Jsou v atributové tabulce a vyskakovacích oknech zobrazovány pouze relevantní a uživatelsky využitelné informace?",
+"weight": 2,
+"explanation": "Zobrazené informace by měly být přehledné, smysluplné a odpovídat účelu aplikace. Nadbytečné nebo technické údaje, které nejsou pro uživatele přínosné, mohou snižovat přehlednost a orientaci v datech.",
+"links": [],
+"source": "Nétek, 2020 (Webová kartografie – pop-up a UI prvky); UCGIS GIS&T Body of Knowledge",
+"images": []
+},
+{
+"id": 19,
+"text": "Obsahuje aplikace základní ovládací prvky pro přiblížení a oddálení mapy (např. tlačítka + a −)?",
+"weight": 3,
+"explanation": "Uživatel by měl mít možnost jednoduše měnit měřítko mapy pomocí standardních ovládacích prvků.",
+"links": [],
+"source": "Nétek, 2020 (Webová kartografie – ovládací prvky); UCGIS GIS&T Body of Knowledge",
+"images": []
+},
+{
+"id": 20,
+"text": "Umožňuje aplikace návrat do výchozího zobrazení mapy (např. pomocí tlačítka „domů“)?",
+"weight": 3,
+"explanation": "Funkce návratu na výchozí pohled usnadňuje orientaci v aplikaci a umožňuje rychlý návrat do původního stavu.",
+"links": [],
+"source": "Nétek, 2020 (Webová kartografie – interaktivita a ovládání); UCGIS GIS&T Body of Knowledge",
+"images": []
+},
+{
+"id": 21,
+"text": "Je minimální úroveň přiblížení (minZoom) nastavena tak, aby nedocházelo k zobrazení nevhodného měřítka (např. celého světa v projekci Web Mercator)?",
+"weight": 1,
+"explanation": "Rozsah zoomu by měl odpovídat charakteru dat a účelu aplikace. Při příliš velkém oddálení (např. zoom 0) může dojít ke ztrátě informace, překryvu prvků nebo nezobrazení dat. Naopak u globálních map může být nízký zoom žádoucí.",
+"links": [],
+"source": "Nétek, 2020 (Webová kartografie – zoom level a měřítko); UCGIS GIS&T Body of Knowledge",
+"images": []
+}
     ]
   },
   {
