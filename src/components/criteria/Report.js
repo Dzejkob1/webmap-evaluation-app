@@ -18,6 +18,8 @@ function Report({ categories, answers, getResult, generateSummary, onReset }) {
   const summaryText = generateSummary(categories, answers);
   const [helpOpen, setHelpOpen] = useState(false);
 
+  const feedbackUrl = "https://forms.gle/KYCPWfQdA7AMVUVQA";
+
   const reportRef = useRef(null);
   const currentLang = localStorage.getItem("lang") || "cs";
   const stats = globalStats(categories, answers);
@@ -250,6 +252,21 @@ function Report({ categories, answers, getResult, generateSummary, onReset }) {
             {summaryText}
           </p>
         </div>
+
+        <div className="report-feedback-box">
+  <p className="report-feedback-text">
+    Nyní prosím vyplňte krátký dotazník. Nezabere Vám více než 5 minut.
+  </p>
+
+  <a
+    href={feedbackUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="form-link-button"
+  >
+    Vyplnit dotazník zpětné vazby
+  </a>
+</div>
 
         <button className="report-back-btn" onClick={onReset}>
           <span className="lang lang-cs">← Zpět na začátek</span>

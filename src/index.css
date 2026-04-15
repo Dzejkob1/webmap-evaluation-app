@@ -511,3 +511,14 @@ body[data-lang="en"] .lang-en {
   transform: translateY(-2px);
   box-shadow: 0 10px 22px rgba(37, 99, 235, 0.25);
 }
+
+.quick-feedback-link {
+  display: flex;
+  justify-content: center;
+  margin-top: -6px;
+  margin-bottom: 10px;
+}
+
+.quick-feedback-link .form-link-button {
+  min-width: 260px;
+}
