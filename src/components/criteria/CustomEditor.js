@@ -14,6 +14,8 @@ function CustomEditor({ setCategories, onClose }) {
     setRows(copy);
   };
 
+  
+
   const save = () => {
     const newCat = {
       id: "custom-" + Date.now(),

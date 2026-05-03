@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import "./Criteria.css";
 
 import CategoryList from "../components/criteria/CategoryList";
@@ -11,50 +11,59 @@ import {
   generateSummary,
 } from "../utils/evaluationUtils";
 
-function CriteriaPage() {
+function CriteriaPage({ lang }) {
+  const currentLang = lang || localStorage.getItem("lang") || "cs";
+
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(null);
   const [showReport, setShowReport] = useState(false);
+
   const [answers, setAnswers] = useState(() => {
-  try {
-    const savedAnswers = localStorage.getItem("criteriaAnswers");
-    return savedAnswers ? JSON.parse(savedAnswers) : {};
-  } catch {
-    return {};
-  }
-});
+    try {
+      const savedAnswers = localStorage.getItem("criteriaAnswers");
+      return savedAnswers ? JSON.parse(savedAnswers) : {};
+    } catch {
+      return {};
+    }
+  });
+
   const [customMode, setCustomMode] = useState(false);
   const [openItems, setOpenItems] = useState({});
 
   const fileInputRef = useRef();
-  const csvInputRef = useRef();
+  
+
+  const loadDefaultCategories = useCallback(async () => {
+    const fileName =
+      currentLang === "en"
+        ? "/data/criteria_en_required.json"
+        : "/data/criteria.json";
+
+    const res = await fetch(process.env.PUBLIC_URL + fileName);
+    const data = await res.json();
+
+    return data.map((cat) => ({
+      ...cat,
+      items: cat.items.filter((item) => item.weight === 3),
+      isCustom: false,
+      ignored: false,
+    }));
+  }, [currentLang]);
 
   const resetCategoryAnswers = (categoryId) => {
-  setAnswers((prev) => {
-    const updated = { ...prev };
+    setAnswers((prev) => {
+      const updated = { ...prev };
 
-    Object.keys(updated).forEach((key) => {
-      if (key.startsWith(`${categoryId}-`)) {
-        delete updated[key];
-      }
+      Object.keys(updated).forEach((key) => {
+        if (key.startsWith(`${categoryId}-`)) {
+          delete updated[key];
+        }
+      });
+
+      return updated;
     });
-
-    return updated;
-  });
-};
-
-  const loadDefaultCategories = async () => {
-  const res = await fetch(process.env.PUBLIC_URL + "/data/criteria.json");
-  const data = await res.json();
-
-  return data.map((cat) => ({
-    ...cat,
-    items: cat.items.filter((item) => item.weight === 3),
-    isCustom: false,
-    ignored: false,
-  }));
-};
+  };
 
   const resetUiState = () => {
     setAnswers({});
@@ -66,8 +75,8 @@ function CriteriaPage() {
   };
 
   useEffect(() => {
-  localStorage.setItem("criteriaAnswers", JSON.stringify(answers));
-}, [answers]);
+    localStorage.setItem("criteriaAnswers", JSON.stringify(answers));
+  }, [answers]);
 
   useEffect(() => {
     const init = async () => {
@@ -93,31 +102,44 @@ function CriteriaPage() {
         }));
 
         setCategories([...mergedDefaults, ...customCategories]);
+        setSelectedCategory(null);
+        setShowReport(false);
+        setCurrentIndex(null);
+        setOpenItems({});
       } catch (err) {
         console.error("Chyba načítání JSON:", err);
       }
     };
 
     init();
-  }, []);
+  }, [loadDefaultCategories]);
 
   useEffect(() => {
-    localStorage.setItem("customCategories", JSON.stringify(categories));
-  }, [categories]);
+  if (categories.length === 0) return;
+
+  const savedState = categories.map((cat) => ({
+    id: cat.id,
+    ignored: !!cat.ignored,
+    isCustom: !!cat.isCustom,
+    ...(cat.isCustom ? cat : {}),
+  }));
+
+  localStorage.setItem("customCategories", JSON.stringify(savedState));
+}, [categories]);
 
   const setAnswer = (catId, itemId, value) => {
-  const key = `${catId}-${itemId}`;
+    const key = `${catId}-${itemId}`;
 
-  setAnswers((prev) => {
-    if (prev[key] === value) {
-      const updated = { ...prev };
-      delete updated[key];
-      return updated;
-    }
+    setAnswers((prev) => {
+      if (prev[key] === value) {
+        const updated = { ...prev };
+        delete updated[key];
+        return updated;
+      }
 
-    return { ...prev, [key]: value };
-  });
-};
+      return { ...prev, [key]: value };
+    });
+  };
 
   const activeCategories = categories.filter((cat) => !cat.ignored);
 
@@ -146,136 +168,70 @@ function CriteriaPage() {
 
     const a = document.createElement("a");
     a.href = url;
-    a.download = "criteria.json";
+    a.download = currentLang === "en" ? "criteria-en.json" : "criteria.json";
     a.click();
 
     URL.revokeObjectURL(url);
   };
 
   const downloadEmptyJsonTemplate = () => {
-  const template = [
-    {
-      category: "custom_category",
-      id: "custom_category",
-      title: "Název kategorie",
-      description: "Popis kategorie",
-      isCustom: true,
-      ignored: false,
-      items: [
-        {
-          id: 1,
-          text: "Text kritéria",
-          weight: 1,
-          explanation: "Vysvětlení kritéria",
-          links: [],
-          images: [],
-        },
-      ],
-    },
-  ];
+    const template = [
+      {
+        category: "custom_category",
+        id: "custom_category",
+        title: currentLang === "en" ? "Category title" : "Název kategorie",
+        description: currentLang === "en" ? "Category description" : "Popis kategorie",
+        isCustom: true,
+        ignored: false,
+        items: [
+          {
+            id: 1,
+            text: currentLang === "en" ? "Criterion text" : "Text kritéria",
+            weight: 1,
+            explanation: currentLang === "en" ? "Criterion explanation" : "Vysvětlení kritéria",
+            links: [],
+            images: [],
+          },
+        ],
+      },
+    ];
 
-  const dataStr = JSON.stringify(template, null, 2);
-  const blob = new Blob([dataStr], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
+    const dataStr = JSON.stringify(template, null, 2);
+    const blob = new Blob([dataStr], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
 
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "criteria-template.json";
-  a.click();
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "criteria-template.json";
+    a.click();
 
-  URL.revokeObjectURL(url);
-};
-
-  const uploadJson = (e) => {
-  const file = e.target.files[0];
-  if (!file) return;
-
-  const reader = new FileReader();
-
-  reader.onload = (event) => {
-    try {
-      const json = JSON.parse(event.target.result);
-
-      const uploadedCategories = json.map((cat) => ({
-        ...cat,
-        isCustom: cat.isCustom ?? true,
-        ignored: cat.ignored ?? false,
-      }));
-
-      setCategories((prev) => [...prev, ...uploadedCategories]);
-      setAnswers({});
-      setSelectedCategory(null);
-      setShowReport(false);
-      setCurrentIndex(null);
-      setOpenItems({});
-    } catch (err) {
-      alert("Neplatný JSON");
-    }
+    URL.revokeObjectURL(url);
   };
 
-  reader.readAsText(file);
-};
-
-  const uploadCsv = (e) => {
+  const uploadJson = (e) => {
     const file = e.target.files[0];
     if (!file) return;
 
     const reader = new FileReader();
 
     reader.onload = (event) => {
-      const text = event.target.result;
-
-      const rows = text
-        .split("\n")
-        .map((r) => r.trim())
-        .filter((r) => r.length > 0)
-        .map((r) => r.split(","));
-
-      const data = rows.slice(1);
-
       try {
-        const categoriesMap = {};
+        const json = JSON.parse(event.target.result);
 
-        data.forEach((row) => {
-          if (row.length < 7) return;
+        const uploadedCategories = json.map((cat) => ({
+          ...cat,
+          isCustom: cat.isCustom ?? true,
+          ignored: cat.ignored ?? false,
+        }));
 
-          let [
-            category_id,
-            category_title,
-            category_description,
-            item_id,
-            text,
-            weight,
-            explanation,
-          ] = row;
-
-          if (!category_id || !text || isNaN(weight)) return;
-
-          const safeCategoryId = "custom_" + category_id;
-
-          if (!categoriesMap[safeCategoryId]) {
-            categoriesMap[safeCategoryId] = {
-              id: safeCategoryId + "_" + Date.now(),
-              title: category_title || "Custom category",
-              description: category_description || "",
-              items: [],
-              isCustom: true,
-              ignored: false,
-            };
-          }
-
-          categoriesMap[safeCategoryId].items.push({
-            id: item_id || Date.now(),
-            text,
-            weight: Number(weight),
-            explanation: explanation || "",
-          });
-        });
-
-        const newCategories = Object.values(categoriesMap);
-        setCategories((prev) => [...prev, ...newCategories]);
+        setCategories((prev) => [...prev, ...uploadedCategories]);
+        setAnswers({});
+        setSelectedCategory(null);
+        setShowReport(false);
+        setCurrentIndex(null);
+        setOpenItems({});
       } catch (err) {
-        alert("Chyba při načítání CSV");
+        alert(currentLang === "en" ? "Invalid JSON" : "Neplatný JSON");
       }
     };
 
@@ -296,7 +252,12 @@ function CriteriaPage() {
   };
 
   const deleteCustomCategory = (id) => {
-    if (!window.confirm("Opravdu smazat kategorii?")) return;
+    const message =
+      currentLang === "en"
+        ? "Do you really want to delete this category?"
+        : "Opravdu smazat kategorii?";
+
+    if (!window.confirm(message)) return;
 
     setCategories((prev) =>
       prev.filter((cat) => !(cat.id === id && cat.isCustom))
@@ -309,21 +270,24 @@ function CriteriaPage() {
   };
 
   const restoreDefaultCategories = async () => {
-  try {
-    const defaults = await loadDefaultCategories();
+    try {
+      const defaults = await loadDefaultCategories();
 
-    setCategories((prev) => {
-      const customCategories = prev.filter((cat) => cat.isCustom);
-      return [...defaults, ...customCategories];
-    });
+      setCategories((prev) => {
+        const customCategories = prev.filter((cat) => cat.isCustom);
+        return [...defaults, ...customCategories];
+      });
 
-    resetUiState();
-  } catch (err) {
-    console.error("Chyba při obnově původních kategorií:", err);
-    alert("Nepodařilo se obnovit původní kategorie.");
-  }
-};
-
+      resetUiState();
+    } catch (err) {
+      console.error("Chyba při obnově původních kategorií:", err);
+      alert(
+        currentLang === "en"
+          ? "Failed to restore default criteria."
+          : "Nepodařilo se obnovit původní kategorie."
+      );
+    }
+  };
   return (
     <div className="criteria-container">
       {!selectedCategory && !showReport && (
@@ -335,10 +299,10 @@ function CriteriaPage() {
     setSelectedCategory(cat);
     setCurrentIndex(index);
   }}
+  onGoToReport={() => setShowReport(true)}
   onDownloadJson={downloadJson}
   onDownloadEmptyJson={downloadEmptyJsonTemplate}
   onUploadJson={() => fileInputRef.current.click()}
-  onUploadCsv={() => csvInputRef.current.click()}
   onCustom={() => setCustomMode(true)}
   onToggleIgnore={toggleIgnoreCategory}
   onDeleteCustom={deleteCustomCategory}
@@ -352,13 +316,7 @@ function CriteriaPage() {
             onChange={uploadJson}
             accept=".json"
           />
-          <input
-            type="file"
-            ref={csvInputRef}
-            hidden
-            onChange={uploadCsv}
-            accept=".csv"
-          />
+
 
           {customMode && (
             <CustomEditor
@@ -394,7 +352,7 @@ function CriteriaPage() {
           categories={activeCategories}
           answers={answers}
           getResult={(cat) => getResult(cat, answers)}
-          generateSummary={() => generateSummary(activeCategories, answers)}
+          generateSummary={() => generateSummary(activeCategories, answers, currentLang)}
           onReset={() => {
             setShowReport(false);
             setSelectedCategory(null);

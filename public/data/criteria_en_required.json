@@ -1,0 +1,593 @@
+[
+  {
+    "category": "cartography",
+    "id": "cartography",
+    "title": "Cartographic",
+    "description": "Basic cartographic rules.",
+    "items": [
+      {
+        "id": 1,
+        "text": "Does the map contain a title?",
+        "weight": 3,
+        "explanation": "The map title defines its purpose/topic, and possibly its spatial and temporal scope.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.2.1 – Název mapy, str. 58); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.2.2 Název mapy); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.13 Layout & Visual Hierarchy); Longley et al. (2011) – Geographic Information Systems and Science, Chapter 12.3.1 ",
+        "images": []
+      },
+      {
+        "id": 2,
+        "text": "Does the map contain map credits?",
+        "weight": 3,
+        "explanation": "Map credits provide information about the author/institution, data sources, publication date, licence and copyright.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.2.5 – Tiráž, str. 65); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.2.8 Tiráž); Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)",
+        "images": []
+      },
+      {
+        "id": 3,
+        "text": "Does the web map application have an accessible legend?",
+        "weight": 3,
+        "explanation": "Is the legend visible in the default state of the application, or can it be easily found and displayed?",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.2.3 – Legenda, str. 61–64); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.2.4 Legenda); Mapping for a Sustainable World (Kraak et al., 2020 – Section 3.6 Map Legends); Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV); Longley et al. (2011) – Geographic Information Systems and Science, Chapter 12.3.1 ",
+        "images": [
+          {
+            "src": "/img/legend.png",
+            "author": "",
+            "source": "",
+            "license": ""
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "text": "Is the legend consistent with cartographic rules?",
+        "weight": 3,
+        "explanation": "A legend is a list of symbols shown in the map and their explanation.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.2.3 – Legenda, str. 61–64); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.2.4 Legenda); Mapping for a Sustainable World (Kraak et al., 2020 – Section 3.6 Map Legends); Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
+        "images": [
+          {
+            "src": "/img/right.png",
+            "author": "",
+            "source": "",
+            "license": ""
+          },
+          {
+            "src": "/img/wrong.png",
+            "author": "",
+            "source": "",
+            "license": ""
+          }
+        ],
+        "subitems": [
+          {
+            "id": "4a",
+            "text": "Is the legend complete (everything shown in the map is included in the legend)?",
+            "weight": 3
+          },
+          {
+            "id": "4b",
+            "text": "Is the legend independent – does it show only one symbol for one phenomenon?",
+            "weight": 3
+          },
+          {
+            "id": "4c",
+            "text": "Is the legend properly organized – does thematic content take precedence over topographic content?",
+            "weight": 3
+          },
+          {
+            "id": "4d",
+            "text": "Is the legend consistent with the map symbols (everything in the legend is also present in the map)?",
+            "weight": 3
+          },
+          {
+            "id": "4e",
+            "text": "Is the legend understandable?",
+            "weight": 3
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "text": "Does the legend explain all used symbols, including their boundary values?",
+        "weight": 3,
+        "explanation": "The legend should fully explain all used symbols, colours and value intervals.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.2.3 – Legenda, str. 61–64); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.2.4 Legenda); Mapping for a Sustainable World (Kraak et al., 2020 – Section 3.6 Map Legends); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
+        "images": []
+      },
+      {
+        "id": 6,
+        "text": "Is a map scale available?",
+        "weight": 3,
+        "explanation": "Scale is essential for interpreting distances. It may be graphical, numerical or verbal.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.2.4 – Měřítko, str. 64); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 1.4.5 Měřítko; Kapitola 10.2.7 Měřítko); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.6 Cartographic Scale); Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011); Longley et al. (2011) – Geographic Information Systems and Science, Chapter 12.3",
+        "images": [
+          {
+            "src": "/img/scale.png",
+            "author": "",
+            "source": "",
+            "license": ""
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "text": "Does the scale change dynamically according to map position and zoom level?",
+        "weight": 3,
+        "explanation": "This ensures that scale information remains up to date during user interaction with the map.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.1.4 – Úroveň měřítka, str. 53–56; Kapitola 6.2.4 – Měřítko, str. 64); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.6 Cartographic Scale; Section 4.3 Interactive Maps)",
+        "images": []
+      },
+      {
+        "id": 8,
+        "text": "Is the map field the most dominant element?",
+        "weight": 3,
+        "explanation": "Does the map field occupy at least 75% of the browser window in the default state of the application?",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.2.2 – Mapové pole, str. 59; Kapitola 6.4.3 – Vliv vizuální hierarchie, str. 79–80); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.1 Základní principy vizuálního designu; Kapitola 10.2.3 Hlavní a vedlejší mapové pole); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.13 Layout & Visual Hierarchy); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
+        "images": []
+      },
+      {
+        "id": 9,
+        "text": "Is proper visual hierarchy maintained in the map?",
+        "weight": 3,
+        "explanation": "Visual hierarchy determines the order and prominence of map layers – order: 1) main thematic content, 2) supplementary thematic content, 3) topographic background.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.4.3 – Vliv vizuální hierarchie, str. 79–80); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.1 Základní principy vizuálního designu); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.13 Layout & Visual Hierarchy); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
+        "images": []
+      },
+      {
+        "id": 10,
+        "text": "Do the thematic layers in the map follow cartographic conventions?",
+        "weight": 3,
+        "explanation": "This includes appropriate use of symbols and colours, colour progression in scales, blue for water, and established symbol standards.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.5 – Vyjadřovací prostředky, str. 80–86; Kapitola 6.6.2 – Barva, str. 88–89; Kapitola 9.1.2 – Tematické vrstvy, str. 150); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 4 Tvorba značkového klíče; Kapitola 8 Barvy); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.9 Symbolization & the Visual Variables; Section 2.10 Colour); Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV); Longley et al. (2011) – Geographic Information Systems and Science, Chapter 12.3.2",
+        "images": []
+      },
+      {
+        "id": 11,
+        "text": "Is the map symbol key appropriately chosen and consistent with cartographic rules?",
+        "weight": 3,
+        "explanation": "The choice of point, line and area symbols must be understandable. This also concerns cartographic semantics.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.5 – Vyjadřovací prostředky, str. 80–86; Kapitola 6.7 – Vybrané vyjadřovací metody, str. 96–118); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 4 Tvorba značkového klíče); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.9 Symbolization & the Visual Variables); Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV); Longley et al. (2011) – Geographic Information Systems and Science, Chapter 12.3.2",
+        "images": []
+      },
+      {
+        "id": 12,
+        "text": "Are map elements appropriately generalized with respect to the zoom level?",
+        "weight": 3,
+        "explanation": "Cartographic generalization is the selection, graphical simplification and abstraction of objects, phenomena and their relationships for their graphical representation in a map. It ensures that, at different zoom levels, the map does not display excessive or overly detailed elements that would reduce its readability and clarity.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.1.4 – Úroveň měřítka, str. 53–56); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 7 Kartografická generalizace); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.7 Generalization); Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011); Longley et al. (2011) – Geographic Information Systems and Science, Chapter 3.8.1",
+        "images": []
+      },
+      {
+        "id": 13,
+        "text": "Does the size or level of detail of symbols change depending on scale (zoom-dependent symbology)?",
+        "weight": 3,
+        "explanation": "Adapting symbols to scale improves map readability when zooming in and out.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.1.4 – Úroveň měřítka, str. 53–56; Kapitola 6.5 – Vyjadřovací prostředky, str. 80–86); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 7 Kartografická generalizace); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.6 Cartographic Scale; Section 2.7 Generalization; Section 2.9 Symbolization & the Visual Variables); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV); Longley et al. (2011) – Geographic Information Systems and Science, Chapter 12.3.1 ",
+        "images": []
+      },
+      {
+        "id": 14,
+        "text": "Is the cartographic projection implemented as Web Mercator?",
+        "weight": 3,
+        "explanation": "Web Mercator is the most widely used projection in web cartography and ensures compatibility with common basemaps.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.1.1 – Kartografické zobrazení, str. 46–50); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 3 Kartografická zobrazení); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.4 Map Projections); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
+        "images": [
+          {
+            "src": "/img/WebMercator.png",
+            "author": "",
+            "source": "",
+            "license": ""
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "text": "Is the map responsive and does it adapt to the browser window size?",
+        "weight": 3,
+        "explanation": "The map should remain usable when the browser window size changes or on different types of devices.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 5.2 – Obrazovka a webový prohlížeč jako zobrazovací médium, str. 39–43; Kapitola 7.5 – Optimalizace pro mobilní zařízení, str. 127–131); Mapping for a Sustainable World (Kraak et al., 2020 – Section 4.5 Web Maps; Section 4.6 Mobile Maps & Responsive Design)",
+        "images": [
+          {
+            "src": "/img/responsive.png",
+            "author": "",
+            "source": "",
+            "license": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "gis",
+    "id": "usability",
+    "title": "User-related",
+    "description": "User options and functionality.",
+    "items": [
+      {
+        "id": 1,
+        "text": "Does the application allow zooming?",
+        "weight": 3,
+        "explanation": "The ability to zoom in and out is a basic interaction for working with a web map.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.1.4 – Úroveň měřítka, str. 53–56)",
+        "images": []
+      },
+      {
+        "id": 7,
+        "text": "Is the functionality of GIS tools clear (icon, label, tooltip)?",
+        "weight": 3,
+        "explanation": "The controls should be understandable to the user.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.3.1 – Ovládací prvky, str. 67–69)",
+        "images": []
+      },
+      {
+        "id": 10,
+        "text": "Do the map composition and controls follow GIS conventions and standards?",
+        "weight": 3,
+        "explanation": "The application should follow common behaviour patterns known from GIS systems.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.3–6.4 – Ovládací prvky a celková kompozice mapy, str. 67–80)",
+        "images": []
+      },
+      {
+        "id": 15,
+        "text": "Can the map be manipulated using a mouse?",
+        "weight": 3,
+        "explanation": "Basic interactivity (panning, zooming) is essential for usability.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 2.8 – Interaktivita, dynamika, str. 21–27)",
+        "images": []
+      },
+      {
+        "id": 16,
+        "text": "Is the application user interface (including all application elements) consistently in one language?",
+        "weight": 3,
+        "explanation": "All parts of the application should be consistently in one language (e.g. only Czech or only English) to maintain maximum clarity.",
+        "links": [],
+        "source": "W3C – Web Content Accessibility Guidelines (WCAG); Frontend Web Performance Checklist",
+        "images": []
+      },
+      {
+        "id": 17,
+        "text": "Is the font size in the application adjusted for easy readability?",
+        "weight": 3,
+        "explanation": "Text elements should be sufficiently large and readable on different devices. Text that is too small or improperly scaled reduces application usability.",
+        "links": [],
+        "source": "W3C – Web Content Accessibility Guidelines (WCAG); Nétek, 2020 (Webová kartografie – kapitola písmo)",
+        "images": []
+      },
+      {
+        "id": 19,
+        "text": "Does the application include basic controls for zooming in and out of the map (e.g. + and − buttons)?",
+        "weight": 3,
+        "explanation": "The user should be able to easily change the map scale using standard controls.",
+        "links": [],
+        "source": "Nétek, 2020 (Webová kartografie – ovládací prvky); UCGIS GIS&T Body of Knowledge",
+        "images": []
+      },
+      {
+        "id": 20,
+        "text": "Does the application allow returning to the default map view (e.g. using a 'home' button)?",
+        "weight": 3,
+        "explanation": "The function for returning to the default view improves orientation in the application and allows a quick return to the original state.",
+        "links": [],
+        "source": "Nétek, 2020 (Webová kartografie – interaktivita a ovládání); UCGIS GIS&T Body of Knowledge",
+        "images": []
+      }
+    ]
+  },
+  {
+    "category": "technology",
+    "id": "technology",
+    "title": "Technological",
+    "description": "Basic technological rules.",
+    "items": [
+      {
+        "id": 1,
+        "text": "Is the selected technology suitable for supporting operational management?",
+        "weight": 3,
+        "explanation": "The technology stack must meet the requirements for reliability and speed.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 2,
+        "text": "Is the application independent of platform, operating system and browser?",
+        "weight": 3,
+        "explanation": "Compatibility across different user environments should be ensured.",
+        "links": [],
+        "source": "W3C – webové standardy a validita / Nétek 2020 (Kapitola 5.2 – Obrazovka a webový prohlížeč jako zobrazovací médium, str. 39–43)",
+        "images": []
+      },
+      {
+        "id": 3,
+        "text": "Does the application run without requiring any installation or plugin?",
+        "weight": 3,
+        "explanation": "Barriers to running the application in modern browsers should be minimized.",
+        "links": [],
+        "source": "W3C – webové standardy a validita / Nétek 2020 (Kapitola 7.2 – Programovací jazyky, str. 124–125)",
+        "images": []
+      },
+      {
+        "id": 4,
+        "text": "Is page reload not required after every map movement (data are loaded asynchronously)?",
+        "weight": 3,
+        "explanation": "Asynchronous data loading provides a smoother user experience without reloading the whole page.",
+        "links": [],
+        "source": "Front-End Performance Checklist",
+        "images": []
+      },
+      {
+        "id": 5,
+        "text": "Is the application adapted for mobile devices?",
+        "weight": 3,
+        "explanation": "Responsive design should support display on phones and tablets.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": [
+          {
+            "src": "/img/responsive.png",
+            "author": "",
+            "source": "",
+            "license": ""
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "text": "Does the application include a clear page title <title> (usually corresponding to the main heading)?",
+        "weight": 3,
+        "explanation": "This is important for user orientation in browser tabs and for SEO.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": [
+          {
+            "src": "/img/title.png",
+            "author": "",
+            "source": "",
+            "license": ""
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "text": "Is the application URL memorable (SEO-friendly)?",
+        "weight": 3,
+        "explanation": "A clear address structure makes sharing and discoverability easier.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 12,
+        "text": "Is the server or hardware solution stable and sufficiently flexible even under high traffic?",
+        "weight": 3,
+        "explanation": "The infrastructure must be able to handle the expected load.",
+        "links": [],
+        "source": "Front-End Performance Checklist / Nétek 2020 (Kapitola 7.4 – Cloud computing, str. 126–127)",
+        "images": []
+      },
+      {
+        "id": 13,
+        "text": "Can the application be launched in an internet environment?",
+        "weight": 3,
+        "explanation": "The application should be available online without being limited to a local network, unless it is intended as an internal application.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 14,
+        "text": "Does the code declare <!DOCTYPE html>?",
+        "weight": 3,
+        "explanation": "This standard for modern web pages ensures correct rendering.",
+        "links": [],
+        "source": "W3C",
+        "images": []
+      },
+      {
+        "id": 15,
+        "text": "Does the application load within 3 seconds after launch?",
+        "weight": 3,
+        "explanation": "Loading speed is crucial for maintaining user attention.",
+        "links": [],
+        "source": "W3C",
+        "images": []
+      },
+      {
+        "id": 16,
+        "text": "Does the application use UTF-8 encoding?",
+        "weight": 3,
+        "explanation": "This ensures correct display of diacritics and special characters.",
+        "links": [],
+        "source": "W3C",
+        "images": []
+      },
+      {
+        "id": 17,
+        "text": "Are individual code tags properly closed?",
+        "weight": 3,
+        "explanation": "Properly closed tags are a basic prerequisite for valid HTML code.",
+        "links": [],
+        "source": "W3C",
+        "images": []
+      },
+      {
+        "id": 18,
+        "text": "Does the application code follow the correct HTML structure (html, head, body)?",
+        "weight": 3,
+        "explanation": "This is a basic requirement for HTML document validity.",
+        "links": [],
+        "source": "W3C",
+        "images": []
+      },
+      {
+        "id": 19,
+        "text": "Does the code correctly use attributes and elements (href, alt, etc.)?",
+        "weight": 3,
+        "explanation": "This ensures link functionality and image accessibility.",
+        "links": [],
+        "source": "W3C",
+        "images": []
+      },
+      {
+        "id": 20,
+        "text": "Does the application have valid and correct CSS properties and values?",
+        "weight": 3,
+        "explanation": "CSS validity helps ensure a consistent appearance across browsers.",
+        "links": [],
+        "source": "W3C",
+        "images": []
+      },
+      {
+        "id": 21,
+        "text": "Is server latency for requests for new data lower than 200 ms?",
+        "weight": 3,
+        "explanation": "Low server latency is important for smooth application response when working with dynamic data.",
+        "links": [],
+        "source": "Front-End Performance Checklist",
+        "images": []
+      }
+    ]
+  },
+  {
+    "category": "safety",
+    "id": "safety",
+    "title": "Security",
+    "description": "Trustworthiness, data origin and legal aspects.",
+    "items": [
+      {
+        "id": 1,
+        "text": "Is the map content current and trustworthy?",
+        "weight": 3,
+        "explanation": "The validity and temporal relevance of the presented information should be ensured.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 2,
+        "text": "Does the application include a place for copyright and licence information for data layers and services?",
+        "weight": 3,
+        "explanation": "Copyright and data-source terms of use must be respected.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 3,
+        "text": "Is the author or imprint of the map application provided?",
+        "weight": 3,
+        "explanation": "The operator and creator of the application should be clearly identified.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 4,
+        "text": "Is the application protected against simple compromise of trustworthiness and security (e.g. by third-party scripts)?",
+        "weight": 3,
+        "explanation": "Protection against common threats and potentially unsafe third-party scripts should be ensured.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 6,
+        "text": "Are all parts of the application located under the same URL address?",
+        "weight": 3,
+        "explanation": "Environmental consistency helps prevent user confusion.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 7,
+        "text": "Does the application avoid redirecting the user without their awareness?",
+        "weight": 3,
+        "explanation": "Navigation should be transparent and the user should not be unexpectedly redirected to another website.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 8,
+        "text": "Does the application avoid hidden or system scripts that run without the user’s awareness?",
+        "weight": 3,
+        "explanation": "The application should not contain hidden, malicious or non-transparent scripts that could endanger the user or data.",
+        "links": [],
+        "source": "Nétek 2020",
+        "images": []
+      },
+      {
+        "id": 10,
+        "text": "Is the application free of serious typographic and spelling errors?",
+        "weight": 3,
+        "explanation": "Correct language increases the professional impression and trustworthiness of the application.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 6.6.3 – Písmo, str. 89–92)",
+        "images": []
+      },
+      {
+        "id": 11,
+        "text": "Are error messages and a 404 (Not Found) page defined?",
+        "weight": 3,
+        "explanation": "States where the requested content is not found should be handled.",
+        "links": [],
+        "source": "W3C – webové standardy a validita",
+        "images": []
+      },
+      {
+        "id": 19,
+        "text": "Does the application comply with legal requirements (does not violate laws, copyright, etc.)?",
+        "weight": 3,
+        "explanation": "The application should comply with GDPR, accessibility legislation and other relevant legal requirements.",
+        "links": [],
+        "source": "Nétek 2020 (Kapitola 8.2 – Autorské právo a licence, str. 135–137)",
+        "images": []
+      },
+      {
+        "id": 20,
+        "text": "Has the application undergone load testing?",
+        "weight": 3,
+        "explanation": "The application’s stability should be verified under a high number of simultaneous users.",
+        "links": [],
+        "source": "Front-End Performance Checklist",
+        "images": []
+      },
+      {
+        "id": 22,
+        "text": "Are the map metadata clearly defined (data origin, date of last update)?",
+        "weight": 3,
+        "explanation": "Metadata make it possible to assess the origin, currency and trustworthiness of map content.",
+        "links": [],
+        "source": "Nétek, Kap. 5.1 / GISTBoK [DM-02]",
+        "images": []
+      },
+      {
+        "id": 23,
+        "text": "Does the map clearly state copyright information and data licences?",
+        "weight": 3,
+        "explanation": "Clearly stated copyright and licence information helps users understand the terms of use of both the data and the map itself.",
+        "links": [],
+        "source": "Kapitola 8.2 – Autorské právo a licence, str. 135",
+        "images": []
+      }
+    ]
+  }
+]

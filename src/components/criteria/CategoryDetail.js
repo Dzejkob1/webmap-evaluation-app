@@ -18,6 +18,16 @@ function CategoryDetail({
   const result = getResult(category);
   const [helpOpen, setHelpOpen] = useState(false);
 
+  const handlePrev = () => {
+    goPrev();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleNext = () => {
+    goNext();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="criteria-container">
       <div className="category-detail-header">
@@ -50,52 +60,35 @@ function CategoryDetail({
 
             {helpOpen && (
               <div className="help-popover">
-                <h3>Nápověda</h3>
+                
 
-                <ul>
+                <h3>
+  <span className="lang lang-cs">Nápověda</span>
+  <span className="lang lang-en">Help</span>
+</h3>
+
+<ul>
   <li>
-    Vyplň všechna kritéria v dané kategorii.
+    <span className="lang lang-cs">Vyplň všechna kritéria. Dělí se podle váhy.</span>
+    <span className="lang lang-en">Fill in all criteria. They are divided by weight.</span>
   </li>
 
   <li>
-    V této testovací verzi jsou zobrazena pouze základní povinná kritéria.
-  </li>
+    <span className="lang lang-cs">
+  Odpovědi:<br />
+  <strong>ANO</strong> – aplikace kritérium splňuje.<br />
+  <strong>NE</strong> – aplikace kritérium nesplňuje.<br />
+  <strong>Nelze zjistit</strong> – kritérium nelze z dostupné podoby aplikace spolehlivě posoudit a nevstupuje do výsledku.
+</span>
 
-  <li>
-    Odpovědi:
-    <br />
-    <strong>ANO</strong> – hodnocená aplikace splňuje kritérium.
-    <br />
-    <strong>NE</strong> – hodnocená aplikace kritérium nesplňuje.
-  </li>
-
-  <li>
-    Po vyplnění všech kategorií se zobrazí souhrnný report.
+<span className="lang lang-en">
+  Answers:<br />
+  <strong>YES</strong> – the application meets the criterion.<br />
+  <strong>NO</strong> – the application does not meet the criterion.<br />
+  <strong>Cannot determine</strong> – the criterion cannot be reliably assessed from the available application view and is excluded from the result.
+</span>
   </li>
 </ul>
-
-                {/*<ul>
-                  <li>Vyplň všechna kritéria. Dělí se podle váhy.</li>
-                  <li>
-                    Váha 3 <span className="required-star">*</span> – povinné kritérium.
-                    To, co musí každá webová mapová aplikace splňovat.
-                  </li>
-                  <li>
-                    Váha 2 <span style={{ color: "#4f46e5", fontWeight: "bold" }}>*</span> – 
-                    neplatí obecně pro všechny případy, ale pokud se týká tvojí aplikace
-                    (je to tvůj záměr), má jasnou definici.
-                  </li>
-                  <li>Váha 1 – nepovinná kritéria.</li>
-                  <li>
-                    Odpovědi:
-                    <br />
-                    <strong>ANO</strong> – tvoje aplikace splňuje kritérium.
-                    <br />
-                    <strong>NE</strong> – tvoje aplikace nesplňuje kritérium (ale týká se jí).
-                    <br />
-                    <strong>N/A</strong> – tvoje aplikace se dané kritérium netýká.
-                  </li>
-                </ul>*/}
               </div>
             )}
           </div>
@@ -135,25 +128,25 @@ function CategoryDetail({
         </span>
       </div>
 
-      <div className="category-navigation">
-        <button
-          className="nav-button"
-          onClick={goPrev}
-          disabled={currentIndex === 0}
-        >
-          <span className="lang lang-cs">← Předchozí</span>
-          <span className="lang lang-en">← Previous</span>
-        </button>
+<div className="category-navigation">
+  <button
+    className="nav-button"
+    onClick={handlePrev}
+    disabled={currentIndex === 0}
+  >
+    <span className="lang lang-cs">← Předchozí</span>
+    <span className="lang lang-en">← Previous</span>
+  </button>
 
-        <button className="nav-button" onClick={goNext}>
-          <span className="lang lang-cs">
-            {currentIndex === categories.length - 1 ? "Zobrazit report →" : "Další →"}
-          </span>
-          <span className="lang lang-en">
-            {currentIndex === categories.length - 1 ? "Show report →" : "Next →"}
-          </span>
-        </button>
-      </div>
+  <button className="nav-button" onClick={handleNext}>
+    <span className="lang lang-cs">
+      {currentIndex === categories.length - 1 ? "Zobrazit report →" : "Další →"}
+    </span>
+    <span className="lang lang-en">
+      {currentIndex === categories.length - 1 ? "Show report →" : "Next →"}
+    </span>
+  </button>
+</div>
     </div>
   );
 }

@@ -3,22 +3,39 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { globalStats } from "../../utils/evaluationUtils";
 
+const flattenItems = (items) => {
+  return items.flatMap((item) => {
+    if (item.subitems?.length > 0) {
+      return item.subitems.map((sub) => ({
+        ...sub,
+        id: `${item.id}-${sub.id}`,
+        weight: sub.weight ?? item.weight,
+        parentText: item.text,
+      }));
+    }
+
+    return [item];
+  });
+};
+
 function Report({ categories, answers, getResult, generateSummary, onReset }) {
-  const results = categories.map((cat) => ({
+  const results = categories.map((cat) => {
+  const flatItems = flattenItems(cat.items);
+
+  return {
     id: cat.id,
     title: cat.title,
     ...getResult(cat),
-    failedCritical: cat.items.filter(
+    failedCritical: flatItems.filter(
       (item) =>
         item.weight === 3 &&
         answers[`${cat.id}-${item.id}`] === false
     ),
-  }));
+  };
+});
 
   const summaryText = generateSummary(categories, answers);
   const [helpOpen, setHelpOpen] = useState(false);
-
-  const feedbackUrl = "https://forms.gle/KYCPWfQdA7AMVUVQA";
 
   const reportRef = useRef(null);
   const currentLang = localStorage.getItem("lang") || "cs";
@@ -104,15 +121,33 @@ function Report({ categories, answers, getResult, generateSummary, onReset }) {
 
                 {helpOpen && (
                   <div className="help-popover">
-                    <h3>Nápověda</h3>
-                    <ul>
-                      <li>Tento report shrnuje výsledky hodnocení jednotlivých kategorií.</li>
-                      <li>Každá karta představuje jednu kategorii a její celkové skóre.</li>
-                      <li>Barevný kruh znázorňuje procentuální úspěšnost splněných kritérií.</li>
-                      <li>V případě nesplnění povinných kritérií jsou tato kritéria vypsána.</li>
-                      <li>Je důležité odpovědět na všechny otázky.</li>
-                      <li>Výsledky slouží pro orientační zhodnocení kvality mapové aplikace.</li>
-                    </ul>
+                    <h3>
+  <span className="lang lang-cs">Nápověda</span>
+  <span className="lang lang-en">Help</span>
+</h3>
+
+<ul>
+  <li>
+    <span className="lang lang-cs">Tento report shrnuje výsledky hodnocení jednotlivých kategorií.</span>
+    <span className="lang lang-en">This report summarizes the results for individual categories.</span>
+  </li>
+  <li>
+    <span className="lang lang-cs">Každá karta představuje jednu kategorii a její celkové skóre.</span>
+    <span className="lang lang-en">Each card represents one category and its score.</span>
+  </li>
+  <li>
+    <span className="lang lang-cs">Barevný kruh znázorňuje procentuální úspěšnost splněných kritérií.</span>
+    <span className="lang lang-en">The colored circle shows the percentage of fulfilled criteria.</span>
+  </li>
+  <li>
+    <span className="lang lang-cs">V případě nesplnění povinných kritérií jsou tato kritéria vypsána.</span>
+    <span className="lang lang-en">Unmet mandatory criteria are listed separately.</span>
+  </li>
+  <li>
+    <span className="lang lang-cs">Výsledky slouží pro orientační zhodnocení kvality mapové aplikace.</span>
+    <span className="lang lang-en">The results provide an indicative evaluation of the web map application.</span>
+  </li>
+</ul>
                   </div>
                 )}
               </div>
@@ -184,7 +219,12 @@ function Report({ categories, answers, getResult, generateSummary, onReset }) {
                   <>
                     {res.percentage}%
                     <div style={{ fontSize: "0.8rem", opacity: 0.7 }}>
-                      {res.yesWeight} / {res.totalWeight} bodů
+                      <span className="lang lang-cs">
+  {res.yesWeight} / {res.totalWeight} bodů
+</span>
+<span className="lang lang-en">
+  {res.yesWeight} / {res.totalWeight} points
+</span>
                     </div>
 
                     {res.naCount > 0 && (
@@ -254,20 +294,7 @@ function Report({ categories, answers, getResult, generateSummary, onReset }) {
           </p>
         </div>
 
-        <div className="report-feedback-box">
-  <p className="report-feedback-text">
-    Nyní prosím vyplňte krátký dotazník. Nezabere Vám více než 5 minut.
-  </p>
-
-  <a
-    href={feedbackUrl}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="form-link-button"
-  >
-    Vyplnit dotazník zpětné vazby
-  </a>
-</div>
+        
 
         <button className="report-back-btn" onClick={onReset}>
           <span className="lang lang-cs">← Zpět na začátek</span>

@@ -9,91 +9,114 @@ function CriteriaItem({
   openItems,
   setOpenItems,
 }) {
-  const key = `${categoryId}-${item.id}`;
-  const isOpen = openItems[key];
+  const baseKey = `${categoryId}-${item.id}`;
+  const infoKey = `${baseKey}-info`;
+  const subitemsKey = `${baseKey}-subitems`;
+
+  const isInfoOpen = openItems[infoKey];
+  const areSubitemsOpen = openItems[subitemsKey];
+
   const [selectedImage, setSelectedImage] = useState(null);
+
+  const hasSubitems = item.subitems && item.subitems.length > 0;
+
+  const isAnswered = !hasSubitems && answers[baseKey] !== undefined;
+  const isUnknown = !hasSubitems && answers[baseKey] === "unknown";
+
+  const toggleInfo = () => {
+    setOpenItems((prev) => ({
+      ...prev,
+      [infoKey]: !prev[infoKey],
+    }));
+  };
+
+  const toggleSubitems = () => {
+    setOpenItems((prev) => ({
+      ...prev,
+      [subitemsKey]: !prev[subitemsKey],
+    }));
+  };
+
+  const renderAnswerButtons = (answerKey, answerId) => (
+    <div className="criteria-answer">
+      <button
+        className={`answer yes ${answers[answerKey] === true ? "selected" : ""}`}
+        onClick={() => setAnswer(categoryId, answerId, true)}
+        type="button"
+      >
+        <span className="lang lang-cs">ANO</span>
+        <span className="lang lang-en">YES</span>
+      </button>
+
+      <button
+        className={`answer no ${answers[answerKey] === false ? "selected" : ""}`}
+        onClick={() => setAnswer(categoryId, answerId, false)}
+        type="button"
+      >
+        <span className="lang lang-cs">NE</span>
+        <span className="lang lang-en">NO</span>
+      </button>
+
+      <button
+        className={`answer na ${answers[answerKey] === "unknown" ? "selected" : ""}`}
+        onClick={() => setAnswer(categoryId, answerId, "unknown")}
+        type="button"
+      >
+        <span className="lang lang-cs">Nelze zjistit</span>
+        <span className="lang lang-en">Cannot determine</span>
+      </button>
+    </div>
+  );
 
   return (
     <div
       className={`criteria-item-advanced 
-        ${answers[key] !== undefined ? "answered" : ""} 
+        ${isAnswered ? "answered" : ""} 
         ${item.weight === 3 ? "required" : ""}
+        ${isUnknown ? "unknown-state" : ""}
+        ${hasSubitems ? "has-subitems" : ""}
       `}
     >
+      {/* HEADER */}
       <div className="criteria-main-row">
         <div className="criteria-left">
           <span className="criteria-number">{number}.</span>
 
-          <button
-            className="expand-btn"
-            onClick={() =>
-              setOpenItems((prev) => ({
-                ...prev,
-                [key]: !prev[key],
-              }))
-            }
-            type="button"
-          >
-            {isOpen ? "✕" : "ℹ"}
+          <button className="info-btn" onClick={toggleInfo} type="button">
+            {isInfoOpen ? "✕" : "ℹ"}
           </button>
 
-          <span className="criteria-text">
-            {item.text}
-          </span>
-        </div>
+          <span className="criteria-text">{item.text}</span>
 
-        <div className="criteria-answer">
-          <button
-            className={`answer yes ${answers[key] === true ? "selected" : ""}`}
-            onClick={() => setAnswer(categoryId, item.id, true)}
-            type="button"
-          >
-            ANO
-          </button>
-
-          <button
-            className={`answer no ${answers[key] === false ? "selected" : ""}`}
-            onClick={() => setAnswer(categoryId, item.id, false)}
-            type="button"
-          >
-            NE
-          </button>
-
-          {item.weight !== 3 && (
-            <button
-              className={`answer na ${answers[key] === "na" ? "selected" : ""}`}
-              onClick={() => setAnswer(categoryId, item.id, "na")}
-              type="button"
-            >
-              N/A
+          {hasSubitems && (
+            <button className="expand-arrow" onClick={toggleSubitems} type="button">
+              {areSubitemsOpen ? "▾" : "▸"}
             </button>
           )}
         </div>
+
+        {!hasSubitems && renderAnswerButtons(baseKey, item.id)}
       </div>
 
-      {isOpen && (
+      {/* INFO (vysvětlení + zdroje) */}
+      {isInfoOpen && (
         <div className="criteria-detail">
           <div className="criteria-detail-layout">
             <div className="criteria-detail-text">
-              <div className="criteria-explanation">
-                {item.explanation}
-              </div>
+              {item.explanation && (
+                <div className="criteria-explanation">{item.explanation}</div>
+              )}
 
               {item.source && (
-  <div className="criteria-source">
-    <strong>Metodický zdroj kritéria:</strong> {item.source}
-  </div>
-)}
+                <div className="criteria-source">
+                  <strong>Zdroj:</strong> {item.source}
+                </div>
+              )}
 
               {item.links?.length > 0 && (
                 <div className="criteria-links">
                   {item.links.map((link, i) => (
-                    <a
-                      key={i}
-                      href={link.url}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
+                    <a key={i} href={link.url} target="_blank" rel="noreferrer">
                       {link.label}
                     </a>
                   ))}
@@ -129,44 +152,76 @@ function CriteriaItem({
               </div>
             )}
           </div>
+        </div>
+      )}
 
-          {selectedImage && (
-            <div
-              className="image-modal-overlay"
-              onClick={() => setSelectedImage(null)}
-            >
+      {/* SUBITEMS */}
+      {hasSubitems && areSubitemsOpen && (
+        <div className="criteria-subitems">
+          {item.subitems.map((sub, index) => {
+            const subId = `${item.id}-${sub.id}`;
+            const subKey = `${categoryId}-${subId}`;
+
+            return (
               <div
-                className="image-modal"
-                onClick={(e) => e.stopPropagation()}
+                key={sub.id}
+                className={`criteria-subitem 
+                  ${answers[subKey] !== undefined ? "answered" : ""}
+                  ${answers[subKey] === "unknown" ? "unknown-state" : ""}
+                `}
               >
-                <button
-                  type="button"
-                  className="image-modal-close"
-                  onClick={() => setSelectedImage(null)}
-                >
-                  ✕
-                </button>
+                <div className="criteria-main-row">
+                  <div className="criteria-left">
+                    <span className="criteria-number">
+                      {number}.{index + 1}
+                    </span>
+                    <span className="criteria-text">{sub.text}</span>
+                  </div>
 
-                <img
-                  src={`${process.env.PUBLIC_URL}${selectedImage.src}`}
-                  alt={selectedImage.alt || item.text}
-                  className="image-modal-img"
-                />
-
-                <div className="image-modal-meta">
-                  {selectedImage.source && (
-                    <div><strong>Zdroj:</strong> {selectedImage.source}</div>
-                  )}
-                  {selectedImage.author && (
-                    <div><strong>Autor:</strong> {selectedImage.author}</div>
-                  )}
-                  {selectedImage.license && (
-                    <div><strong>Licence:</strong> {selectedImage.license}</div>
-                  )}
+                  {renderAnswerButtons(subKey, subId)}
                 </div>
               </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* IMAGE MODAL */}
+      {selectedImage && (
+        <div
+          className="image-modal-overlay"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div
+            className="image-modal"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="image-modal-close"
+              onClick={() => setSelectedImage(null)}
+            >
+              ✕
+            </button>
+
+            <img
+              src={`${process.env.PUBLIC_URL}${selectedImage.src}`}
+              alt={selectedImage.alt || item.text}
+              className="image-modal-img"
+            />
+
+            <div className="image-modal-meta">
+              {selectedImage.source && (
+                <div><strong>Zdroj:</strong> {selectedImage.source}</div>
+              )}
+              {selectedImage.author && (
+                <div><strong>Autor:</strong> {selectedImage.author}</div>
+              )}
+              {selectedImage.license && (
+                <div><strong>Licence:</strong> {selectedImage.license}</div>
+              )}
             </div>
-          )}
+          </div>
         </div>
       )}
     </div>

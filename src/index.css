@@ -1,19 +1,49 @@
 /* ===== GLOBÁLNÍ STYL ===== */
 
+html, body, #root {
+  height: 100%;
+}
+
 .homepage {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+.homepage::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("./assets/map_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header,
+.main-content,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f7f6;
   color: #333;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
+
+body {
+  background: #f5f7fa;
+  position: relative;
+}
+
 
 /* Jemná animace načtení */
 .main-content {
@@ -76,7 +106,7 @@ body {
 
 .header-back-button:hover {
   background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+  transform: none;
 }
 
 @media (max-width: 768px) {
@@ -160,7 +190,7 @@ nav a:hover::after {
 }
 
 .bubble:hover {
-  transform: translateY(-4px);
+  transform: none;
   box-shadow: 0 12px 25px rgba(0,0,0,0.12);
   background: linear-gradient(135deg, #2980b9, #2471a3);
 }
@@ -236,7 +266,7 @@ nav a:hover::after {
   width: 400px;
   border-radius: 12px;
   box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
+  transform: none;
 }
 
 .intro-image img:hover {
@@ -264,19 +294,19 @@ nav a:hover::after {
 
 .back-button:hover {
   background: linear-gradient(135deg, #2980b9, #2471a3);
-  transform: translateY(-3px);
+  transform: none;
   box-shadow: 0 12px 25px rgba(0,0,0,0.12);
 }
 
 /* ===== FOOTER ===== */
 
 .footer {
-  background: #f4f7f6;
+  background: linear-gradient(135deg, #2c3e50, #1f2d3a);
   padding: 0.8rem 1rem;
   text-align: center;
   font-size: 0.9rem;
   margin-top: -20px;
-  color: rgba(100, 116, 139, 0.75); /* lehká průhlednost */
+  color: rgba(100, 116, 139); 
 }
 
 .footer-content {
@@ -508,7 +538,7 @@ body[data-lang="en"] .lang-en {
 
 .form-link-button:hover {
   background: linear-gradient(135deg, #1d4ed8, #1e40af);
-  transform: translateY(-2px);
+  transform: none;
   box-shadow: 0 10px 22px rgba(37, 99, 235, 0.25);
 }
 
@@ -521,4 +551,114 @@ body[data-lang="en"] .lang-en {
 
 .quick-feedback-link .form-link-button {
   min-width: 260px;
+}
+
+.workflow-section {
+  margin-top: 3rem;
+}
+
+.workflow-steps {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.workflow-step {
+  flex: 1 1 180px;
+  min-width: 180px;
+  max-width: 240px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.workflow-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 45%;
+  background: #2563eb;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  margin-right: 5px;
+}
+
+.workflow-step h3 {
+  margin: 0.3rem 0 0.5rem;
+}
+
+.workflow-step p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.workflow-arrow {
+  display: flex;
+  align-items: center;
+  color: #64748b;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .workflow-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 1.4rem 1rem 1.8rem;
+  }
+
+  .language-switch {
+    position: static;
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .language-switch button {
+    margin-left: 0;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  .header p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+  }
+
+  .main-content {
+    margin: 20px 12px;
+    padding: 26px 18px;
+  }
+
+  .test-banner h2 {
+    font-size: 1.35rem;
+    line-height: 1.35;
+  }
+}
+
+.osm-attribution {
+  position: fixed;
+  bottom: 10px;
+  right: 12px;
+  font-size: 0.7rem;
+  opacity: 0.5;
+  z-index: 2;
+  pointer-events: none;
 }
