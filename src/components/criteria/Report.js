@@ -42,52 +42,57 @@ function Report({ categories, answers, getResult, generateSummary, onReset }) {
   const stats = globalStats(categories, answers);
 
   const downloadPdf = async () => {
-    const element = reportRef.current;
-    if (!element) return;
+  const element = reportRef.current;
+  if (!element) return;
 
-    try {
-      const canvas = await html2canvas(element, {
-        scale: 2,
-        useCORS: true,
-        backgroundColor: "#f4f7f6",
-        scrollX: 0,
-        scrollY: -window.scrollY,
-        windowWidth: document.documentElement.clientWidth,
-        windowHeight: document.documentElement.clientHeight,
-      });
+  try {
+    element.classList.add("exporting-report");
 
-      const imgData = canvas.toDataURL("image/png");
+    const canvas = await html2canvas(element, {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: "#ffffff",
+      scrollX: 0,
+      scrollY: 0,
+      windowWidth: 1000,
+      windowHeight: element.scrollHeight,
+    });
 
-      const pdf = new jsPDF("p", "mm", "a4");
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = pdf.internal.pageSize.getHeight();
+    element.classList.remove("exporting-report");
 
-      const margin = 10;
-      const usableWidth = pdfWidth - margin * 2;
-      const usableHeight = pdfHeight - margin * 2;
+    const imgData = canvas.toDataURL("image/png");
 
-      const imgWidth = usableWidth;
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+    const pdf = new jsPDF("p", "mm", "a4");
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = pdf.internal.pageSize.getHeight();
 
-      let heightLeft = imgHeight;
-      let position = margin;
+    const margin = 10;
+    const usableWidth = pdfWidth - margin * 2;
+    const usableHeight = pdfHeight - margin * 2;
 
+    const imgWidth = usableWidth;
+    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+    let heightLeft = imgHeight;
+    let position = margin;
+
+    pdf.addImage(imgData, "PNG", margin, position, imgWidth, imgHeight);
+    heightLeft -= usableHeight;
+
+    while (heightLeft > 0) {
+      position = margin - (imgHeight - heightLeft);
+      pdf.addPage();
       pdf.addImage(imgData, "PNG", margin, position, imgWidth, imgHeight);
       heightLeft -= usableHeight;
-
-      while (heightLeft > 0) {
-        position = margin - (imgHeight - heightLeft);
-        pdf.addPage();
-        pdf.addImage(imgData, "PNG", margin, position, imgWidth, imgHeight);
-        heightLeft -= usableHeight;
-      }
-
-      pdf.save("web-map-eval-report.pdf");
-    } catch (err) {
-      console.error("Chyba při generování PDF:", err);
-      alert("Nepodařilo se stáhnout PDF report.");
     }
-  };
+
+    pdf.save("web-map-eval-report.pdf");
+  } catch (err) {
+    element.classList.remove("exporting-report");
+    console.error("Chyba při generování PDF:", err);
+    alert("Nepodařilo se stáhnout PDF report.");
+  }
+};
 
   return (
     <div className="criteria-container">

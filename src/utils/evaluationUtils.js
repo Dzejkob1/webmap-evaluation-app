@@ -49,8 +49,8 @@ export const getResult = (cat, answers) => {
     totalWeight > 0 ? Math.round((yesWeight / totalWeight) * 100) : 0;
 
   let color = "red";
-  if (percentage >= 90) color = "green";
-  else if (percentage >= 61) color = "orange";
+if (percentage === 100) color = "green";
+else if (percentage >= 61) color = "orange";
 
   const isEmpty = answeredCount === 0 && naCount === 0;
 

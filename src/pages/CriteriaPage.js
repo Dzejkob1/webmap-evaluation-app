@@ -45,7 +45,7 @@ function CriteriaPage({ lang }) {
 
     return data.map((cat) => ({
       ...cat,
-      items: cat.items.filter((item) => item.weight === 3),
+      items: cat.items,
       isCustom: false,
       ignored: false,
     }));

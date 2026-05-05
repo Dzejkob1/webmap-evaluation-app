@@ -21,8 +21,6 @@
   color: #6b7280;
 }
 
-/* ===== GRID KATEGORIÍ ===== */
-
 .category-grid {
   display: grid;
   grid-template-columns: repeat(4, 220px);
@@ -98,7 +96,6 @@
   transform: scale(1.06);
   transition: transform 0.25s ease;
 }
-/* ===== TLAČÍTKO ZPĚT ===== */
 
 .home-button,
 .back-button {
@@ -110,7 +107,7 @@
   color: #ffffff;
 
   padding: 10px 22px;
-  height: 42px; /* ← místo min-height */
+  height: 42px; 
   border-radius: 8px;
 
   font-family: inherit;
@@ -136,8 +133,6 @@
   transform: none;
   box-shadow: 0 12px 25px rgba(0,0,0,0.12);
 }
-
-/* ===== KRITÉRIA ===== */
 
 .criteria-items {
   display: flex;
@@ -166,8 +161,6 @@
   white-space: normal;
 }
 
-/* ===== ANO / NE ===== */
-
 .criteria-answer {
   display: flex;
   gap: 0.8rem;
@@ -185,8 +178,6 @@
   font-size: 0.9rem;
 }
 
-/* Hover */
-
 .answer.yes:hover {
   background-color: #2ecc71;
   color: white;
@@ -200,8 +191,6 @@
   border-color: #e74c3c;
   opacity: 1;
 }
-
-/* Selected */
 
 .answer.selected.yes {
   background-color: #2ecc71;
@@ -218,8 +207,6 @@
   opacity: 1;
   box-shadow: 0 6px 15px rgba(231, 76, 60, 0.3);
 }
-
-/* ===== VÝSLEDEK ===== */
 
 .category-result {
   margin-top: 2rem;
@@ -241,8 +228,6 @@
 .category-result.red {
   color: #e74c3c;
 }
-
-/* ===== PROGRESS BAR ===== */
 
 .criteria-progress-bar {
   width: 100%;
@@ -272,9 +257,6 @@
   background: linear-gradient(90deg, #e74c3c, #c0392b);
 }
 
-
-/* ===== NAVIGACE NAHOŘE ===== */
-
 .top-navigation {
   display: flex;
   justify-content: flex-start;
@@ -288,8 +270,6 @@
   transform: none;
   box-shadow: 0 12px 25px rgba(0,0,0,0.12);
 }
-
-/* ===== ADVANCED ITEM ===== */
 
 .criteria-item-advanced {
   border: 1px solid #e2e8f0;
@@ -344,8 +324,6 @@
   color: #4f46e5;
   font-weight: 600;
 }
-
-/* ===== DETAIL ===== */
 
 .criteria-detail {
   margin-top: 1rem;
@@ -479,8 +457,6 @@
   border-color: #4f46e5;
 }
 
-/* ===== POVINNÁ KRITÉRIA ===== */
-
 .required-star {
   color: #dc2626;
   font-weight: bold;
@@ -495,10 +471,6 @@
   font-size: 0.9rem;
   color: #6b7280;
 }
-
-/* ======================================= */
-/* =============== REPORT ================ */
-/* ======================================= */
 
 .report-header {
   position: relative;
@@ -557,15 +529,11 @@
   color: #6b7280;
 }
 
-/* GRID PRO KARTY */
-
 .report-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(240px, 1fr));
   gap: 1.5rem;
 }
-
-/* KARTA JEDNÉ KATEGORIE */
 
 .report-card {
   background: white;
@@ -587,8 +555,6 @@
   color: #111827;
   text-align: center;
 }
-
-/* KRUHOVÉ SCORE */
 
 .report-circle-wrapper {
   display: flex;
@@ -618,16 +584,12 @@
   }
 }
 
-/* DETAILY POD SCORE */
-
 .report-stats {
   text-align: center;
   font-size: 0.9rem;
   color: #6b7280;
   margin-top: 0.5rem;
 }
-
-/* NESPLNĚNÁ KRITICKÁ */
 
 .report-alert {
   margin-top: 1.5rem;
@@ -649,8 +611,6 @@
   color: #7f1d1d;
   font-size: 0.85rem;
 }
-
-/* TLAČÍTKO ZPĚT */
 
 .report-back-btn {
   margin-top: 3rem;
@@ -675,8 +635,6 @@
 .lang {
   display: none;
 }
-
-/* ===== NAVIGACE KATEGORIÍ ===== */
 
 .category-navigation {
   display: flex;
@@ -844,7 +802,7 @@
   gap: 0.5rem;
   flex-wrap: wrap;
 
-  margin-right: 60px; /* 👈 KLÍČOVÉ */
+  margin-right: 60px; 
 }
 
 .category-card h2 {
@@ -863,8 +821,6 @@
   margin-top: 0;
   margin-bottom: 0.2rem;
 }
-
-/* ===== NÁPOVĚDA STRÁNKY ===== */
 
 .page-help {
   position: absolute;
@@ -950,7 +906,7 @@
 }
 
 .recommended-star {
-  color: #4f46e5;   /* stejná modrá jako weight badge */
+  color: #4f46e5;   
   font-weight: bold;
   margin-left: 6px;
   font-size: 1rem;
@@ -980,7 +936,7 @@
 
 .category-detail-actions {
   display: flex;
-  align-items: center; /* DŮLEŽITÉ */
+  align-items: center; 
   gap: 0.8rem;
   flex-wrap: wrap;
 }
@@ -1429,4 +1385,94 @@
 
 .go-to-report-btn:hover {
   background: #2471a3;
+}
+
+.exporting-report {
+  width: 1000px !important;
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+  padding: 40px !important;
+  background: #ffffff !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+.exporting-report .report-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 24px !important;
+}
+
+.exporting-report .report-card {
+  width: auto !important;
+  min-width: 0 !important;
+}
+
+.exporting-report .report-header-actions,
+.exporting-report .report-download-btn,
+.exporting-report .help-button,
+.exporting-report .report-back-btn,
+.exporting-report .help-popover {
+  display: none !important;
+}
+
+.criteria-source ul {
+  margin-top: 0.4rem;
+  padding-left: 1.2rem;
+}
+
+.criteria-source li {
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+.custom-editor {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border: 1px solid #dbe3ec;
+  border-radius: 14px;
+  background: #f9fbfd;
+}
+
+.custom-editor > input {
+  width: 100%;
+  max-width: 360px;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border: 1px solid #d5dde6;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.custom-row {
+  display: grid;
+  grid-template-columns: 1.4fr 170px 1.4fr;
+  gap: 10px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.custom-row input,
+.custom-row select {
+  padding: 10px 12px;
+  border: 1px solid #d5dde6;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: white;
+}
+
+.custom-row input:focus,
+.custom-row select:focus,
+.custom-editor > input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+@media (max-width: 800px) {
+  .custom-row {
+    grid-template-columns: 1fr;
+  }
 }

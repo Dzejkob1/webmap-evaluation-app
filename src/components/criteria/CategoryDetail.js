@@ -69,8 +69,8 @@ function CategoryDetail({
 
 <ul>
   <li>
-    <span className="lang lang-cs">Vyplň všechna kritéria. Dělí se podle váhy.</span>
-    <span className="lang lang-en">Fill in all criteria. They are divided by weight.</span>
+    <span className="lang lang-cs">Vyplň všechna kritéria, ab nebylo zkreslono hodnocení.</span>
+    <span className="lang lang-en">Fill in all the criteria so that the evaluation isn't skewed.</span>
   </li>
 
   <li>

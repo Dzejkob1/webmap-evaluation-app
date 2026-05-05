@@ -1,5 +1,3 @@
-/* ===== GLOBÁLNÍ STYL ===== */
-
 html, body, #root {
   height: 100%;
 }
@@ -30,7 +28,6 @@ html, body, #root {
   z-index: 1;
 }
 
-
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -45,12 +42,11 @@ body {
 }
 
 
-/* Jemná animace načtení */
 .main-content {
   max-width: 1200px;
-  margin: 40px auto 24px auto;
+  margin: 30px auto 18px auto;
   background: #ffffff;
-  padding: 50px 60px 40px 60px;
+  padding: 44px 70px 35px 70px;
   border-radius: 16px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.05);
   flex: 1;
@@ -60,18 +56,14 @@ body {
   to { opacity: 1; }
 }
 
-/* ===== HORNÍ LIŠTA ===== */
-
 .header {
   background: linear-gradient(135deg, #2c3e50, #1f2d3a);
   color: #ffffff;
-  padding: 2.5rem 1rem;
+  padding: 0.8rem 0.8rem;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   position: relative;
 }
-
-
 
 .header h1 {
   margin: 0;
@@ -122,7 +114,6 @@ body {
   }
 }
 
-/* ===== NAVIGACE ===== */
 
 nav {
   background: #2c3e50;
@@ -154,11 +145,6 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* ===== HLAVNÍ OBSAH (MODERN CARD) ===== */
-
-
-
-/* ===== HLAVNÍ TLAČÍTKA ===== */
 
 .bubble-container {
   display: flex;
@@ -203,7 +189,6 @@ nav a:hover::after {
   margin: 0;
 }
 
-/* ===== ÚVOD ===== */
 
 .intro {
   display: flex;
@@ -273,8 +258,6 @@ nav a:hover::after {
   transform: scale(1.0);
 }
 
-/* ===== TLAČÍTKO ZPĚT ===== */
-
 .back-home {
   text-align: center;
   margin-top: 50px;
@@ -298,7 +281,6 @@ nav a:hover::after {
   box-shadow: 0 12px 25px rgba(0,0,0,0.12);
 }
 
-/* ===== FOOTER ===== */
 
 .footer {
   background: linear-gradient(135deg, #2c3e50, #1f2d3a);
@@ -323,7 +305,7 @@ nav a:hover::after {
 .footer-content a:hover {
   text-decoration: underline;
 }
-/* ===== RESPONZIVITA ===== */
+
 
 @media (max-width: 768px) {
 
@@ -364,7 +346,6 @@ html, body, #root {
   height: 100%;
 }
 
-/* ===== LANGUAGE SWITCH ===== */
 
 .language-switch {
   position: absolute;
@@ -387,8 +368,6 @@ html, body, #root {
   background: #2980b9;
   border-color: #2980b9;
 }
-
-/* ===== LANGUAGE VISIBILITY ===== */
 
 .lang {
   display: none;
@@ -506,6 +485,7 @@ body[data-lang="en"] .lang-en {
 .testing-note {
   margin-top: 1.6rem;
   padding: 1rem 1.1rem;
+  text-align: center;
   border-radius: 12px;
   background: #fff7ed;
   border: 1px solid #fed7aa;
@@ -561,15 +541,15 @@ body[data-lang="en"] .lang-en {
   display: flex;
   align-items: stretch;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.8rem;
   flex-wrap: wrap;
-  margin-top: 1.5rem;
+  margin-top: 1.3rem;
 }
 
 .workflow-step {
   flex: 1 1 180px;
-  min-width: 180px;
-  max-width: 240px;
+  min-width: 200px;
+  max-width: 270px;
   background: #ffffff;
   border-radius: 16px;
   padding: 1.2rem;
@@ -628,6 +608,22 @@ body[data-lang="en"] .lang-en {
     margin-bottom: 1rem;
   }
 
+  body {
+    padding-bottom: 22px;
+}
+
+  .osm-attribution {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: right;
+        font-size: 0.45rem;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 2px 0;
+        border-radius: 0;
+    }
+
   .language-switch button {
     margin-left: 0;
   }
@@ -654,11 +650,88 @@ body[data-lang="en"] .lang-en {
 }
 
 .osm-attribution {
-  position: fixed;
-  bottom: 10px;
-  right: 12px;
-  font-size: 0.7rem;
-  opacity: 0.5;
-  z-index: 2;
-  pointer-events: none;
+    position: fixed;
+    right: 10px;
+    bottom: 8px;
+    z-index: 1000;
+    font-size: 0.45rem;
+    color: #adadad9c;
+    background: rgba(255, 255, 255, 0);
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+.banner-about {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(52, 152, 219, 0.25);
+}
+
+.banner-about h3 {
+  margin-bottom: 0.5rem;
+  color: #1f354d;
+}
+
+.banner-about p {
+  margin-bottom: 0.7rem;
+}
+
+.testing-grid-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 700px) {
+  .testing-grid-two {
+    grid-template-columns: 1fr;
+  }
+}
+
+.workflow-img {
+  width: 100%;
+  max-width: 190px;
+  height: 110px;
+  object-fit: contain;
+  margin: 0 auto 1rem;
+  display: block;
+  border-radius: 10px;
+}
+
+.workflow-step h3 {
+  margin-top: 0.4rem;
+}
+
+.workflow-plus {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #9ca3af;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.workflow-step-admin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #f9fafb;
+  border: 1px dashed #d1d5db;
+
+  text-align: center;
+  padding: 25px;
+}
+
+
+.workflow-step-admin h3 {
+  margin: 6px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+
+.workflow-step-admin p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #6b7280;
 }

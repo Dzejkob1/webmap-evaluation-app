@@ -1,4 +1,5 @@
 import { useState } from "react";
+const currentLang = localStorage.getItem("lang") || "cs";
 
 function CustomEditor({ setCategories, onClose }) {
   const [name, setName] = useState("");
@@ -42,37 +43,49 @@ function CustomEditor({ setCategories, onClose }) {
   return (
     <div className="custom-editor">
       <input
-        placeholder="Název kategorie"
+        placeholder={currentLang === "en" ? "Category name" : "Název kategorie"}
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
 
       {rows.map((row, i) => (
-        <div key={i} className="custom-row">
-          <input
-            placeholder="Kritérium"
-            value={row.text}
-            onChange={(e) => updateRow(i, "text", e.target.value)}
-          />
-          <input
-            type="number"
-            value={row.weight}
-            onChange={(e) => updateRow(i, "weight", e.target.value)}
-          />
-          <input
-            placeholder="Popis"
-            value={row.explanation}
-            onChange={(e) => updateRow(i, "explanation", e.target.value)}
-          />
-        </div>
-      ))}
+  <div key={i} className="custom-row">
+    <input
+      placeholder={
+        currentLang === "en" ? "Criterion" : "Kritérium"
+      }
+      value={row.text}
+      onChange={(e) => updateRow(i, "text", e.target.value)}
+    />
+
+    <select
+  value={row.weight}
+  onChange={(e) => updateRow(i, "weight", Number(e.target.value))}
+>
+  <option value={1}>1</option>
+  <option value={2}>2</option>
+  <option value={3}>
+    {currentLang === "en" ? "3 – mandatory" : "3 – povinné"}
+  </option>
+</select>
+
+    <input
+      placeholder={
+        currentLang === "en" ? "Description" : "Popis"
+      }
+      value={row.explanation}
+      onChange={(e) => updateRow(i, "explanation", e.target.value)}
+    />
+  </div>
+))}
 
       <button className="home-button" onClick={addRow}>
-        + řádek
-      </button>
-      <button className="home-button" onClick={save}>
-        Uložit
-      </button>
+  {currentLang === "en" ? "+ row" : "+ řádek"}
+</button>
+
+<button className="home-button" onClick={save}>
+  {currentLang === "en" ? "Save" : "Uložit"}
+</button>
     </div>
   );
 }

@@ -1,112 +1,433 @@
 [
   {
-  "category": "cartography",
-  "id": "cartography",
-  "title": "Kartografické",
-  "description": "Základní kartografická pravidla.",
+    "category": "cartography",
+    "id": "cartography",
+    "title": "Kartografické",
+    "description": "Základní kartografická pravidla.",
+    "items": [
+      {
+        "id": 1,
+        "text": "Obsahuje mapa název?",
+        "weight": 3,
+        "explanation": "Název mapy určuje jéjí účel/téma, případně prostorové a časové určení.",
+        "links": [],
+        "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.2.1 – Název mapy, str. 58)\nMIKLÍN, Jan et al. Tvorba map. Ostrava: OU, 2018. (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.2.2 Název mapy)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Kraak et al., 2020 – Section 2.13 Layout & Visual Hierarchy)\nLONGLEY, Paul A. et al. Geographic Information Systems and Science. Wiley, 2011. (2011)",
+        "images": []
+      },
+      {
+        "id": 2,
+        "text": "Obsahuje mapa tiráž?",
+        "weight": 3,
+        "explanation": "Tiráž poskytuje informace o autoru/instituci, zdrojích dat, datu vydání, licenci a copyright.",
+        "links": [],
+        "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.2.5 – Tiráž, str. 65)\nMIKLÍN, Jan et al. Tvorba map. Ostrava: OU, 2018. (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.2.8 Tiráž)\nMetody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)",
+        "images": []
+      },
+      {
+        "id": 3,
+        "text": "Má mapová aplikace přístupnou legendu?",
+        "weight": 3,
+        "explanation": "Je ve výchozím stavu aplikace viditelná legenda, nebo ji lze jednoduše nají a zobrazit?",
+        "links": [],
+        "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.2.3 – Legenda, str. 61–64)\nMIKLÍN, Jan et al. Tvorba map. Ostrava: OU, 2018. (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.2.4 Legenda)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Kraak et al., 2020 – Section 3.6 Map Legends)\nMetody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)\nUCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)\nLONGLEY, Paul A. et al. Geographic Information Systems and Science. Wiley, 2011. (2011)",
+        "images": [   
+        ]
+      },
+      {
+        "id": 4,
+        "text": "Je legenda v souladu s kartografickými pravidly?",
+        "weight": 3,
+        "explanation": "Legenda je seznam znaků zobrazených v mapě, a jejich vysvělení.",
+        "links": [],
+        "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.2.3 – Legenda, str. 61–64)\nMIKLÍN, Jan et al. Tvorba map. Ostrava: OU, 2018. (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.2.4 Legenda)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Kraak et al., 2020 – Section 3.6 Map Legends)\nMetody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)\nUCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
+        "images": [
+                  ],
+        "subitems": [
+          {
+            "id": "4a",
+            "text": "Je legenda úplná(co je v mapě je v legendě)?",
+            "weight": 3
+          },
+          {
+            "id": "4b",
+            "text": "Je legenda nezávislá – zobrazuje pro jeden jev pouze jeden znak?",
+            "weight": 3
+          },
+          {
+            "id": "4c",
+            "text": "Je legenda uspořádaná – má tematický obsah přednost před topografickým?",
+            "weight": 3
+          },
+          {
+            "id": "4d",
+            "text": "Je v souladu s označením v mapě (co je v legendě je v mapě)? ",
+            "weight": 3
+          },
+          {
+            "id": "4e",
+            "text": "Je legenda srozumitelná? ",
+            "weight": 3
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "text": "Je k dispozici měřítko mapy?",
+        "weight": 3,
+        "explanation": "Měřítko je nezbytné pro interpretaci vzdáleností. Může být grafické, číselné či slovní",
+        "links": [],
+        "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.2.4 – Měřítko, str. 64)\nMIKLÍN, Jan et al. Tvorba map. Ostrava: OU, 2018.\nKapitola 10.2.7 Měřítko)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Kraak et al., 2020 – Section 2.6 Cartographic Scale)\nMetody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)\nLONGLEY, Paul A. et al. Geographic Information Systems and Science. Wiley, 2011. (2011)",
+        "images": [
+                  ]
+      },
+      {
+        "id": 6,
+        "text": "Mění se měřítko dynamicky na základě změny pozice a zoomu?",
+        "weight": 3,
+        "explanation": "Zajišťuje aktuálnost údaje o měřítku při interakci uživatele s mapou.",
+        "links": [],
+        "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.\nKapitola 6.2.4 – Měřítko, str. 64)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020.\nSection 4.3 Interactive Maps)",
+        "images": []
+      },
+      {
+        "id": 7,
+        "text": "Je mapové pole nejdominantnějším prvkem?",
+        "weight": 3,
+        "explanation": "Představuje ve výchozím stavu aplikace mapové pole alespoň 75% okna prohlížeče?",
+        "links": [],
+        "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.\nKapitola 6.4.3 – Vliv vizuální hierarchie, str. 79–80)\nMIKLÍN, Jan et al. Tvorba map. Ostrava: OU, 2018.\nKapitola 10.2.3 Hlavní a vedlejší mapové pole)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Kraak et al., 2020 – Section 2.13 Layout & Visual Hierarchy)\nUCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
+        "images": []
+      },
+      {
+        "id": 8,
+        "text": "Je v mapě zachována správná vizuální hierarchie?",
+        "weight": 3,
+        "explanation": "Vizuální hierarchie určuje pořadí a výraznost mapových vrstev – pořadí: 1) Hlavní tematický obsah 2) Doplňkový tematický obsah 3) Topografický podklad",
+        "links": [],
+        "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.4.3 – Vliv vizuální hierarchie, str. 79–80)\nMIKLÍN, Jan et al. Tvorba map. Ostrava: OU, 2018. (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.1 Základní principy vizuálního designu)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Kraak et al., 2020 – Section 2.13 Layout & Visual Hierarchy)\nUCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
+        "images": []
+      },
+      {
+        "id": 9,
+        "text": "Řídí se tematické vrstvy v mapě kartografickými konvencemi?",
+        "weight": 3,
+        "explanation": "Vhodné použití znaků a barev propadání barev u stupnice  modrá pro vodu  standardy znaků ",
+        "links": [],
+        "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.\nKapitola 6.6.2 – Barva, str. 88–89\nKapitola 9.1.2 – Tematické vrstvy, str. 150)\nMIKLÍN, Jan et al. Tvorba map. Ostrava: OU, 2018.\nKapitola 8 Barvy)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020.\nSection 2.10 Colour)\nMetody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)\nUCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)\nLONGLEY, Paul A. et al. Geographic Information Systems and Science. Wiley, 2011. (2011)",
+        "images": []
+      },
+      {
+        "id": 10,
+        "text": "Je znakový klíč mapy vhodně zvolený a odpovídá kartografickým pravidlům?",
+        "weight": 3,
+        "explanation": "Volba bodových, liniových a plošných znaků musí být srozumitelná. Kartografická sémantika",
+        "links": [],
+        "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.\nKapitola 6.7 – Vybrané vyjadřovací metody, str. 96–118)\nMIKLÍN, Jan et al. Tvorba map. Ostrava: OU, 2018. (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 4 Tvorba značkového klíče)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Kraak et al., 2020 – Section 2.9 Symbolization & the Visual Variables)\nMetody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)\nUCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)\nLONGLEY, Paul A. et al. Geographic Information Systems and Science. Wiley, 2011. (2011)",
+        "images": []
+      },
+      {
+        "id": 11,
+        "text": "Jsou prvky v mapě přiměřeně generalizovány vzhledem k úrovni přiblížení?",
+        "weight": 3,
+        "explanation": "Kartografická generalizace je výběr, grafické zjednodušení a zevšeobecnění objektů, jevů a jejich vztahů pro jejich grafické vyjádření v mapě. Zajišťuje, že při různých úrovních přiblížení nejsou v mapě zobrazeny nadbytečné nebo příliš detailní prvky, které by snižovaly čitelnost a přehlednost mapy.",
+        "links": [],
+        "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.1.4 – Úroveň měřítka, str. 53–56)\nMIKLÍN, Jan et al. Tvorba map. Ostrava: OU, 2018. (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 7 Kartografická generalizace)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Kraak et al., 2020 – Section 2.7 Generalization)\nMetody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)\nLONGLEY, Paul A. et al. Geographic Information Systems and Science. Wiley, 2011. (2011)",
+        "images": []
+      },
+      {
+        "id": 12,
+        "text": "Mění se velikost nebo detail znaků v závislosti na měřítku (zoom-dependent symbology)?",
+        "weight": 3,
+        "explanation": "Přizpůsobení znaků měřítku zlepšuje čitelnost mapy při přibližování a oddalování.",
+        "links": [],
+        "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.\nKapitola 6.5 – Vyjadřovací prostředky, str. 80–86)\nMIKLÍN, Jan et al. Tvorba map. Ostrava: OU, 2018. (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 7 Kartografická generalizace)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020.\nSection 2.7 Generalization\nSection 2.9 Symbolization & the Visual Variables)\nUCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)\nLONGLEY, Paul A. et al. Geographic Information Systems and Science. Wiley, 2011. (2011)",
+        "images": []
+      },
+      {
+        "id": 13,
+        "text": "Je kartografické zobrazení realizováno v projekci Web Mercator?",
+        "weight": 3,
+        "explanation": "Web Mercator je nejrozšířenější projekce ve webové kartografii a zajišťuje kompatibilitu s běžnými mapovými podklady.",
+        "links": [],
+        "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.1.1 – Kartografické zobrazení, str. 46–50)\nMIKLÍN, Jan et al. Tvorba map. Ostrava: OU, 2018. (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 3 Kartografická zobrazení)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Kraak et al., 2020 – Section 2.4 Map Projections)\nUCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
+        "images": [
+          {
+            "src": "/img/WebMercator.png",
+            "author": "",
+            "source": "",
+            "license": ""
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "text": "Je mapa responzivní a přizpůsobuje se velikosti okna prohlížeče?",
+        "weight": 3,
+        "explanation": "Mapa by měla zůstat použitelná i při změně velikosti okna nebo na různých typech zařízení.",
+        "links": [],
+        "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.\nKapitola 7.5 – Optimalizace pro mobilní zařízení, str. 127–131)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020.\nSection 4.6 Mobile Maps & Responsive Design)",
+        "images": [
+          {
+            "src": "/img/responsive.png",
+            "author": "",
+            "source": "",
+            "license": ""
+          }
+        ]
+      },
+      {
+  "id": 15,
+  "text": "Does the application allow switching thematic layers?",
+  "weight": 2,
+  "explanation": "The user should have control over which data are currently displayed.",
+  "links": [],
+  "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 9.1.2 – Tematické vrstvy, str. 150)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Section 4.3 Interactive Maps)\nUCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
+  "images": []
+},
+{
+  "id": 16,
+  "text": "Does the application allow reading coordinates in [lat, lon] format?",
+  "weight": 1,
+  "explanation": "Allows the user to obtain the exact position of a point using coordinates.",
+  "links": [],
+  "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.1.2 – Souřadnicové systémy, str. 50–52)\nLONGLEY, Paul A. et al. Geographic Information Systems and Science. Wiley, 2011.\nUCGIS GIS&T Body of Knowledge – Geospatial Data (GD)",
+  "images": []
+},
+{
+  "id": 17,
+  "text": "Can the user switch between different basemaps?",
+  "weight": 2,
+  "explanation": "The user can choose different map contexts, such as an orthophoto, topographic map or base map.",
+  "links": [],
+  "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 9.1.1 – Podkladové mapy, str. 145–150)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Section 4.5 Web Maps)\nUCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
+  "images": []
+},
+{
+  "id": 18,
+  "text": "If map rotation is enabled, is there a north indicator and a button to return to the default orientation?",
+  "weight": 2,
+  "explanation": "When the map is rotated, the user must be able to determine orientation easily and return the map to its default position.",
+  "links": [],
+  "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.1.3 – Orientace, str. 52–53)\nMIKLÍN, Jan et al. Tvorba map. Ostrava: OU, 2018. (Kapitola 10.2.6 Směrovka)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Section 2.13 Layout & Visual Hierarchy)",
+  "images": []
+},
+{
+  "id": 19,
+  "text": "Are points automatically clustered when zooming out to prevent symbol overlap?",
+  "weight": 2,
+  "explanation": "Clustering reduces symbol overlap and improves map readability at smaller scales.",
+  "links": [],
+  "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.7.11 – Shlukování (clustering), str. 118)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Section 2.7 Generalization)\nUCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
+  "images": []
+},
+{
+  "id": 20,
+  "text": "Is the selected thematic mapping method, such as a choropleth map or diagram map, appropriate for the given data type?",
+  "weight": 2,
+  "explanation": "The selected cartographic method should correspond to the nature of the data and the purpose of the map.",
+  "links": [],
+  "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.7 – Vyjadřovací metody, str. 96–118)\nMIKLÍN, Jan et al. Tvorba map. Ostrava: OU, 2018. (Kapitola 6 Metody tematické kartografie)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Section 3.1 Thematic Maps)\nUCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV-04)\nMetody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)",
+  "images": []
+},
+{
+  "id": 21,
+  "text": "When using a heatmap method, is the user informed that it is an indicative method unsuitable for precise value reading?",
+  "weight": 2,
+  "explanation": "A heatmap is more suitable for an indicative visualization of phenomenon intensity than for precise interpretation of specific values.",
+  "links": [],
+  "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.7.10 – Heat-map, str. 115–116)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Section 3 Map Types)\nUCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
+  "images": []
+},
+{
+  "id": 22,
+  "text": "When using the dot method, do the size or value of dots change dynamically when the scale or zoom level changes?",
+  "weight": 2,
+  "explanation": "The dot method should respond to scale changes so that both readability and correct interpretation are preserved.",
+  "links": [],
+  "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.7.4 – Metoda teček, str. 102–103)\nMIKLÍN, Jan et al. Tvorba map. Ostrava: OU, 2018. (Kapitola 6 Metody tematické kartografie)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Section 2.7 Generalization)\nMetody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)",
+  "images": []
+},
+{
+  "id": 23,
+  "text": "Do point symbols have an outline, halo effect or shadow to increase contrast against the background?",
+  "weight": 2,
+  "explanation": "Additional highlighting of point symbols helps distinguish them from the basemap and improves their readability.",
+  "links": [],
+  "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.5.1 – Bodové znaky, str. 81; Kapitola 6.6.4 – Okraj znaku, str. 92)\nMIKLÍN, Jan et al. Tvorba map. Ostrava: OU, 2018. (Kapitola 4 Značkový klíč)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Section 2.9 Symbolization & the Visual Variables)",
+  "images": []
+},
+{
+  "id": 24,
+  "text": "Are vector data optimized for web use, for example in GeoJSON or TopoJSON format?",
+  "weight": 2,
+  "explanation": "Optimization of vector data reduces the amount of transferred data and speeds up map rendering in the web environment.",
+  "links": [],
+  "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 5.2 – Vektorová a rastrová data, str. 43)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Section 4.5 Web Maps)\nUCGIS GIS&T Body of Knowledge – Data Modeling (DM)",
+  "images": []
+},
+{
+  "id": 25,
+  "text": "Does the application use standardized tile services for raster basemaps?",
+  "weight": 2,
+  "explanation": "Tile services are a standard and efficient way of publishing raster map backgrounds on the web.",
+  "links": [],
+  "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 9.3.3 – Webové mapové služby, str. 163)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Section 4.5 Web Maps)\nUCGIS GIS&T Body of Knowledge – Geospatial Data (GD)",
+  "images": []
+},
+{
+  "id": 26,
+  "text": "Are map labels created so that they do not overlap?",
+  "weight": 2,
+  "explanation": "It is important that place names or phenomenon labels are designed so that they remain readable.",
+  "links": [],
+  "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.4 – Vizuální proměnné a čitelnost mapy, str. 75–80)\nMIKLÍN, Jan et al. Tvorba map. Ostrava: OU, 2018. (Kapitola 9 Popis mapy a kartografická typografie)\nKRAAK, Menno-Jan; ORMELING, Ferjan. Cartography: Visualization of Spatial Data. 3rd ed. Pearson, 2010. (Map lettering and text placement)\nKRAAK, Menno-Jan et al. Mapping for a Sustainable World. UN, 2020. (Section 2.13 Layout & Visual Hierarchy)\nMetody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)",
+  "images": []
+}
+     
+    ]
+  },
+  {
+  "category": "gis",
+  "id": "usability",
+  "title": "Uživatelské",
+  "description": "Uživatelské možnosti a funkcionalita.",
   "items": [
     {
       "id": 1,
-      "text": "Obsahuje mapa název?",
+      "text": "Umožňuje aplikace zoom?",
       "weight": 3,
-      "explanation": "Název mapy určuje jéjí účel/téma, případně prostorové a časové určení.",
+      "explanation": "Možnost přibližování a oddalování je základní interakcí pro práci s webovou mapou.",
       "links": [],
-      "source": "Nétek 2020 (Kapitola 6.2.1 – Název mapy, str. 58); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.2.2 Název mapy); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.13 Layout & Visual Hierarchy); Longley et al. (2011) – Geographic Information Systems and Science, Chapter 12.3.1 ",
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.1.4 – Úroveň měřítka, str. 53–56)",
       "images": []
     },
     {
       "id": 2,
-      "text": "Obsahuje mapa tiráž?",
+      "text": "Je funkcionalita GIS nástrojů zřejmá (ikona, popisek, tooltip)?",
       "weight": 3,
-      "explanation": "Tiráž poskytuje informace o autoru/instituci, zdrojích dat, datu vydání, licenci a copyright.",
+      "explanation": "Srozumitelnost ovládacích prvků pro uživatele.",
       "links": [],
-      "source": "Nétek 2020 (Kapitola 6.2.5 – Tiráž, str. 65); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.2.8 Tiráž); Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011)",
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.3.1 – Ovládací prvky, str. 67–69)",
       "images": []
     },
     {
       "id": 3,
-      "text": "Má mapová aplikace přístupnou legendu?",
+      "text": "Odpovídá kompozice a ovládání mapy GIS konvencím a standardům?",
       "weight": 3,
-      "explanation": "Je ve výchozím stavu aplikace viditelná legenda, nebo ji lze jednoduše nají a zobrazit?",
+      "explanation": "Dodržení obvyklých vzorců chování známých z GIS systémů.",
       "links": [],
-      "source": "Nétek 2020 (Kapitola 6.2.3 – Legenda, str. 61–64); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.2.4 Legenda); Mapping for a Sustainable World (Kraak et al., 2020 – Section 3.6 Map Legends); Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV); Longley et al. (2011) – Geographic Information Systems and Science, Chapter 12.3.1 ",
-      "images": [
-        {
-          "src": "/img/legend.png",
-          "author": "",
-          "source": "",
-          "license": ""
-        }
-      ]
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.3–6.4 – Ovládací prvky a celková kompozice mapy, str. 67–80)",
+      "images": []
     },
     {
       "id": 4,
-      "text": "Je legenda v souladu s kartografickými pravidly?",
+      "text": "Umožňuje aplikace manipulaci s mapou pomocí myši?",
       "weight": 3,
-      "explanation": "Legenda je seznam znaků zobrazených v mapě, a jejich vysvělení.",
+      "explanation": "Základní interaktivita (posun, zoom) je klíčová pro použitelnost.",
       "links": [],
-      "source": "Nétek 2020 (Kapitola 6.2.3 – Legenda, str. 61–64); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.2.4 Legenda); Mapping for a Sustainable World (Kraak et al., 2020 – Section 3.6 Map Legends); Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
-      "images": [
-        {
-          "src": "/img/right.png",
-          "author": "",
-          "source": "",
-          "license": ""
-        },
-        {
-          "src": "/img/wrong.png",
-          "author": "",
-          "source": "",
-          "license": ""
-        }
-      ],
-      "subitems": [
-    {
-      "id": "4a",
-      "text": "Je legenda úplná(co je v mapě je v legendě)?" ,
-      "weight": 3
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 2.8 – Interaktivita, dynamika, str. 21–27)",
+      "images": []
     },
     {
-      "id": "4b",
-      "text": "Je legenda nezávislá – zobrazuje pro jeden jev pouze jeden znak?",
-      "weight": 3
-    },
-    {
-      "id": "4c",
-      "text": "Je legenda uspořádaná – má tematický obsah přednost před topografickým?",
-      "weight": 3
-    },
-    {
-      "id": "4d",
-      "text": "Je v souladu s označením v mapě (co je v legendě je v mapě)? ",
-      "weight": 3
-    },
-    {
-      "id": "4e",
-      "text": "Je legenda srozumitelná? ",
-      "weight": 3
-    }
-  ]
-},
-    {
-      "id": 5,
-      "text": "Obsahuje legenda vysvětlení všech použitých znaků včetně jejich hraničních hodnot?",
+      "id":5,
+      "text": "Je uživatelské rozhraní aplikace (včetně všech prvků aplikace) konzistentně v jednom jazyce?",
       "weight": 3,
-      "explanation": "Legenda by měla úplně vysvětlovat všechny použité symboly, barvy a intervaly hodnot.",
+      "explanation": "Všechny části aplikace by měly být konzistentně v jednom jazyce (např. pouze česky nebo pouze anglicky) pro udržení maximální srozumitelnosti.",
       "links": [],
-      "source": "Nétek 2020 (Kapitola 6.2.3 – Legenda, str. 61–64); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.2.4 Legenda); Mapping for a Sustainable World (Kraak et al., 2020 – Section 3.6 Map Legends); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
+      "source": "WORLD WIDE WEB CONSORTIUM (W3C). Web Content Accessibility Guidelines (WCAG). (WCAG)\nFrontend Web Performance Checklist",
       "images": []
     },
     {
       "id": 6,
-      "text": "Je k dispozici měřítko mapy?",
+      "text": "Je velikost písma v aplikaci přizpůsobena pro snadnou čitelnost?",
       "weight": 3,
-      "explanation": "Měřítko je nezbytné pro interpretaci vzdáleností. Může být grafické, číselné či slovní",
+      "explanation": "Textové prvky by měly být dostatečně velké a čitelné na různých zařízeních. Příliš malé nebo nevhodně škálované písmo zhoršuje použitelnost aplikace.",
       "links": [],
-      "source": "Nétek 2020 (Kapitola 6.2.4 – Měřítko, str. 64); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 1.4.5 Měřítko; Kapitola 10.2.7 Měřítko); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.6 Cartographic Scale); Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011); Longley et al. (2011) – Geographic Information Systems and Science, Chapter 12.3",
+      "source": "WORLD WIDE WEB CONSORTIUM (W3C). Web Content Accessibility Guidelines (WCAG). (WCAG)\nNétek, 2020 (Webová kartografie – kapitola písmo)",
+      "images": []
+    },
+    {
+      "id": 7,
+      "text": "Obsahuje aplikace základní ovládací prvky pro přiblížení a oddálení mapy (např. tlačítka + a −)?",
+      "weight": 3,
+      "explanation": "Uživatel by měl mít možnost jednoduše měnit měřítko mapy pomocí standardních ovládacích prvků.",
+      "links": [],
+      "source": "Nétek, 2020 (Webová kartografie – ovládací prvky)\nUCGIS GIS&T Body of Knowledge",
+      "images": []
+    },
+    {
+      "id": 8,
+      "text": "Umožňuje aplikace návrat do výchozího zobrazení mapy (např. pomocí tlačítka „domů“)?",
+      "weight": 3,
+      "explanation": "Funkce návratu na výchozí pohled usnadňuje orientaci v aplikaci a umožňuje rychlý návrat do původního stavu.",
+      "links": [],
+      "source": "Nétek, 2020 (Webová kartografie – interaktivita a ovládání)\nUCGIS GIS&T Body of Knowledge",
+      "images": []
+    }
+  ]
+},
+  {
+  "category": "technology",
+  "id": "technology",
+  "title": "Technologické",
+  "description": "Základní technologická pravidla.",
+  "items": [
+    {
+      "id": 1,
+      "text": "Je zvolená technologie vhodná pro podporu operačního řízení?",
+      "weight": 3,
+      "explanation": "Technologický stack musí odpovídat nárokům na spolehlivost a rychlost.",
+      "links": [],
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.",
+      "images": []
+    },
+    {
+      "id": 2,
+      "text": "Je aplikace nezávislá na platformě, OS i prohlížeči?",
+      "weight": 3,
+      "explanation": "Zajištění kompatibility napříč různými uživatelskými prostředími.",
+      "links": [],
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 5.2 – Obrazovka a webový prohlížeč jako zobrazovací médium, str. 39–43)",
+      "images": []
+    },
+    {
+      "id": 3,
+      "text": "Funguje aplikace bez nutnosti instalace pluginu nebo doplňku?",
+      "weight": 3,
+      "explanation": "Minimalizace bariér pro spuštění aplikace v moderních prohlížečích.",
+      "links": [],
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 7.2 – Programovací jazyky, str. 124–125)",
+      "images": []
+    },
+    {
+      "id": 4,
+      "text": "Načítají se data při práci s mapou průběžně bez nutnosti znovu načítat celou stránku?",
+      "weight": 3,
+      "explanation": "Využití AJAX/Fetch pro plynulý uživatelský zážitek bez blikání stránky.",
+      "links": [],
+      "source": "Front-End Performance Checklist",
+      "images": []
+    },
+    {
+      "id": 5,
+      "text": "Je aplikace přizpůsobena pro mobilní zařízení?",
+      "weight": 3,
+      "explanation": "Responzivní design pro zobrazení na telefonech a tabletech.",
+      "links": [],
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.",
+      "images": [
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Obsahuje aplikace jednoznačný titulek stránky <title> (zpravidla obdobu nadpisu)?",
+      "weight": 3,
+      "explanation": "Důležité pro orientaci uživatele v záložkách prohlížeče a SEO.",
+      "links": [],
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.",
       "images": [
         {
-          "src": "/img/scale.png",
+          "src": "/img/title.png",
           "author": "",
           "source": "",
           "license": ""
@@ -115,840 +436,228 @@
     },
     {
       "id": 7,
-      "text": "Mění se měřítko dynamicky na základě změny pozice a zoomu?",
+      "text": "Je URL aplikace zapamatovatelné (SEO-friendly)?",
       "weight": 3,
-      "explanation": "Zajišťuje aktuálnost údaje o měřítku při interakci uživatele s mapou.",
+      "explanation": "Srozumitelná struktura adresy usnadňuje sdílení a dohledatelnost.",
       "links": [],
-      "source": "Nétek 2020 (Kapitola 6.1.4 – Úroveň měřítka, str. 53–56; Kapitola 6.2.4 – Měřítko, str. 64); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.6 Cartographic Scale; Section 4.3 Interactive Maps)",
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.",
       "images": []
     },
     {
       "id": 8,
-      "text": "Je mapové pole nejdominantnějším prvkem?",
+      "text": "Je serverové nebo hardwarové řešení stabilní a dostatečně flexibilní i při vysokém počtu návštěv?",
       "weight": 3,
-      "explanation": "Představuje ve výchozím stavu aplikace mapové pole alespoň 75% okna prohlížeče?",
+      "explanation": "Infrastruktura musí zvládat očekávanou zátěž.",
       "links": [],
-      "source": "Nétek 2020 (Kapitola 6.2.2 – Mapové pole, str. 59; Kapitola 6.4.3 – Vliv vizuální hierarchie, str. 79–80); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.1 Základní principy vizuálního designu; Kapitola 10.2.3 Hlavní a vedlejší mapové pole); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.13 Layout & Visual Hierarchy); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 7.4 – Cloud computing, str. 126–127)",
       "images": []
     },
     {
       "id": 9,
-      "text": "Je v mapě zachována správná vizuální hierarchie?",
+      "text": "Lze aplikaci spustit v prostředí internetu?",
       "weight": 3,
-      "explanation": "Vizuální hierarchie určuje pořadí a výraznost mapových vrstev – pořadí: 1) Hlavní tematický obsah 2) Doplňkový tematický obsah 3) Topografický podklad",
+      "explanation": "Dostupnost aplikace online bez omezení na lokální síť (pokud není interní).",
       "links": [],
-      "source": "Nétek 2020 (Kapitola 6.4.3 – Vliv vizuální hierarchie, str. 79–80); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 10.1 Základní principy vizuálního designu); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.13 Layout & Visual Hierarchy); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.",
       "images": []
     },
     {
       "id": 10,
-      "text": "Řídí se tematické vrstvy v mapě kartografickými konvencemi?",
+      "text": "Má kód deklarovaný <!DOCTYPE html>?",
       "weight": 3,
-      "explanation": "Vhodné použití znaků a barev propadání barev u stupnice  modrá pro vodu  standardy znaků ",
+      "explanation": "Standard pro moderní webové stránky zajišťující správné vykreslování.",
       "links": [],
-      "source": "Nétek 2020 (Kapitola 6.5 – Vyjadřovací prostředky, str. 80–86; Kapitola 6.6.2 – Barva, str. 88–89; Kapitola 9.1.2 – Tematické vrstvy, str. 150); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 4 Tvorba značkového klíče; Kapitola 8 Barvy); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.9 Symbolization & the Visual Variables; Section 2.10 Colour); Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV); Longley et al. (2011) – Geographic Information Systems and Science, Chapter 12.3.2",
+      "source": "WORLD WIDE WEB CONSORTIUM (W3C). Web Content Accessibility Guidelines (WCAG).",
       "images": []
     },
     {
       "id": 11,
-      "text": "Je znakový klíč mapy vhodně zvolený a odpovídá kartografickým pravidlům?",
+      "text": "Načte se aplikace po spuštění do 3 sekund?",
       "weight": 3,
-      "explanation": "Volba bodových, liniových a plošných znaků musí být srozumitelná. Kartografická sémantika",
+      "explanation": "Rychlost načtení je klíčová pro udržení pozornosti uživatele.",
       "links": [],
-      "source": "Nétek 2020 (Kapitola 6.5 – Vyjadřovací prostředky, str. 80–86; Kapitola 6.7 – Vybrané vyjadřovací metody, str. 96–118); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 4 Tvorba značkového klíče); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.9 Symbolization & the Visual Variables); Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV); Longley et al. (2011) – Geographic Information Systems and Science, Chapter 12.3.2",
+      "source": "WORLD WIDE WEB CONSORTIUM (W3C). Web Content Accessibility Guidelines (WCAG).",
       "images": []
     },
     {
-  "id": 12,
-  "text": "Jsou prvky v mapě přiměřeně generalizovány vzhledem k úrovni přiblížení?",
-  "weight": 3,
-  "explanation": "Kartografická generalizace je výběr, grafické zjednodušení a zevšeobecnění objektů, jevů a jejich vztahů pro jejich grafické vyjádření v mapě. Zajišťuje, že při různých úrovních přiblížení nejsou v mapě zobrazeny nadbytečné nebo příliš detailní prvky, které by snižovaly čitelnost a přehlednost mapy.",
-  "links": [],
-  "source": "Nétek 2020 (Kapitola 6.1.4 – Úroveň měřítka, str. 53–56); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 7 Kartografická generalizace); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.7 Generalization); Metody tematické kartografie (Voženílek, V., Kaňok, J., a kol., 2011); Longley et al. (2011) – Geographic Information Systems and Science, Chapter 3.8.1",
-  "images": []
-},
+      "id": 12,
+      "text": "Má aplikace nastavené kódování UTF-8?",
+      "weight": 3,
+      "explanation": "Zajišťuje správné zobrazení diakritiky a speciálních znaků.",
+      "links": [],
+      "source": "WORLD WIDE WEB CONSORTIUM (W3C). Web Content Accessibility Guidelines (WCAG).",
+      "images": []
+    },
     {
       "id": 13,
-      "text": "Mění se velikost nebo detail znaků v závislosti na měřítku (zoom-dependent symbology)?",
+      "text": "Jsou jednotlivé tagy kódu uzavřené?",
       "weight": 3,
-      "explanation": "Přizpůsobení znaků měřítku zlepšuje čitelnost mapy při přibližování a oddalování.",
+      "explanation": "Správně uzavřené tagy jsou základním předpokladem validního HTML kódu.",
       "links": [],
-      "source": "Nétek 2020 (Kapitola 6.1.4 – Úroveň měřítka, str. 53–56; Kapitola 6.5 – Vyjadřovací prostředky, str. 80–86); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 7 Kartografická generalizace); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.6 Cartographic Scale; Section 2.7 Generalization; Section 2.9 Symbolization & the Visual Variables); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV); Longley et al. (2011) – Geographic Information Systems and Science, Chapter 12.3.1 ",
+      "source": "WORLD WIDE WEB CONSORTIUM (W3C). Web Content Accessibility Guidelines (WCAG).",
       "images": []
     },
     {
       "id": 14,
-      "text": "Je kartografické zobrazení realizováno v projekci Web Mercator?",
+      "text": "Splňuje kód aplikace správnou strukturu HTML (html, head, body)?",
       "weight": 3,
-      "explanation": "Web Mercator je nejrozšířenější projekce ve webové kartografii a zajišťuje kompatibilitu s běžnými mapovými podklady.",
+      "explanation": "Základní validita HTML dokumentu.",
       "links": [],
-      "source": "Nétek 2020 (Kapitola 6.1.1 – Kartografické zobrazení, str. 46–50); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 3 Kartografická zobrazení); Mapping for a Sustainable World (Kraak et al., 2020 – Section 2.4 Map Projections); UCGIS GIS&T Body of Knowledge – Cartography and Visualization (CV)",
-      "images": [
-        {
-          "src": "/img/WebMercator.png",
-          "author": "",
-          "source": "",
-          "license": ""
-        }
-      ]
+      "source": "WORLD WIDE WEB CONSORTIUM (W3C). Web Content Accessibility Guidelines (WCAG).",
+      "images": []
     },
     {
       "id": 15,
-      "text": "Je mapa responzivní a přizpůsobuje se velikosti okna prohlížeče?",
+      "text": "Používá kód správně atributy a elementy (href, alt,…)?",
       "weight": 3,
-      "explanation": "Mapa by měla zůstat použitelná i při změně velikosti okna nebo na různých typech zařízení.",
+      "explanation": "Zajištění funkčnosti odkazů a přístupnosti obrázků.",
       "links": [],
-      "source": "Nétek 2020 (Kapitola 5.2 – Obrazovka a webový prohlížeč jako zobrazovací médium, str. 39–43; Kapitola 7.5 – Optimalizace pro mobilní zařízení, str. 127–131); Mapping for a Sustainable World (Kraak et al., 2020 – Section 4.5 Web Maps; Section 4.6 Mobile Maps & Responsive Design)",
-      "images": [
-        {
-          "src": "/img/responsive.png",
-          "author": "",
-          "source": "",
-          "license": ""
-        }
-      ]
+      "source": "WORLD WIDE WEB CONSORTIUM (W3C). Web Content Accessibility Guidelines (WCAG).",
+      "images": []
     },
     {
-        "id": 16,
-        "text": "Umožňuje aplikace přepínání tematických vrstev?",
-        "weight": 2,
-        "explanation": "Uživatel by měl mít kontrolu nad tím, jaká data jsou aktuálně zobrazena.",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 9.1.2 – Tematické vrstvy, str. 150)",
-        "images": []
-      },
-      
-  
-      {
-        "id": 17,
-        "text": "Umožňuje aplikace odečet souřadnic ve formátu [lat, lon]?",
-        "weight": 1,
-        "explanation": "Možnost získat přesnou polohu bodu v souřadnicích.",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 6.1.2 – Souřadnicové systémy, str. 50–52) / UCGIS GIS&T Body of Knowledge",
-        "images": []
-      },
-      {
-        "id": 18,
-        "text": "Lze přepínat mezi podkladovými mapami?",
-        "weight": 2,
-        "explanation": "Uživatel může volit kontext (ortofoto, topografická mapa, základní mapa).",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 9.1.1 – Podkladové mapy, str. 145–150)",
-        "images": []
-      },
-  
-      {
-        "id": 19,
-        "text": "Je v případě možnosti rotace mapy přítomen prvek směrovky (orientace k severu) a tlačítko pro návrat do výchozí polohy?",
-        "weight": 2,
-        "explanation": "Při rotaci mapy musí mít uživatel možnost snadno určit orientaci a vrátit mapu do výchozí polohy.",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 6.1.3 – Orientace, str. 52, 53)",
-        "images": []
-      },
-      {
-        "id": 20,
-        "text": "Dochází k automatické agregaci bodů (clustering) při odzoomování, aby nedocházelo k překryvu znaků?",
-        "weight": 2,
-        "explanation": "Agregace bodů omezuje překryv znaků a zvyšuje čitelnost mapy při malých měřítcích.",
-        "links": [],
-        "source": "Nétek, Kap. 4.3.4 (Generalizace)",
-        "images": []
-      },
-      
-      {
-        "id": 21,
-        "text": "Je zvolená metoda tematické kartografie (např. kartogram vs. kartodiagram) adekvátní pro daný typ dat?",
-        "weight": 2,
-        "explanation": "Zvolená kartografická metoda má odpovídat povaze dat i cíli sdělení mapy.",
-        "links": [],
-        "source": "Nétek, Kap. 6.7 / GISTBoK [CV-04]",
-        "images": []
-      },
-      {
-        "id": 22,
-        "text": "Je uživatel v případě využití metody intenzity jevu (heat-map) upozorněn, že jde o náhledovou metodu nevhodnou pro přesný odečet hodnot?",
-        "weight": 2,
-        "explanation": "Heatmapa je vhodná spíše pro orientační zobrazení intenzity jevu než pro přesnou interpretaci konkrétních hodnot.",
-        "links": [],
-        "source": "Nétek (Kapitola 6.7.10 – Heat-map, str. 116)",
-        "images": []
-      },
-      {
-        "id": 23,
-        "text": "Je v případě použití metody teček zajištěna jejich dynamická změna (velikosti či hodnoty tečky) při změně měřítka (zoomu)?",
-        "weight": 2,
-        "explanation": "Metoda teček by měla reagovat na změnu měřítka tak, aby zůstala zachována čitelnost i interpretační správnost.",
-        "links": [],
-        "source": "Nétek (Kapitola 6.7.4 – Metoda teček, str. 102, 103)",
-        "images": []
-      },
-      {
-        "id": 24,
-        "text": "Mají bodové znaky pro zvýšení kontrastu vůči podkladu definovaný okraj, halo efekt nebo stínování?",
-        "weight": 2,
-        "explanation": "Doplňkové zvýraznění bodových znaků pomáhá odlišit je od podkladové mapy a zlepšuje jejich čitelnost.",
-        "links": [],
-        "source": "Nétek (Kapitola 6.5.1 a 6.6.4 – Bodové znaky a Okraj, str. 81, 92)",
-        "images": []
-      },
-      {
-        "id": 25,
-        "text": "Jsou vektorová data optimalizována pro web (např. formát GeoJSON nebo TopoJSON)?",
-        "weight": 2,
-        "explanation": "Optimalizace vektorových dat snižuje objem přenášených dat a zrychluje vykreslení mapy ve webovém prostředí.",
-        "links": [],
-        "source": "Nétek (Kapitola 5.2.2 – Vektorová data, str. 80)",
-        "images": []
-      },
-      {
-        "id": 26,
-        "text": "Využívá aplikace pro rastrové podklady standardizované dlaždicové služby (Tiles)?",
-        "weight": 2,
-        "explanation": "Dlaždicové služby jsou standardním a efektivním způsobem publikování rastrových mapových podkladů na webu.",
-        "links": [],
-        "source": "Nétek (Kapitola 4.3 – Metody publikování, str. 61)",
-        "images": []
-      },
-     
-      {
-        "id": 27,
-        "text": "Využívá aplikace pro přenos dat otevřené a standardizované formáty (např. GeoJSON, GeoPackage) pro lepší interoperabilitu?",
-        "weight": 2,
-        "explanation": "Použití otevřených a standardizovaných formátů zvyšuje interoperabilitu a usnadňuje výměnu dat mezi systémy.",
-        "links": [],
-        "source": "Kapitola 8.4 a 9.2.1 – Standardizace a formáty dat, str. 140, 151",
-        "images": []
-      }
-    ]
-  },
-  {
-    "category": "gis",
-    "id": "usability",
-    "title": "Uživatelské",
-    "description": "Uživatelské možnosti a funkcionalita.",
-    "items": [
-      {
-        "id": 1,
-        "text": "Umožňuje aplikace zoom?",
-        "weight": 3,
-        "explanation": "Možnost přibližování a oddalování je základní interakcí pro práci s webovou mapou.",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 6.1.4 – Úroveň měřítka, str. 53–56)",
-        "images": []
-      },
-      {
-        "id": 2,
-        "text": "Umožňuje aplikace vyhledávání?",
-        "weight": 1,
-        "explanation": "Nástroj pro nalezení prvků na základě atributů nebo polohy.",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 6.3.3 – Vyhledávání, str. 71)",
-        "images": []
-      },
-      {
-        "id": 3,
-        "text": "Umožňuje aplikace on-screen analýzy (např. měření, identifikaci apod.)?",
-        "weight": 1,
-        "explanation": "Základní GIS nástroje pro interakci s mapovými prvky.",
-        "links": [],
-        "source": "UCGIS GIS&T Body of Knowledge",
-        "images": []
-      },
-      {
-        "id": 4,
-        "text": "Obsahuje mapa navigaci, která umožňuje procházení kroků vpřed a zpět?",
-        "weight": 1,
-        "explanation": "Historie pohledů umožňuje uživateli vrátit se k předchozímu výřezu.",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 6.3.1 – Ovládací prvky, str. 67–69)",
-        "images": []
-      },
-      {
-        "id": 5,
-        "text": "Je počet nutných kroků vyžadujících práci s mapou co nejvíce minimalizován?",
-        "weight": 1,
-        "explanation": "Efektivita uživatelského rozhraní a workflow.",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 6.3.1 – Ovládací prvky, str. 67–69)",
-        "images": []
-      },
-      {
-        "id": 6,
-        "text": "Mají obrázky popisky nebo alternativní popisky (atribut alt u tagu img)?",
-        "weight": 1,
-        "explanation": "Důležité pro přístupnost (screen-readery) a při výpadku načítání.",
-        "links": [],
-        "source": "W3C WAI – alt text / Web accessibility",
-        "images": []
-      },
-      {
-        "id": 7,
-        "text": "Je funkcionalita GIS nástrojů zřejmá (ikona, popisek, tooltip)?",
-        "weight": 3,
-        "explanation": "Srozumitelnost ovládacích prvků pro uživatele.",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 6.3.1 – Ovládací prvky, str. 67–69)",
-        "images": []
-      },
-      {
-        "id": 8,
-        "text": "Podporuje aplikace GPS lokalizaci aktuální pozice (GPS senzor, WiFi, IP adresa)?",
-        "weight": 1,
-        "explanation": "Využití GPS senzoru pro zobrazení polohy uživatele.",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 7.5 – Optimalizace pro mobilní zařízení, str. 127–131)",
-        "images": []
-      },
-      {
-        "id": 9,
-        "text": "Podporuje aplikace atributová data?",
-        "weight": 1,
-        "explanation": "Možnost prohlížet a pracovat s tabulkovými informacemi o prvcích.",
-        "links": [],
-        "source": "UCGIS GIS&T Body of Knowledge",
-        "images": []
-      },
-      {
-        "id": 10,
-        "text": "Odpovídá kompozice a ovládání mapy GIS konvencím a standardům?",
-        "weight": 3,
-        "explanation": "Dodržení obvyklých vzorců chování známých z GIS systémů.",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 6.3–6.4 – Ovládací prvky a celková kompozice mapy, str. 67–80)",
-        "images": []
-      },
-      {
-        "id": 11,
-        "text": "Podporuje aplikace multimediální data (fotografie, videa, grafy apod.)?",
-        "weight": 1,
-        "explanation": "Podpora multimediálních dat rozšiřuje možnosti interpretace mapových prvků a jejich kontextu.",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 6.5.4 – Multimédia, str. 84–86)",
-        "images": []
-      },
-      {
-        "id": 12,
-        "text": "Umožňuje aplikace prostorové dotazování (např. výběr prvků v okruhu 5 km)?",
-        "weight": 1,
-        "explanation": "Prostorové dotazování umožňuje vybírat a analyzovat prvky podle jejich polohy a vzdálenostních vztahů.",
-        "links": [],
-        "source": "UCGIS GIS&T Body of Knowledge",
-        "images": []
-      },
-      {
-        "id": 13,
-        "text": "Obsahují interaktivní prvky (např. body) vyskakovací okna (pop-up), která podávají doplňující informace bez zakrytí celé mapy?",
-        "weight": 1,
-        "explanation": "Vyskakovací okna umožňují zpřístupnit doplňující informace o prvku bez nutnosti opustit mapové pole.",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 6.3.4 – Vyskakovací okno (pop-up), str. 72–75)",
-        "images": []
-      },
-      {
-        "id": 14,
-        "text": "Je k dispozici nástroj pro měření vzdálenosti nebo plochy?",
-        "weight": 1,
-        "explanation": "Měřicí nástroje rozšiřují funkční možnosti aplikace pro praktickou práci s mapou.",
-        "links": [],
-        "source": "Nétek (Kapitola 6.3.4 – Vyskakovací okno, str. 72)",
-        "images": []
-      },
-      {
-        "id": 15,
-        "text": "Umožňuje aplikace manipulaci s mapou pomocí myši?",
-        "weight": 3,
-        "explanation": "Základní interaktivita (posun, zoom) je klíčová pro použitelnost.",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 2.8 – Interaktivita, dynamika, str. 21–27)",
-        "images": []
-      },
-      {
-"id": 16,
-"text": "Je uživatelské rozhraní aplikace (včetně všech prvků aplikace) konzistentně v jednom jazyce?",
-"weight": 3,
-"explanation": "Všechny části aplikace by měly být konzistentně v jednom jazyce (např. pouze česky nebo pouze anglicky) pro udržení maximální srozumitelnosti.",
-"links": [],
-"source": "W3C – Web Content Accessibility Guidelines (WCAG); Frontend Web Performance Checklist",
-"images": []
-},
-{
-"id": 17,
-"text": "Je velikost písma v aplikaci přizpůsobena pro snadnou čitelnost?",
-"weight": 3,
-"explanation": "Textové prvky by měly být dostatečně velké a čitelné na různých zařízeních. Příliš malé nebo nevhodně škálované písmo zhoršuje použitelnost aplikace.",
-"links": [],
-"source": "W3C – Web Content Accessibility Guidelines (WCAG); Nétek, 2020 (Webová kartografie – kapitola písmo)",
-"images": []
-},
-{
-"id": 18,
-"text": "Jsou v atributové tabulce a vyskakovacích oknech zobrazovány pouze relevantní a uživatelsky využitelné informace?",
-"weight": 2,
-"explanation": "Zobrazené informace by měly být přehledné, smysluplné a odpovídat účelu aplikace. Nadbytečné nebo technické údaje, které nejsou pro uživatele přínosné, mohou snižovat přehlednost a orientaci v datech.",
-"links": [],
-"source": "Nétek, 2020 (Webová kartografie – pop-up a UI prvky); UCGIS GIS&T Body of Knowledge",
-"images": []
-},
-{
-"id": 19,
-"text": "Obsahuje aplikace základní ovládací prvky pro přiblížení a oddálení mapy (např. tlačítka + a −)?",
-"weight": 3,
-"explanation": "Uživatel by měl mít možnost jednoduše měnit měřítko mapy pomocí standardních ovládacích prvků.",
-"links": [],
-"source": "Nétek, 2020 (Webová kartografie – ovládací prvky); UCGIS GIS&T Body of Knowledge",
-"images": []
-},
-{
-"id": 20,
-"text": "Umožňuje aplikace návrat do výchozího zobrazení mapy (např. pomocí tlačítka „domů“)?",
-"weight": 3,
-"explanation": "Funkce návratu na výchozí pohled usnadňuje orientaci v aplikaci a umožňuje rychlý návrat do původního stavu.",
-"links": [],
-"source": "Nétek, 2020 (Webová kartografie – interaktivita a ovládání); UCGIS GIS&T Body of Knowledge",
-"images": []
-},
-{
-"id": 21,
-"text": "Je minimální úroveň přiblížení (minZoom) nastavena tak, aby nedocházelo k zobrazení nevhodného měřítka (např. celého světa v projekci Web Mercator)?",
-"weight": 1,
-"explanation": "Rozsah zoomu by měl odpovídat charakteru dat a účelu aplikace. Při příliš velkém oddálení (např. zoom 0) může dojít ke ztrátě informace, překryvu prvků nebo nezobrazení dat. Naopak u globálních map může být nízký zoom žádoucí.",
-"links": [],
-"source": "Nétek, 2020 (Webová kartografie – zoom level a měřítko); UCGIS GIS&T Body of Knowledge",
-"images": []
-}
-    ]
-  },
-  {
-    "category": "technology",
-    "id": "technology",
-    "title": "Technologické",
-    "description": "Základní technologická pravidla.",
-    "items": [
-      {
-        "id": 1,
-        "text": "Je zvolená technologie vhodná pro podporu operačního řízení?",
-        "weight": 3,
-        "explanation": "Technologický stack musí odpovídat nárokům na spolehlivost a rychlost.",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": []
-      },
-      {
-        "id": 2,
-        "text": "Je aplikace nezávislá na platformě, OS i prohlížeči?",
-        "weight": 3,
-        "explanation": "Zajištění kompatibility napříč různými uživatelskými prostředími.",
-        "links": [],
-        "source": "W3C – webové standardy a validita / Nétek 2020 (Kapitola 5.2 – Obrazovka a webový prohlížeč jako zobrazovací médium, str. 39–43)",
-        "images": []
-      },
-      {
-        "id": 3,
-        "text": "Funguje aplikace bez nutnosti instalace pluginu nebo doplňku?",
-        "weight": 3,
-        "explanation": "Minimalizace bariér pro spuštění aplikace v moderních prohlížečích.",
-        "links": [],
-        "source": "W3C – webové standardy a validita / Nétek 2020 (Kapitola 7.2 – Programovací jazyky, str. 124–125)",
-        "images": []
-      },
-      {
-        "id": 4,
-        "text": "Načítají se data při práci s mapou průběžně bez nutnosti znovu načítat celou stránku?",
-        "weight": 3,
-        "explanation": "Využití AJAX/Fetch pro plynulý uživatelský zážitek bez blikání stránky.",
-        "links": [],
-        "source": "Front-End Performance Checklist",
-        "images": []
-      },
-      {
-        "id": 5,
-        "text": "Je aplikace přizpůsobena pro mobilní zařízení?",
-        "weight": 3,
-        "explanation": "Responzivní design pro zobrazení na telefonech a tabletech.",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": [{
-    "src": "/img/responsive.png",
-    "author": "",
-    "source": "",
-    "license": ""
-  }]
-      },
-      {
-        "id": 6,
-        "text": "Lze aplikaci ovládat dotykem?",
-        "weight": 1,
-        "explanation": "Podpora gest pro zařízení s dotykovou obrazovkou.",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": []
-      },
-      {
-        "id": 7,
-        "text": "Obsahuje aplikace jednoznačný titulek stránky <title> (zpravidla obdobu nadpisu)?",
-        "weight": 3,
-        "explanation": "Důležité pro orientaci uživatele v záložkách prohlížeče a SEO.",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": [{
-    "src": "/img/title.png",
-    "author": "",
-    "source": "",
-    "license": ""
-  }]
-      },
-      {
-        "id": 8,
-        "text": "Je URL aplikace zapamatovatelné (SEO-friendly)?",
-        "weight": 3,
-        "explanation": "Srozumitelná struktura adresy usnadňuje sdílení a dohledatelnost.",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": []
-      },
-      {
-        "id": 9,
-        "text": "Umožňuje aplikace vizualizovat různé typy dat (není uzavřena pro jediný typ souborů)?",
-        "weight": 1,
-        "explanation": "Schopnost pracovat s různorodými datovými zdroji.",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 9.2–9.3 – Publikování a konzumace dat, str. 151–163)",
-        "images": []
-      },
-      {
-        "id": 10,
-        "text": "Lze aplikaci upravit nebo rozšířit (např. díky otevřenému zdrojovému kódu)?",
-        "weight": 1,
-        "explanation": "Možnost úprav a rozšíření zvyšuje otevřenost řešení a jeho dlouhodobou udržitelnost.",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": []
-      },
-      {
-        "id": 11,
-        "text": "Je aplikace rozšiřitelná (widgety, pluginy)?",
-        "weight": 1,
-        "explanation": "Rozšiřitelnost aplikace umožňuje její další vývoj bez zásadních změn jádra systému.",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": []
-      },
-      {
-        "id": 12,
-        "text": "Je serverové nebo hardwarové řešení stabilní a dostatečně flexibilní i při vysokém počtu návštěv?",
-        "weight": 3,
-        "explanation": "Infrastruktura musí zvládat očekávanou zátěž.",
-        "links": [],
-        "source": "Front-End Performance Checklist / Nétek 2020 (Kapitola 7.4 – Cloud computing, str. 126–127)",
-        "images": []
-      },
-      {
-        "id": 13,
-        "text": "Lze aplikaci spustit v prostředí internetu?",
-        "weight": 3,
-        "explanation": "Dostupnost aplikace online bez omezení na lokální síť (pokud není interní).",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": []
-      },
-      {
-        "id": 14,
-        "text": "Má kód deklarovaný <!DOCTYPE html>?",
-        "weight": 3,
-        "explanation": "Standard pro moderní webové stránky zajišťující správné vykreslování.",
-        "links": [],
-        "source": "W3C",
-        "images": []
-      },
-      {
-        "id": 15,
-        "text": "Načte se aplikace po spuštění do 3 sekund?",
-        "weight": 3,
-        "explanation": "Rychlost načtení je klíčová pro udržení pozornosti uživatele.",
-        "links": [],
-        "source": "W3C",
-        "images": []
-      },
-      {
-        "id": 16,
-        "text": "Má aplikace nastavené kódování UTF-8?",
-        "weight": 3,
-        "explanation": "Zajišťuje správné zobrazení diakritiky a speciálních znaků.",
-        "links": [],
-        "source": "W3C",
-        "images": []
-      },
-      {
-        "id": 17,
-        "text": "Jsou jednotlivé tagy kódu uzavřené?",
-        "weight": 3,
-        "explanation": "Správně uzavřené tagy jsou základním předpokladem validního HTML kódu.",
-        "links": [],
-        "source": "W3C",
-        "images": []
-      },
-      {
-        "id": 18,
-        "text": "Splňuje kód aplikace správnou strukturu HTML (html, head, body)?",
-        "weight": 3,
-        "explanation": "Základní validita HTML dokumentu.",
-        "links": [],
-        "source": "W3C",
-        "images": []
-      },
-      {
-        "id": 19,
-        "text": "Používá kód správně atributy a elementy (href, alt,…)?",
-        "weight": 3,
-        "explanation": "Zajištění funkčnosti odkazů a přístupnosti obrázků.",
-        "links": [],
-        "source": "W3C",
-        "images": []
-      },
-      {
-        "id": 20,
-        "text": "Má aplikace platné a správné vlastnosti a hodnoty CSS?",
-        "weight": 3,
-        "explanation": "Validita stylů zajišťuje konzistentní vzhled napříč prohlížeči.",
-        "links": [],
-        "source": "W3C",
-        "images": []
-      },
-      {
-        "id": 21,
-        "text": "Je latence serveru při požadavku na nová data nižší než 200 ms?",
-        "weight": 3,
-        "explanation": "Nízká latence serveru je důležitá pro plynulou odezvu aplikace při práci s dynamickými daty.",
-        "links": [],
-        "source": "Front-End Performance Checklist",
-        "images": []
-      }
-    ]
-  },
-  {
-    "category": "safety",
-    "id": "safety",
-    "title": "Bezpečnostní",
-    "description": "Důvěryhodnost, původ dat a legislativní aspekty.",
-    "items": [
-      {
-        "id": 1,
-        "text": "Je mapový obsah aktuální a důvěryhodný?",
-        "weight": 3,
-        "explanation": "Zajištění validity a časové relevance prezentovaných informací.",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": []
-      },
-      {
-        "id": 2,
-        "text": "Obsahuje aplikace místo pro autorské a licenční údaje (Copyright) datových vrstev i služeb?",
-        "weight": 3,
-        "explanation": "Dodržení autorských práv a podmínek užití datových zdrojů.",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": []
-      },
-      {
-        "id": 3,
-        "text": "Je uveden autor nebo tiráž mapové aplikace?",
-        "weight": 3,
-        "explanation": "Jasná identifikace provozovatele a tvůrce aplikace.",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": []
-      },
-      {
-        "id": 4,
-        "text": "Je aplikace chráněna proti běžným způsobům narušení důvěryhodnosti a bezpečnosti, např. skripty třetích stran?",
-        "weight": 3,
-        "explanation": "Ochrana proti běžným útokům (XSS, SQL injection apod.).",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": []
-      },
-      {
-        "id": 5,
-        "text": "Jsou neveřejné aplikace chráněny před veřejným dohledáním, např. správným nastavením robots nebo přístupových práv?",
-        "weight": 2,
-        "explanation": "Správné nastavení přístupových práv a indexace.",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": []
-      },
-      {
-        "id": 6,
-        "text": "Jsou veškeré části aplikace umístěny na totožné URL adrese?",
-        "weight": 3,
-        "explanation": "Konzistence prostředí a prevence zmatení uživatele.",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": []
-      },
-      {
-        "id": 7,
-        "text": "Probíhá přesměrování pouze srozumitelně a s vědomím uživatele?",
-        "weight": 3,
-        "explanation": "Transparentní navigace bez nevyžádaných skoků na jiné weby.",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": []
-      },
-      {
-        "id": 8,
-        "text": "Obsahuje aplikace pouze bezpečné a legitimní skripty, které neohrožují uživatele ani data?",
-        "weight": 3,
-        "explanation": "Čistota kódu bez škodlivého malwaru či sledovacích skriptů.",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": []
-      },
-      {
-        "id": 9,
-        "text": "Je k dispozici návod nebo nápověda?",
-        "weight": 2,
-        "explanation": "Uživatelská podpora pro pochopení ovládání aplikace.",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": []
-      },
-      {
-        "id": 10,
-        "text": "Je textový obsah aplikace bez závažných typografických a pravopisných chyb?",
-        "weight": 3,
-        "explanation": "Jazyková správnost zvyšuje profesionální dojem a důvěryhodnost.",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 6.6.3 – Písmo, str. 89–92)",
-        "images": []
-      },
-      {
-        "id": 11,
-        "text": "Jsou definována chybová hlášení a stránka 404 (Nenalezeno)?",
-        "weight": 3,
-        "explanation": "Ošetření stavů, kdy požadovaný obsah není nalezen.",
-        "links": [],
-        "source": "W3C – webové standardy a validita",
-        "images": []
-      },
-      {
-        "id": 12,
-        "text": "Obsahují chybová hlášení jasné instrukce?",
-        "weight": 2,
-        "explanation": "Pomoc uživateli vyřešit nastalý problém místo prostého oznámení chyby.",
-        "links": [],
-        "source": "W3C – webové standardy a validita",
-        "images": []
-      },
-      {
-        "id": 13,
-        "text": "Jsou nápovědy, upozornění a chybové hlášky formulovány srozumitelně, věcně a neutrálně?",
-        "weight": 2,
-        "explanation": "Profesionální komunikace s uživatelem.",
-        "links": [],
-        "source": "W3C – webové standardy a přístupnost",
-        "images": []
-      },
-      {
-        "id": 14,
-        "text": "Je uživatel v případě inicializace nebo načítání většího množství dat upozorněn (textově nebo graficky, např. loader)?",
-        "weight": 1,
-        "explanation": "Vizuální zpětná vazba při delších operacích.",
-        "links": [],
-        "source": "Front-End Performance Checklist",
-        "images": []
-      },
-      {
-        "id": 15,
-        "text": "Je nápověda pochopitelná, bez chyb a překlepů?",
-        "weight": 2,
-        "explanation": "Kvalitní dokumentace je vizitkou aplikace.",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": []
-      },
-      {
-        "id": 16,
-        "text": "Lze aplikaci včetně nastavení automaticky nebo manuálně zálohovat?",
-        "weight": 1,
-        "explanation": "Zajištění kontinuity dat a nastavení v případě havárie.",
-        "links": [],
-        "source": "UCGIS GIS&T Body of Knowledge",
-        "images": []
-      },
-      {
-        "id": 17,
-        "text": "Jsou originální data chráněna před neautorizovaným stažením nebo úpravou uživatelem?",
-        "weight": 1,
-        "explanation": "Ochrana surových dat před neautorizovaným stažením nebo modifikací.",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 9.2–9.3 – Publikování a konzumace dat, str. 151–163)",
-        "images": []
-      },
-      {
-        "id": 18,
-        "text": "Jsou nastaveny mechanismy pro návrat k funkční verzi v případě havárie (verzování, git)?",
-        "weight": 2,
-        "explanation": "Možnost rollbacku při neúspěšné aktualizaci.",
-        "links": [],
-        "source": "UCGIS GIS&T Body of Knowledge",
-        "images": []
-      },
-      {
-        "id": 19,
-        "text": "Odpovídá aplikace legislativním požadavkům (neporušuje zákony, autorská práva apod.)?",
-        "weight": 3,
-        "explanation": "Soulad s GDPR, zákonem o přístupnosti apod.",
-        "links": [],
-        "source": "Nétek 2020 (Kapitola 8.2 – Autorské právo a licence, str. 135–137)",
-        "images": []
-      },
-      {
-        "id": 20,
-        "text": "Byla aplikace podrobena zátěžovým testům?",
-        "weight": 3,
-        "explanation": "Ověření stability při vysokém počtu současně přistupujících uživatelů.",
-        "links": [],
-        "source": "Front-End Performance Checklist",
-        "images": []
-      },
-      {
-        "id": 21,
-        "text": "Je k dispozici technická podpora nebo FAQ pro závažnější případy?",
-        "weight": 1,
-        "explanation": "Dostupná technická podpora nebo FAQ usnadňuje řešení závažnějších problémů a zvyšuje důvěryhodnost aplikace.",
-        "links": [],
-        "source": "Nétek 2020",
-        "images": []
-      },
-      {
-        "id": 22,
-        "text": "Jsou u mapy jasně definována metadata (původ dat, datum poslední aktualizace)?",
-        "weight": 3,
-        "explanation": "Metadata umožňují posoudit původ, aktuálnost a důvěryhodnost mapového obsahu.",
-        "links": [],
-        "source": "Nétek, Kap. 5.1 / GISTBoK [DM-02]",
-        "images": []
-      },
-      {
-        "id": 23,
-        "text": "Je u mapy jasně uvedeno prohlášení o autorských právech (Copyright) a licence k datům?",
-        "weight": 3,
-        "explanation": "Jasně uvedené copyrightové a licenční informace pomáhají uživateli pochopit podmínky použití dat i samotné mapy.",
-        "links": [],
-        "source": "Kapitola 8.2 – Autorské právo a licence, str. 135",
-        "images": []
-      },
-      {
-      "id": 12,
-      "text": "Jsou data polohově správně lokalizována?",
+      "id": 16,
+      "text": "Má aplikace platné a správné vlastnosti a hodnoty CSS?",
       "weight": 3,
-      "explanation": "Geometrická přesnost dat vůči podkladové mapě a souřadnicovému systému.",
+      "explanation": "Validita stylů zajišťuje konzistentní vzhled napříč prohlížeči.",
       "links": [],
-      "source": "Nétek 2020 (Kapitola 6.1.2 – Souřadnicové systémy, str. 50–52); Tvorba map (Miklín, Dušek, Krtička, Kaláb, 2018 – Kapitola 1.4.3 Souřadnice; Kapitola 3 Kartografická zobrazení); UCGIS GIS&T Body of Knowledge; Geografické informace – systémy a věda (Longley, Goodchild, Maguire, Rhind)",
+      "source": "WORLD WIDE WEB CONSORTIUM (W3C). Web Content Accessibility Guidelines (WCAG).",
+      "images": []
+    },
+    {
+      "id": 17,
+      "text": "Je latence serveru při požadavku na nová data nižší než 200 ms?",
+      "weight": 3,
+      "explanation": "Nízká latence serveru je důležitá pro plynulou odezvu aplikace při práci s dynamickými daty.",
+      "links": [],
+      "source": "Front-End Performance Checklist",
       "images": []
     }
-    ]
-  }
+  ]
+},
+  {
+  "category": "safety",
+  "id": "safety",
+  "title": "Bezpečnostní",
+  "description": "Důvěryhodnost, původ dat a legislativní aspekty.",
+  "items": [
+    {
+      "id": 1,
+      "text": "Je mapový obsah aktuální a důvěryhodný?",
+      "weight": 3,
+      "explanation": "Zajištění validity a časové relevance prezentovaných informací.",
+      "links": [],
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.",
+      "images": []
+    },
+    {
+      "id": 2,
+      "text": "Obsahuje aplikace místo pro autorské a licenční údaje (Copyright) datových vrstev i služeb?",
+      "weight": 3,
+      "explanation": "Dodržení autorských práv a podmínek užití datových zdrojů.",
+      "links": [],
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.",
+      "images": []
+    },
+    {
+      "id": 3,
+      "text": "Je uveden autor nebo tiráž mapové aplikace?",
+      "weight": 3,
+      "explanation": "Jasná identifikace provozovatele a tvůrce aplikace.",
+      "links": [],
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.",
+      "images": []
+    },
+    {
+      "id": 4,
+      "text": "Je aplikace chráněna proti běžným způsobům narušení důvěryhodnosti a bezpečnosti, např. skripty třetích stran?",
+      "weight": 3,
+      "explanation": "Ochrana proti běžným útokům (XSS, SQL injection apod.).",
+      "links": [],
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.",
+      "images": []
+    },
+    {
+      "id": 5,
+      "text": "Jsou veškeré části aplikace umístěny na totožné URL adrese?",
+      "weight": 3,
+      "explanation": "Konzistence prostředí a prevence zmatení uživatele.",
+      "links": [],
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.",
+      "images": []
+    },
+    {
+      "id": 6,
+      "text": "Probíhá přesměrování pouze srozumitelně a s vědomím uživatele?",
+      "weight": 3,
+      "explanation": "Transparentní navigace bez nevyžádaných skoků na jiné weby.",
+      "links": [],
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.",
+      "images": []
+    },
+    {
+      "id": 7,
+      "text": "Obsahuje aplikace pouze bezpečné a legitimní skripty, které neohrožují uživatele ani data?",
+      "weight": 3,
+      "explanation": "Čistota kódu bez škodlivého malwaru či sledovacích skriptů.",
+      "links": [],
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020.",
+      "images": []
+    },
+    {
+      "id": 8,
+      "text": "Je textový obsah aplikace bez závažných typografických a pravopisných chyb?",
+      "weight": 3,
+      "explanation": "Jazyková správnost zvyšuje profesionální dojem a důvěryhodnost.",
+      "links": [],
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 6.6.3 – Písmo, str. 89–92)",
+      "images": []
+    },
+    {
+      "id": 9,
+      "text": "Jsou definována chybová hlášení a stránka 404 (Nenalezeno)?",
+      "weight": 3,
+      "explanation": "Ošetření stavů, kdy požadovaný obsah není nalezen.",
+      "links": [],
+      "source": "WORLD WIDE WEB CONSORTIUM (W3C). Web Content Accessibility Guidelines (WCAG).",
+      "images": []
+    },
+    {
+      "id": 10,
+      "text": "Odpovídá aplikace legislativním požadavkům (neporušuje zákony, autorská práva apod.)?",
+      "weight": 3,
+      "explanation": "Soulad s GDPR, zákonem o přístupnosti apod.",
+      "links": [],
+      "source": "NÉTEK, Rostislav. Webová kartografie – specifika tvorby interaktivních map na webu. Olomouc: UPOL, 2020. (Kapitola 8.2 – Autorské právo a licence, str. 135–137)",
+      "images": []
+    },
+    {
+      "id": 11,
+      "text": "Byla aplikace podrobena zátěžovým testům?",
+      "weight": 3,
+      "explanation": "Ověření stability při vysokém počtu současně přistupujících uživatelů.",
+      "links": [],
+      "source": "Front-End Performance Checklist",
+      "images": []
+    },
+    {
+      "id": 12,
+      "text": "Jsou u mapy jasně definována metadata (původ dat, datum poslední aktualizace)?",
+      "weight": 3,
+      "explanation": "Metadata umožňují posoudit původ, aktuálnost a důvěryhodnost mapového obsahu.",
+      "links": [],
+      "source": "Nétek, Kap. 5.1 / GISTBoK [DM-02]",
+      "images": []
+    },
+    {
+      "id": 13,
+      "text": "Je u mapy jasně uvedeno prohlášení o autorských právech (Copyright) a licence k datům?",
+      "weight": 3,
+      "explanation": "Jasně uvedené copyrightové a licenční informace pomáhají uživateli pochopit podmínky použití dat i samotné mapy.",
+      "links": [],
+      "source": "Kapitola 8.2 – Autorské právo a licence, str. 135",
+      "images": []
+    }
+  ]
+}
 ]

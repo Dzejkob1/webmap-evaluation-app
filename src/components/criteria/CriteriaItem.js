@@ -62,8 +62,13 @@ function CriteriaItem({
         onClick={() => setAnswer(categoryId, answerId, "unknown")}
         type="button"
       >
-        <span className="lang lang-cs">Nelze zjistit</span>
-        <span className="lang lang-en">Cannot determine</span>
+        <span className="lang lang-cs">
+  {item.weight === 3 ? "Nelze zjistit" : "Nelze zjistit / netýká se"}
+</span>
+
+<span className="lang lang-en">
+  {item.weight === 3 ? "Cannot determine" : "Cannot determine / not applicable"}
+</span>
       </button>
     </div>
   );
@@ -98,7 +103,7 @@ function CriteriaItem({
         {!hasSubitems && renderAnswerButtons(baseKey, item.id)}
       </div>
 
-      {/* INFO (vysvětlení + zdroje) */}
+      
       {isInfoOpen && (
         <div className="criteria-detail">
           <div className="criteria-detail-layout">
@@ -109,7 +114,16 @@ function CriteriaItem({
 
               {item.source && (
                 <div className="criteria-source">
-                  <strong>Zdroj:</strong> {item.source}
+                  {item.source && (
+  <div className="criteria-source">
+    <strong>Zdroje:</strong>
+    <ul>
+      {item.source.split("\n").map((src, i) => (
+  <div key={i}>{src}</div>
+))}
+    </ul>
+  </div>
+)}
                 </div>
               )}
 
@@ -155,7 +169,7 @@ function CriteriaItem({
         </div>
       )}
 
-      {/* SUBITEMS */}
+      
       {hasSubitems && areSubitemsOpen && (
         <div className="criteria-subitems">
           {item.subitems.map((sub, index) => {
@@ -186,7 +200,7 @@ function CriteriaItem({
         </div>
       )}
 
-      {/* IMAGE MODAL */}
+      
       {selectedImage && (
         <div
           className="image-modal-overlay"

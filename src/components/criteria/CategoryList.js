@@ -78,10 +78,10 @@ function CategoryList({
 
                   <li>
                     <span className="lang lang-cs">
-                      Pomocí „Vlastní kritéria“ můžeš pracovat s vlastním JSONem.
+                      Pomocí „Vlastní kritéria“ můžeš pracovat s vlastním JSON souborem.
                     </span>
                     <span className="lang lang-en">
-                      Use “Custom criteria” to manage your own JSON dataset.
+                      Use “Custom criteria” to manage your own JSON file.
                     </span>
                   </li>
 
@@ -96,7 +96,7 @@ function CategoryList({
 
                   <li>
                     <span className="lang lang-cs">
-                      Tlačítkem „Obnovit“ vrátíš původní stav.
+                      Tlačítkem „Obnovit“ vrátíš původní stav kategorií.
                     </span>
                     <span className="lang lang-en">
                       Use “Restore” to return to default categories.
